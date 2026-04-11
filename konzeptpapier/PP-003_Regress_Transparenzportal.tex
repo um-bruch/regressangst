@@ -1,0 +1,1171 @@
+\documentclass{umbruch-position}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+
+\positionsnummer{PP-003}
+\title{Regress-Transparenzportal:\\Warum Deutschland eine anonyme Meldeplattform für ärztliche Regressforderungen braucht}
+\untertitel{Ein Open-Source-Konzept zur Schließung der größten Datenlücke\\im deutschen Gesundheitswesen}
+\author{Um:bruch -- Denkfabrik für gesellschaftlichen Wandel}
+\date{April 2026}
+\versionsnummer{2.8}
+
+
+\zusammenfassung{%
+Das deutsche Wirtschaftlichkeitsprüfsystem kennt zwei Wege zum Regress: die Auffälligkeitsprüfung (V1, statistisches Screening) und die Einzelfallprüfung (V2, Kassenantrag bei konkretem Verdacht). Für V1 liegt die Durchsetzungsquote unter 1\,\%. Für V2 existieren \textbf{keine öffentlichen Verfahrensstatistiken} --- obwohl allein in einer KV-Region 20.000 Anträge jährlich gestellt werden. Gleichzeitig berichten 72\,\% der Hausärzte eigene Regresserfahrung (Ribbat et al. 2023; V1+V2 zusammen, keine Verfahrenstrennung). Dieser Widerspruch löst sich auf, wenn man die Verfahren trennt: Die beruhigende Statistik stammt aus V1, die ärztliche Erfahrung überwiegend aus V2. Das System produziert drei Scanner (Kosten, Formfehler, Abrechnung), aber keiner prüft medizinische Versorgungsqualität. Dieses Konzept skizziert ein anonymes, verifiziertes Meldeportal (Wahlkabinen-Prinzip), das die größte Datenlücke im System --- die V2-Verfahrensstatistik --- erstmals empirisch schließen würde.
+}
+\schlagworte{Regress, Transparenz, GLP-1, Gesundheitspolitik, Open Source, Patientenversorgung}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+
+
+
+\section{Executive Summary}
+
+In Deutschland existiert keine Plattform, auf der Ärzte anonym und verifiziert melden können, ob und in welcher Höhe sie von Krankenkassen regressiert wurden. Auch international gibt es nichts Vergleichbares.
+
+Das deutsche Wirtschaftlichkeitsprüfsystem kennt zwei Wege zum Regress: die \textbf{Auffälligkeitsprüfung} (V1, statistisches Screening, Durchsetzungsquote unter 1\,\%) und die \textbf{Einzelfallprüfung} (V2, Kassenantrag bei Formfehler-Verdacht). Für V2 existieren keine öffentlichen Verfahrensstatistiken --- obwohl allein in der KV Nordrhein jährlich 20.000 Anträge gestellt werden. Die beruhigende ``unter 1\,\%''-Statistik stammt aus V1; die ärztliche Regresserfahrung (72\,\% der Hausärzte, Ribbat et al. 2023) überwiegend aus V2. Die Angst ist berechtigt --- sie bezieht sich auf ein anderes Verfahren als die Statistik. Ein einziger Formfehler kann zu existenzbedrohenden Rückforderungen führen (BSG B\,6\,KA\,9/24\,R: 491.000\,EUR --- Stempel statt Unterschrift, alle Verordnungen medizinisch korrekt).
+
+\textbf{Dieses Projekt schließt die größte Datenlücke im System:} Ein anonymes, verifiziertes Meldeportal für ärztliche Regressforderungen, das erstmals V2-Verfahrensausgänge, Formfehler-Anteile und Vergleichsquoten empirisch erfasst. Betrieben von einer gemeinnützigen Trägerorganisation, geschützt durch Art.\,5 GG und legitimiert durch das Präzedenzbeispiel des KV-RLP-Regress-Rankings. \textit{Dieses Konzept wird der Öffentlichkeit zur Umsetzung angeboten --- die Autoren suchen Träger, nicht Eigentum.}
+
+\textbf{Begleitstudie:} Die wissenschaftliche Tiefenanalyse der Befunde, auf die sich dieses Konzept stützt, findet sich im Begleitpaper \textit{ST-001 — Systemtheoretische Aufarbeitung der Regressangst} (v0.12, 85~Seiten). Das vorliegende Konzeptpapier referenziert die Befunde, die ausführliche Begründung steht in der Studie.
+
+\textbf{Klarstellung zur Position:} Dieses Konzept ist \textit{pro-Governance}, nicht \textit{anti-Regress}. Der Regress als Instrument der Wirtschaftlichkeitsprüfung wird nicht infrage gestellt. Was infrage gestellt wird, ist die fehlende Transparenz über seine tatsächliche Wirkung. Wir wollen den Regress nicht abschaffen, sondern messbar machen --- damit eine evidenzbasierte Reformdebatte überhaupt möglich wird.
+
+\textbf{Kosten MVP:} ca. 800--2.500\,EUR (Detailkalkulation siehe Abschnitt 10)\\
+\textbf{Zeitrahmen MVP:} 8--12 Wochen\\
+\textbf{Gemeinnütziger Zweck:} Förderung der Volksbildung (\S\,52 Abs. 2 Nr. 7 AO) und des demokratischen Staatswesens (Nr. 24)
+
+
+\section{Methodische Einordnung}
+
+Dieses Konzept ist kein Aktivismus — es ist ein Messinstrument. Es überträgt bewährte wissenschaftliche Ansätze auf ein neues Feld und schließt damit eine Forschungslücke.
+
+\subsection{Was wir messen}
+
+\textbf{Wir messen nicht Regress — wir messen Regress-induzierte Unterversorgung.} Der Regress selbst ist ein bekanntes, rechtlich geregeltes Verfahren. Was fehlt, ist die empirische Erfassung seiner systemischen Nebenwirkungen: vorauseilender Gehorsam, Quartalsende-Effekte, Überweisungskaskaden, Therapievermeidung.
+
+\subsection{Vier Referenzrahmen}
+
+\begin{infobox}[1. Pharmakovigilanz $\rightarrow$ übertragen auf Regulationsschäden]
+Die WHO-Pharmakovigilanz (gegr. 1968, 157 Mitgliedsstaaten, über 30 Mio. Berichte in VigiBase) erfasst unerwünschte Arzneimittelwirkungen durch Spontanmeldungen. Das Regress-Transparenzportal überträgt dieses Prinzip: Statt Nebenwirkungen von Medikamenten erfassen wir Nebenwirkungen von Regulierung. Das BfArM-Spontanmeldesystem (nebenwirkungen.bund.de) dient als methodische Blaupause.
+\end{infobox}
+
+\begin{infobox}[2. Incident Reporting (CIRS) $\rightarrow$ nicht für Fehler, sondern für Sanktionsrisiken]
+Critical Incident Reporting Systeme sind seit 2014 in deutschen Krankenhäusern verpflichtend. Sie erfassen anonyme Beinahe-Zwischenfälle als Lerngrundlage (APS/ÄZQ, CIRSmedical.de). Das Regress-Portal nutzt dieselbe Methodik — anonyme, strukturierte, sanktionsfreie Meldung — wendet sie aber auf Sanktionsrisiken statt auf Behandlungsfehler an.
+\end{infobox}
+
+\begin{infobox}[3. Chilling-Effect-Messung $\rightarrow$ empirisch operationalisiert]
+Der \textit{Chilling Effect} — die abschreckende Wirkung regulatorischer Drohungen auf erlaubtes Verhalten — ist in der Rechtswissenschaft seit Jahrzehnten beschrieben, aber im Gesundheitswesen kaum empirisch gemessen. Goetz et al. (2024, BMC Primary Care) zeigten: 27\,\% der deutschen Hausärzte berichten starke Angst vor rechtlichen Konsequenzen, 50\,\% veranlassen wöchentlich unnötige Laboruntersuchungen aus Defensivmedizin. Eine Meta-Analyse (Moosazadeh et al. 2023) beziffert die Prävalenz von Defensivmedizin auf 75,8\,\% weltweit. Das Regress-Portal operationalisiert diesen Effekt erstmals für das deutsche Verordnungswesen.
+\end{infobox}
+
+\begin{infobox}[4. Governance-Pharmakovigilanz: Surveillance für regulatorische Nebenwirkungen]
+Klassische Surveillance-Systeme überwachen Krankheiten. Das Konzept einer \textit{Governance-Pharmakovigilanz} --- die systematische Anwendung von Surveillance-Methoden auf regulatorische Nebenwirkungen --- wird in ST-001 (Abschn.~8.1) als neues Paradigma eingeführt. Cha et al. (2026, J. Business Logistics) zeigten, dass PDMP-Enforcement in den USA zwar Opioid-Verschreibungen um 6,1\,\% senkte, aber Heroin-Todesfälle um 50,1\,\% steigen ließ. Das Regress-Portal wäre international das erste Instrument, das regulatorische Nebenwirkungen im Gesundheitswesen systematisch erfasst.
+\end{infobox}
+
+\subsection{Forschungsbeitrag}
+
+Die Kombination dieser vier Ansätze ist bislang nicht besetzt. Das Regress-Transparenzportal wäre:
+\begin{itemize}[nosep]
+\item Das erste \textbf{Spontanmeldesystem für regulatorische Nebenwirkungen} im Gesundheitswesen
+\item Die erste \textbf{empirische Operationalisierung des Chilling Effect} im deutschen Verordnungswesen
+\item Ein Beitrag zur \textbf{Versorgungsforschung}: Der Sachverständigenrat identifizierte bereits 2001 Unterversorgung als unterschätztes Problem (SVR-Gutachten 2000/2001). Seitdem fehlen Instrumente, um regulatorisch bedingte Unterversorgung zu messen.
+\end{itemize}
+
+
+\section{Problemanalyse}
+
+\subsection{Zwei Wege zum Regress --- und warum die Unterscheidung entscheidend ist}
+
+Vertragsärzte in Deutschland unterliegen der Wirtschaftlichkeitsprüfung nach \S\S\,106, 106b SGB\,V. Zwei grundlegend verschiedene Verfahren können zu einem Regress führen. Ihre Unterscheidung ist für alles Folgende zentral, wird aber in der öffentlichen Debatte fast nie vorgenommen:
+
+{\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+ & \textbf{V1: Auffälligkeitsprüfung} & \textbf{V2: Einzelfallprüfung} \\
+\midrule
+Auslöser & Statistische Abweichung vom Fachgruppendurchschnitt & Konkreter Antrag einer Krankenkasse \\
+\addlinespace
+Initiator & Prüfungsstelle (KV + Kassen, neutral) & Krankenkasse (Antragstellerin) \\
+\addlinespace
+Was geprüft wird & Kostenvolumen, regional auch Wirkstoffquoten (DDD) & Formale Korrektheit einzelner Verordnungen \\
+\addlinespace
+Beratung vor Regress & \textbf{Ja} (\S\,106b Abs.\,2) & \textbf{Nein} (\S\,106b Abs.\,2 S.\,4) \\
+\addlinespace
+Charakter & Statistisches Screening & Gezieltes Verdachtsverfahren \\
+\addlinespace
+Ausschlussfrist & 2 Jahre (seit TSVG 2019) & 2,5 Jahre (seit GVWG 2021) \\
+\bottomrule
+\end{tabularx}
+}
+
+\textbf{Warum diese Unterscheidung so wichtig ist:} Fast alle öffentlich zitierten Statistiken (``unter 1\,\% Regressquote'') beziehen sich auf \textbf{V1 und V2 zusammen} --- ohne Verfahrenstrennung. Da V1 die große Mehrheit der Verfahren stellt und eine sehr niedrige Durchsetzungsquote hat, dominiert sie die Gesamtstatistik. Die tatsächliche Regresswahrscheinlichkeit bei V2 (Einzelfallprüfung) ist unbekannt, weil sie nie separat publiziert wird. Genau diese Datenlücke macht das System intransparent --- und genau hier setzt dieses Konzept an.
+
+\subsection{Der Systemwiderspruch: Warum es zwei Verfahren gibt --- und warum sie sich widersprechen}
+
+Die beiden Prüfverfahren widersprechen sich fundamental: wissenschaftlich, ökonomisch und rechtlich. Diesen Widerspruch muss man verstehen, bevor man die Zahlen interpretiert.
+
+\subsection{Was wir wissen: Die Zahlen --- getrennt nach Verfahren}
+
+\subsubsection{V1 (Auffälligkeitsprüfung): Niedrige Durchsetzungsquote, gut dokumentiert}
+
+Für die Auffälligkeitsprüfung (V1) existieren öffentlich zugängliche Daten aus mehreren KV-Regionen. Die Dropout-Rate ist hoch:
+
+\begin{center}
+\begin{tikzpicture}[
+    stage/.style={draw, rounded corners, thick, minimum height=1.2cm, align=center, font=\small},
+    arrow/.style={->, very thick, draw=umbruch-dark},
+    drop/.style={font=\footnotesize, text=red!70!black}
+]
+
+\node[stage, fill=umbruch-red!20, text width=3.8cm] (s0) at (0,0) {\textbf{916}\\Auffälligkeiten\\(V1, Hessen 2015)};
+\node[stage, fill=umbruch-red!15, text width=3.2cm] (s1) at (5.2,0) {\textbf{29}\\Verfahren\\eröffnet};
+\node[stage, fill=umbruch-red!10, text width=2.8cm] (s2) at (9.8,0) {\textbf{3}\\Regresse\\durchgesetzt};
+
+\draw[arrow] (s0) -- node[above, font=\footnotesize\bfseries] {3,2\,\%} (s1);
+\draw[arrow] (s1) -- node[above, font=\footnotesize\bfseries] {10,3\,\%} (s2);
+
+\node[drop, below=0.3cm of s0] {100\,\%};
+\node[drop, below=0.3cm of s1] {887 verworfen};
+\node[drop, below=0.3cm of s2] {\textbf{Endquote: 0,3\,\%}};
+
+\end{tikzpicture}
+\end{center}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X X}
+\toprule
+\textbf{KV-Bezirk (nur V1)} & \textbf{Auffälligkeiten} & \textbf{Regresse} & \textbf{Durchsetzungsquote} \\
+\midrule
+Hessen 2015 & 916 & 3 & 0,3\,\% \\
+Hessen 2016 & 1.106 & 8 & 0,7\,\% \\
+Hessen 2017 & 513 & 4 & 0,8\,\% \\
+Nordrhein (stat. Prüfung) & 13.500 Praxen & $\sim$2/Jahr & 0,015\,\% \\
+Thüringen 2015 & 22 Prüfungen & 0 & 0\,\% \\
+BaWü 2022 & $\sim$21.500 Ärzte & 21 & 0,097\,\% \\
+\bottomrule
+\end{tabularx}
+}
+
+Diese Zahlen zeigen: Die Auffälligkeitsprüfung (V1) führt sehr selten zu Regressen. Die ``unter 1\,\%''-Zahl des Virchowbundes wird primär von diesen V1-Daten dominiert.
+
+\subsubsection{V2 (Einzelfallprüfung): Daten existieren --- aber nicht als integrierte Statistik}
+
+V2-Daten existieren: Das BMG nennt im GVSG-Referentenentwurf 2024 ca.\,\textbf{47.000 V2-Verfahren bundesweit} (2022). Der SpiFa meldet für Bayern \textbf{13.332 festgesetzte Regresse} (2024) bei ${\sim}$24.000 Vertragsärzten --- Durchschnittsbetrag 334\,EUR, ${\sim}$70\,\% Bagatelle unter 300\,EUR. Was fehlt, ist die \textbf{Aufschlüsselung}: nach V2a (Unwirtschaftlichkeit) vs. V2b (Formfehler), nach Kassenart, nach Ausgang (Regress/Vergleich/Einstellung), nach Betragsklasse. Allein in der KV Nordrhein: jährlich ca.\,20.000 Einzelfallprüfungsanträge bei gleichzeitig nur $\sim$2 V1-Regressen pro Jahr. \textbf{Genau diese Aufschlüsselung soll PP-003 liefern.}
+
+\subsubsection{Ist die Angst berechtigt?}
+
+Die Ribbat-Studie (2023, n=770, TU München; \textbf{V1+V2 zusammen, keine Verfahrenstrennung}) liefert einen Befund, der die ``unter 1\,\%''-Beruhigung fundamental infrage stellt:
+
+\begin{itemize}[nosep]
+  \item \textbf{72\,\% der Hausärzte} und 59\,\% der Orthopäden hatten \textbf{tatsächlich mindestens einmal einen Regress erlebt}
+  \item 47\,\% / 55\,\%: Regressgefahr beschäftigt im Praxisalltag ``stark oder sehr stark''
+  \item 37\,\% / 47\,\%: Ärztliches Handeln ``stark beeinflusst''
+  \item 51\,\% der Hausärzte: Überweisen ``zumindest gelegentlich trotz Indikation'' an Spezialisten
+\end{itemize}
+
+\textbf{72\,\% persönliche Regresserfahrung} bei einer offiziellen Quote von ``unter 1\,\%'' --- dieser Widerspruch ist kein Wahrnehmungsfehler der Ärzte, sondern eine \textbf{Definitionsdivergenz} (ST-001, CORE4): Die ``unter 1\,\%'' messen nur V1-Regresse, nur rechtskräftig (Schicht~1). Die 47.000 V2-Verfahren (Schicht~3) fehlen. Der Faktor: ca.\,500$\times$. Dazu kommt die Summierung: Bei V2 ist das Risiko \textit{pro Verordnung} gering --- aber ein Arzt mit ca.\,3.000 Verordnungen pro Quartal akkumuliert über 10 Jahre 120.000 Angriffspunkte. \textbf{Kleines Risiko pro Fall, großes Risiko pro Arzt --- die Angst ist berechtigt.}
+
+Ergänzend: 46,7\,\% der ca. 13.900 befragten Medizinstudierenden nennen ``drohende Regressforderungen'' als Niederlassungshindernis (KBV-Berufsmonitoring 2018). Die Angst erreicht also selbst Personen, die noch nie niedergelassen waren.
+
+\subsection{Was wir nicht wissen: Die Datenlücken}
+
+Das System hat blinde Flecken, die nicht zufällig, sondern strukturell sind. Die folgende Übersicht trennt Bekanntes von Unbekanntem:
+
+{\small
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+\textbf{Das wissen wir} & \textbf{Das wissen wir nicht} \\
+\midrule
+V1-Durchsetzungsquote ($<$1\,\%) & V2-Durchsetzungsquote (nie publiziert) \\
+\addlinespace
+Anzahl V2-Anträge in einzelnen KVen ($\sim$20.000/Jahr Nordrhein) & Verfahrensausgänge der V2-Anträge (Regress / Vergleich / Einstellung) \\
+\addlinespace
+47\,\% der Hausärzte: Verhalten beeinflusst (Ribbat 2023) & Ob Patienten tatsächlich unterversorgt werden (keine Outcome-Daten) \\
+\addlinespace
+Formfehler lösen 100\,\%-Regress aus (BSG B\,6\,KA\,5/09\,R) & Wie viele V2-Regresse auf Formfehler vs. Sachfehler zurückgehen \\
+\addlinespace
+Kosten des Prüfsystems (nicht bilanziert, Niskanen) & Nutzen des Prüfsystems (Abschreckungswirkung unquantifiziert) \\
+\addlinespace
+Kassen haben Echtzeit-Prüfsoftware (scanacs u.\,a.) & Ob Kassen systematisch screenen (\S\,106b setzt ``zufälligen'' Verdacht voraus) \\
+\bottomrule
+\end{tabularx}
+}
+
+\textbf{Diese Daten existieren} --- in den Prüfungsstellen, den Beschwerdeausschüssen, den Sozialgerichten. Sie werden nur nicht veröffentlicht. Die 99,7\,\%-Verwerfungsrate der V1-Verfahren ist für ein statistisches Screening \textit{erwartbar} und Ergebnis eines funktionierenden Schutzstufenmodells (Anhörung, medizinische Berücksichtigung, Beratung vor Regress). Die entscheidende offene Frage betrifft V2: Wie hoch ist die tatsächliche Durchsetzungsrate bei Einzelfallprüfungen, und wie viel Geld fließt über Vergleiche (außerhalb der Gerichtsstatistik)? Neun IFG-Anfragen zur Schließung dieser Lücken wurden im April 2026 eingereicht (siehe ST-001, Anhang~C).
+
+\subsubsection*{Termination without Determination: Enden ohne Feststellung}
+
+Ein zusätzliches epistemisches Problem: Die öffentlichen Statistiken messen nicht, \textit{wie} Verfahren enden. Regressverfahren können durch Ablehnungsbescheid, informellen Vergleich, Antragsrücknahme, Verjährung oder Gerichtsurteil enden. Da bei V2 geschätzt 70--80\,\% der betroffenen Ärzte einen \textbf{Vergleich} akzeptieren (typisch 30--50\,\% des Regressbetrags), findet die Durchsetzung überwiegend außerhalb des Gerichts statt. Der Vergleich \textit{ist} die Durchsetzung --- er erscheint nur in keiner Statistik. Beide Seiten meiden das Gericht aus rationalen Gründen: Der Arzt, weil er bei festgestelltem Formfehler verliert; die Kasse, weil zu viele Gerichtsverfahren die Aufmerksamkeit auf ihre Antragspraxis lenken. Die eigentliche Messebene wäre der \textit{Geldfluss} (Regressvolumen), nicht die Gerichtsurteile --- aber genau diese Daten werden nicht publiziert. Eine vollständige Analyse in ST-001, Abschn.~2.4.
+
+\subsubsection{Wissenschaftlicher Widerspruch: Reliabilität und Validität}
+
+Zwei Messinstrumente, die denselben Gegenstand messen (Wirtschaftlichkeit einer Arztpraxis), müssten konvergente Ergebnisse liefern. Die Auffälligkeitsprüfung (statistisch, Fachgruppenvergleich) kann einen Arzt als \textit{unauffällig} einstufen — während die Einzelfallprüfung (auf Kassenantrag) zeitgleich einzelne Verordnungen desselben Arztes als \textit{unwirtschaftlich} beanstandet.
+
+\textbf{Entweder} die statistische Prüfung übersieht systematisch Probleme — dann ist sie invalide. \textbf{Oder} die Einzelfallprüfung produziert systematisch falsche Alarme — dann ist sie unreliabel. Beides gleichzeitig kann logisch nicht zutreffen. In der Messtheorie wäre eine solche Divergenz zweier Instrumente ein Konstruktionsfehler.
+
+\subsubsection{Ökonomischer Widerspruch: Stichprobe vs. Mikromanagement}
+
+Die Auffälligkeitsprüfung ist eine statistische Stichproben-Qualitätskontrolle — entwickelt, um genau die Fälle zu identifizieren, die näher betrachtet werden müssen. Ergebnis: unauffällig. Normalerweise würde ein rationaler Akteur daraus schließen: kein Handlungsbedarf.
+
+Stattdessen stellen Krankenkassen parallel tausende Einzelfallprüfungsanträge. Allein in der KV Nordrhein: \textbf{20.000 Einzelfallprüfungsanträge pro Jahr} — bei gleichzeitig nur 23 statistischen Prüfungen in drei Jahren mit ca. 2 Regressen pro Jahr. Die Kosten dieses Parallelsystems — Personal der Prüfungsstellen, Beschwerdeausschüsse, Sozialgerichtsverfahren — werden nirgends bilanziert.
+
+\subsubsection{Interessenkonflikt bei der Einzelfallprüfung}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X X}
+\toprule
+\textbf{Prüfungsart} & \textbf{Initiator} & \textbf{Entscheider} & \textbf{Neutralität} \\
+\midrule
+Auffälligkeitsprüfung & Prüfungsstelle (neutral) & Prüfungsstelle & Gegeben \\
+Einzelfallprüfung & \textbf{Krankenkasse} & Prüfungsstelle & Eingeschränkt \\
+\bottomrule
+\end{tabularx}
+}
+
+Bei der Einzelfallprüfung ist die Krankenkasse gleichzeitig \textbf{Zahlerin} (finanzielles Interesse an geringeren Ausgaben), \textbf{Antragstellerin} (wählt aus, welche Verordnungen geprüft werden) und \textbf{Empfängerin} des Regressbetrags. Dies konstituiert ein strukturelles Interessenkonfliktpotenzial: finanzielle Interessen des Antragstellers und Entscheidungsbefugnis der Prüfungsstelle sind systemimmanent nicht vollständig entkoppelt.
+
+\subsubsection{Drei Scanner, keine Qualitätsprüfung}
+
+Das Wirtschaftlichkeitsprüfsystem betreibt drei Screening-Mechanismen. Keiner davon prüft medizinische Versorgungsqualität (ausführliche Analyse in ST-001, Abschn.~2.8):
+
+\begin{itemize}[nosep]
+  \item \textbf{V1 (Auffälligkeitsprüfung):} Scannt Kostenabweichung vom Fachgruppendurchschnitt. Prüft nicht, ob die Versorgung medizinisch angemessen war.
+  \item \textbf{V2a (Einzelfallprüfung --- Wirtschaftlichkeit):} Prüft Wirtschaftlichkeit einzelner Verordnungen. Medizinische Begründung und Kostendifferenz möglich. Prüft nicht, ob die Therapieentscheidung medizinisch richtig war.
+  \item \textbf{V2b (Einzelfallprüfung --- Formfehler):} Scannt formale Korrektheit (Unterschrift, ICD$\leftrightarrow$PZN, Dosierung). Medizinische Korrektheit irrelevant.
+  \item \textbf{Retax (Apotheke):} Scannt formale Korrektheit der Abrechnung. Prüft nicht, ob der Patient das richtige Medikament bekommen hat.
+\end{itemize}
+
+\textbf{Niemand prüft}, ob der Patient ausreichend versorgt wurde (\S\,12 SGB\,V), ob eine Unterlassung stattfand, ob die Therapieentscheidung leitliniengemäß war, oder ob der Arzt aus Angst \textit{weniger} verordnet hat als medizinisch geboten. Das System bestraft Formfehler --- nicht Überversorgung im medizinischen Sinne. Ein Arzt, der formal korrekt dokumentiert aber medizinisch schlecht behandelt, ist unsichtbar. Ein Arzt, der exzellente Medizin macht aber einen Formfehler produziert, ist maximal exponiert. Ein Arzt, der aus Angst gar nicht erst verordnet, wird nie geprüft --- aber der Patient trägt die Folgen (Unterversorgung, Überweisung, Hospitalisierung). Der Arzt selbst riskiert im Einzelfall eine Behandlungsfehler-Klage (\S\,280 BGB) --- aber die hat kein Prüfverfahren als Auslöser, sondern den Patienten.
+
+\subsubsection{Der doppelte Zertifikatsfehler: Was das System tatsächlich misst}
+
+Beide Prüfverfahren messen nicht, was \S\,12 SGB\,V als Schutzziel benennt — bedarfsgerechte, zweckmäßige Versorgung. Sie messen Proxys (Ersatzgrößen, die stellvertretend für das eigentliche Ziel gemessen werden):
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Verfahren} & \textbf{Anspruch} & \textbf{Tatsächlich gemessen} \\
+\midrule
+Auffälligkeitsprüfung & wirtschaftliche Versorgung & Kostenabweichung vom Fachgruppendurchschnitt \\
+Einzelfallprüfung & medizinische Unwirtschaftlichkeit im Einzelfall & formale und dokumentarische Angreifbarkeit \\
+\midrule
+\textbf{Kein Verfahren} & \textbf{\S\,12 SGB\,V} & \textbf{wird systematisch nicht gemessen} \\
+\bottomrule
+\end{tabularx}
+}
+
+Die Einzelfallprüfung beansprucht, medizinische Unwirtschaftlichkeit zu prüfen, misst aber faktisch formale Angreifbarkeit. Formfehler sind: billig zu prüfen, eindeutig, angstwirksam, nicht medizinisch streitbar. Das erzeugt eine inverse Selektionslogik: Das System selektiert gegen Dokumentationsschwäche, nicht gegen Versorgungsdefizite. In der Sozialwissenschaft ist dieses Phänomen als \textit{Goodhart's Law} bekannt: Wenn eine Kennzahl zum Steuerungsziel wird, hört sie auf, eine gute Kennzahl zu sein (Goodhart 1975; Campbell 1979). Der Zertifikatsfehler ist keine Anomalie, sondern eine bekannte systemische Pathologie von Proxy-Messungen. \textbf{Medizinische Angemessenheit wird nur außerhalb des Regresssystems zertifiziert} — in Schlichtungsverfahren und Arzthaftungsprozessen. Das Transparenzportal (PP-003) löst diesen Zertifikatsfehler nicht, sondern macht ihn sichtbar und messbar. Die vollständige Analyse in ST-001, Abschn.~2.5. Einschränkung: Der Zertifikatsfehler trifft in voller Schärfe V2b (Formfehler). V1 berücksichtigt medizinische Besonderheiten im Schutzstufenmodell. V2a lässt medizinische Verteidigung zu.
+
+\subsubsection{Strukturelle Asymmetrie: Beratungsschutz nur bei V1}
+
+Ein zentraler struktureller Defekt des Systems betrifft den Schutz ``Beratung vor Regress''. Dieser ist in \S\,106b Abs.\,2 SGB\,V \textbf{nur für die Auffälligkeitsprüfung (V1)} verankert: Ein erstmals auffälliger Arzt wird beraten, bevor ein Regress durchgesetzt wird. Für die \textbf{Einzelfallprüfung (V2) ist dieser Schutz gesetzlich ausgeschlossen} (\S\,106b Abs.\,2 S.\,4 SGB\,V): Hier folgt nach Kassenantrag unmittelbar eine sanktionsrechtliche Entscheidung --- ohne pädagogischen Zwischenschritt.
+
+Diese Asymmetrie bedeutet: Ein Arzt, der im statistischen Screening (V1) erstmals auffällt, wird beraten. Ein Arzt, gegen den eine Krankenkasse einen Einzelfallantrag stellt (V2), wird direkt sanktioniert. Da die Einzelfallprüfung nach Schritt~0 nahezu deterministisch verläuft (dies gilt insbesondere für V2b; bei V2a bestehen Verteidigungsmöglichkeiten) (die Kasse wählt gezielt Fälle mit formaler Angreifbarkeit), fehlt der Beratungsschutz ausgerechnet dort, wo die Regresswahrscheinlichkeit am höchsten ist. Die vollständige Analyse findet sich in ST-001, Abschn. 2.1--2.2.
+
+\subsection{Bürokratiekosten und Kodierungskomplexität}
+
+\subsubsection{Zeitaufwand}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Bereich} & \textbf{Aufwand} & \textbf{Quelle} \\
+\midrule
+Klinikärzte & 3\,h/Tag (44\,\% der Arbeitszeit) & MB-Monitor 2024 (n=9.649) \\
+Niedergelassene & 7,4\,h/Woche = 61 Arbeitstage/Jahr & KBV Bürokratieindex \\
+Kosten ambulant & 4,33\,Mrd.\,EUR/Jahr & Statistisches Bundesamt \\
+Kosten Gesamtsystem & 40,4\,Mrd.\,EUR/Jahr & Healthcare-in-Europe \\
+Informationspflichten & 371 verschiedene & Statistisches Bundesamt \\
+Berufsausstieg-Erwägung & 28\,\% der Klinikärzte & MB-Monitor 2024 \\
+\bottomrule
+\end{tabularx}
+}
+
+\subsubsection{16.000 ICD-Codes — ein eigener Beruf}
+
+Die ICD-10-GM umfasst ca. 13.000--16.000 terminale Codes auf fünf Hierarchieebenen mit jährlicher Aktualisierung. Im stationären Bereich existiert dafür ein eigenständiger Beruf: die \textit{Kodierfachkraft} (IHK-zertifiziert, 6--12 Monate Weiterbildung). Im ambulanten Bereich muss der Arzt diese Aufgabe \textbf{zusätzlich zu seiner medizinischen Tätigkeit} selbst übernehmen.
+
+International ist das die Ausnahme: In Großbritannien kodiert der \textit{Clinical Coder} (NCCQ-zertifiziert), in den Niederlanden vereinfacht das DBC-System die Abrechnungslogik erheblich.
+
+\subsubsection{Einzige Branche ohne Fehlertoleranz}
+
+{\small
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+\textbf{Branche} & \textbf{Umgang mit Formfehlern} \\
+\midrule
+Steuerrecht & Korrektur jederzeit (\S\S\,129, 153, 173 AO). Differenzierung Versehen/Vorsatz. \\
+Verwaltungsrecht & Heilung gesetzlich vorgesehen (\S\,45 VwVfG). Rückwirkend möglich. \\
+Baurecht & Formfehler nach Rügefrist (1 Jahr) unbeachtlich (\S\S\,214--215 BauGB). \\
+\textbf{Gesundheitswesen} & \textbf{Keine Heilung.} Jeder Kodierfehler wird finanziell sanktioniert (\S\,275c SGB\,V). \\
+\bottomrule
+\end{tabularx}
+}
+
+Das Gesundheitswesen unterscheidet sich durch das Fehlen kodifizierter Fehlertoleranz bei Formfehlern in Verordnungen grundlegend von anderen regulierten Branchen.
+
+
+\subsection{Formfehler und Eigentumsparadoxon}
+
+\subsubsection{BSG B\,6\,KA\,9/24\,R: 491.000\,EUR für einen Stempel}
+
+Am 27. August 2025 bestätigte das Bundessozialgericht einen Regress von 491.000\,EUR über 14 Quartale — weil ein Arzt seine Verordnungen mit Namensstempel statt persönlicher Unterschrift gezeichnet hatte. Die medizinische Korrektheit der Verordnungen war unbestritten. Das BSG urteilte: Die persönliche Unterschrift sei kein bloßer Formalakt, sondern diene dem ``Schutz des Lebens''. Eine nachträgliche Heilung des Formfehlers wurde nicht zugelassen.
+
+Die KBV nannte das Urteil ``unverhältnismäßig und überzogen''. Die KV Baden-Württemberg sprach von einem ``Schlag ins Gesicht der Ärzteschaft''. Der betroffene Arzt kündigte eine Verfassungsbeschwerde an.
+
+\subsubsection{Tatsächlicher Schaden: Null}
+
+Bei einem Formalregress hat die Krankenkasse für eine medizinisch korrekte Verordnung bezahlt. Hätte der Arzt formfehlerfrei verordnet, hätte die Kasse \textbf{denselben Betrag} zahlen müssen. Der tatsächliche Mehrschaden ist Null. Dennoch: voller Regress in Höhe von 100\,\% der Verordnungskosten.
+
+Die KBV fordert eine \textbf{Differenzkostenberechnung}: Regress nur auf den tatsächlichen Mehrschaden begrenzen. Diese Forderung blieb bislang ohne gesetzliche Umsetzung.
+
+\subsubsection{Das Eigentumsparadoxon}
+
+Nach einem Formalregress hat der Arzt für ein Medikament bezahlt, dessen Eigentümer er nie war:
+
+\begin{itemize}[nosep]
+  \item Das Medikament ging vom Hersteller über den Großhandel an die Apotheke und von dort an den Patienten (Eigentumsübergang nach \S\,929 BGB).
+  \item Der Arzt hat \textit{verordnet}, nicht \textit{gekauft}.
+  \item Eine Rückforderung vom Patienten scheitert (\S\,812 BGB: kein Leistungsverhältnis Arzt--Patient).
+  \item Das Medikament ist durch Verbrauch untergegangen (\S\,90 BGB).
+\end{itemize}
+
+\textbf{Der Arzt bezahlt für etwas, das er nie besaß, das nicht mehr existiert und das dem Patienten genützt hat.}
+
+
+\subsection{Konkrete Patientenschäden}
+
+Die Regressangst führt zu messbarer Fehlversorgung --- nicht in Einzelfällen, sondern systemisch. Die Fehlversorgung ist \textit{bidirektional}: Einerseits unterlassen Ärzte notwendige Verordnungen (Unterversorgung), andererseits veranlassen sie unnötige Absicherungsdiagnostik und Überweisungen (Überversorgung an anderer Stelle). In beiden Fällen trägt der Patient die Last --- durch verzögerte Therapie oder unnötige Eingriffe (ausführlich: ST-001, Teil~VI). Die folgenden Fälle sind anonymisiert und dokumentiert.
+
+\begin{infobox}[Fall 1: Physiotherapie-Regress — 65.000\,EUR]
+Ein Allgemeinarzt aus Nordrhein-Westfalen verordnete zwischen 2002 und 2006 doppelt so viel Physiotherapie wie der Fachgruppendurchschnitt — weil seine Patienten es brauchten. Seine Praxis versorgte überdurchschnittlich viele multimorbide und geriatrische Patienten. Die Prüfungsstelle verglich ihn trotzdem mit dem statistischen Mittel seiner Fachgruppe und erkannte keine Praxisbesonderheiten an. Regressforderung: 65.000\,EUR über vier Jahre.
+
+\textit{Quelle: Deutsches Ärzteblatt, ,,Kein Arzt wird für seine teuren Patienten bestraft``}
+
+Dieser Fall zeigt, dass das V1-Schutzstufenmodell nur greift, wenn Praxisbesonderheiten aktiv und korrekt angemeldet werden.
+\end{infobox}
+
+\begin{infobox}[Fall 2: Sechsstelliger Heilmittelregress — Daten lagen vor]
+Mehrere Ärzte reichten Praxisbesonderheiten bei der Prüfungsstelle ein und erhielten trotzdem existenzbedrohende Regressforderungen. Die Begründung der Ablehnung: ,,Die Versichertennummern der betroffenen Patienten seien nicht genannt`` — obwohl diese bereits im Datensatz enthalten waren. Der Ablehnungsbescheid umfasste über 200 Seiten und lag ausschließlich in Papierform vor.
+
+\textit{Quelle: Virchowbund Praxisberatung, ,,Praxiswahnsinn Teil 03``}
+\end{infobox}
+
+\begin{infobox}[Fall 3: Cannabis — Vaporizer genehmigt, Blüten regressiert]
+Ein Arzt verordnete einem Patienten Cannabis-Extrakt, das die Krankenkasse genehmigte. Im Behandlungsverlauf stellte er auf Blüten um und beantragte einen Vaporizer. Die Kasse genehmigte auch den Vaporizer — regressierte dann aber die Blüten, weil die Änderung der Darreichungsform nicht vorab beantragt worden war.
+
+\textit{Quelle: Virchowbund Praxisberatung, ,,Praxiswahnsinn Teil 01``}
+\end{infobox}
+
+\begin{infobox}[Fall 4: GLP-1 bei Diabetes und Leberzirrhose — Arzt verordnet nicht, Kasse darf nicht genehmigen]
+Ein Patient mit einer komplexen Stoffwechselerkrankung erhält ein leitliniengerecht verordnetes Präparat, das vom G-BA mit Zusatznutzen bewertet und von einer spezialisierten Klinik empfohlen wurde. Der Hausarzt setzt die Verordnung aus: Regressangst. Der Patient beantragt eine Kostenübernahme-Bestätigung bei seiner Krankenkasse. Die Kasse antwortet formal korrekt: Eine Vorab-Genehmigung von Arzneimitteln ist gesetzlich verboten (\S\,29 BMV-Ä). Der Patient erhält stattdessen ein Alternativpräparat, das seine Grunderkrankung verschlimmert.
+
+\textit{Anonymisierter Fallbericht. Dokumentation liegt vor.}
+\end{infobox}
+
+\begin{infobox}[Fall 5: Onkologie — 60\% Off-Label, 100\% Regressrisiko]
+Bis zu 60\,\% der Krebspatienten in der Regelversorgung werden off-label behandelt, weil die Wissenschaft schneller ist als die Zulassung. Obwohl das BSG Off-Label-Verordnungen unter bestimmten Bedingungen erlaubt (BSG B~1~KR~37/00~R), regressierten Krankenkassen Onkologen für medizinische Standardtherapien wie Folinsäure/5-Fluorouracil bei metastasiertem Kolonkarzinom oder Pamidronat bei Mammakarzinom. Die DGHO warnte bereits 2006: Ärzte stehen im Dilemma — Off-Label verordnen bedeutet Regressrisiko, nicht verordnen bedeutet Haftung wegen unterlassener Hilfeleistung. Die Forderung der DGHO nach einer Beweislastumkehr blieb bis heute unerfüllt.
+
+\textit{Quellen: Deutsches Ärzteblatt 13/2002; DGHO-Stellungnahme an G-BA, 25.01.2006; KBV-Pressemitteilung 04.07.2024}
+\end{infobox}
+
+\subsubsection{Systemische Muster}
+
+Die Einzelfälle illustrieren wiederkehrende Muster:
+
+\begin{itemize}[nosep]
+  \item \textbf{Quartalsende-Effekt:} Ärzte vermeiden am Quartalsende teure Verordnungen, um Budgetwerte nicht zu überschreiten (\S\S\,106, 106b SGB~V; vgl.\ ST-001). Die Unterversorgung folgt dem Kalender.
+  \item \textbf{Überweisungskaskade:} Ärzte überweisen an Fachärzte, um das Verordnungsrisiko abzuwälzen — Mehrkosten für das System, Wartezeiten für Patienten, aber der Regress liegt beim anderen.
+  \item \textbf{Behandlungsparadox:} Die Werte sind gut, \textit{weil} das Medikament wirkt. Das Medikament abzusetzen wegen guter Werte ist wie den Regenschirm wegzuwerfen, weil man trocken ist.
+  \item \textbf{Der gesetzlich eingebaute Interessenkonflikt:} Der Arzt soll nach \S\,12 SGB\,V ausreichend und zweckmäßig versorgen, wird aber durch \S\,106b SGB\,V für Formfehler bei genau dieser Versorgung sanktioniert --- ohne Beratungsschutz. Der Konflikt ist nicht still und nicht selten: 72\,\% der Hausärzte berichten eigene Regresserfahrung (Ribbat 2023; V1+V2 zusammen).
+\end{itemize}
+
+\subsection{Vertraulicher Erstattungsbetrag — das Paradoxon}
+
+Seit August 2025 gilt für Mounjaro ein vertraulicher Erstattungsbetrag. Ärzte kennen den tatsächlichen GKV-Preis nicht. Die KBV (Dr. Steiner, Feb. 2025): "Ärzte verantworten den indikationsgerechten Einsatz, nicht jedoch den verhandelten Preis."
+
+\textbf{Das Dilemma:} Ärzte sollen wirtschaftlich verordnen, kennen aber den Preis nicht. Will die Kasse einen Regress beziffern, muss sie den vertraulichen Erstattungsbetrag offenlegen --- was die Vertraulichkeit bricht. Den Listenpreis als Regressbetrag anzusetzen wäre sachlich falsch, weil die Kasse tatsächlich weniger zahlt. Das Deutsche Ärzteblatt formuliert: ``Es gibt entweder keine Regresse oder keine vertraulichen Erstattungspreise. Beides zusammen geht nicht.'' Die Frage ist juristisch ungeklärt; die Befristung der Regelung bis Juni 2028 mit Evaluationspflicht bis Ende 2026 zeigt den Klärungsbedarf.
+
+\subsection{Was daraus folgt: Warum diese Datenlücken geschlossen werden müssen}
+
+Die in Abschnitt~3.4 dokumentierten Datenlücken sind nicht zufällig --- sie sind strukturell. Solange sie bestehen:
+\begin{itemize}[nosep]
+  \item Können Ärzte ihr tatsächliches V2-Risiko nicht einschätzen (Verfahrensdaten nicht publiziert)
+  \item Können Fachgesellschaften keine evidenzbasierten Stellungnahmen verfassen
+  \item Kann die Politik keine informierten Entscheidungen treffen
+  \item Bleiben die Kosten der Prüfungsinfrastruktur unbilanziert (Niskanen-Befund, ST-001 Abschn.~5.3)
+  \item Bleibt die Wirkung des Systems auf die Versorgungsqualität unmessbar
+\end{itemize}
+
+Ein Transparenzportal, das anonymisierte Regress-Meldungen von Ärzten systematisch erfasst, würde erstmals empirische Daten liefern, die das System selbst nicht produziert: V2-Verfahrensausgänge, Formfehler-Anteile, Vergleichsquoten, regionale Unterschiede. \textbf{Neu durch CORE4:} Das Portal könnte insbesondere die bisher unbekannte \textbf{V2a/V2b-Verteilung} empirisch leisten --- d.\,h. messen, welcher Anteil der Regresse medizinisch begründbare Evidenzsteuerung (V2a, geschätzt ${\sim}$35\,\%) und welcher reine Formalkontrolle (V2b, ${\sim}$40\,\%) ist. Diese Differenzierung existiert in keiner offiziellen Statistik und wäre ein originärer Beitrag des Portals. Das schließt nicht alle Lücken (dafür braucht es IFG-Anfragen und institutionelle Reformen), aber es schafft die \textbf{Datengrundlage für eine evidenzbasierte Reformdebatte}.
+
+\textbf{Einordnung im Lösungsraum:} ST-001 (Teil~VIII) bewertet 14 mögliche Interventionen in einer Kosten-Nutzen-Analyse. Der effizienteste Einzelhebel ist die Streichung des Beratungsschutz-Ausschlusses in \S\,106b Abs.\,2\,S.\,4 (Rang~1: ein Halbsatz, keine Kosten, sofortige Wirkung). Das Transparenzportal (PP-003) ist Rang~7: moderater Aufwand (800--2.500\,EUR MVP), hohe Datenqualität, aber keine direkte Systemreform. \textit{PP-003 ist der Plan~B, der den Plan~A erzwingen soll:} Wenn die empirischen Daten des Portals zeigen, dass V2-Regresse häufiger und existenzbedrohender sind als die offizielle Statistik suggeriert, entsteht der politische Druck für die effizienteren Hebel (Rang~1--6). Das Portal ist damit kein Selbstzweck, sondern ein \textbf{Katalysator für evidenzbasierte Reformen}.
+
+
+\section{Marktlücke und Alleinstellung}
+
+\subsection{Was existiert}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Akteur} & \textbf{Was er tut} & \textbf{Was fehlt} \\
+\midrule
+\textbf{Therapiefreiheit e.V.} (seit 2006) & Regressschutz-Versicherung, Rechtsberatung & Keine Datenbank, keine Veröffentlichung \\
+\textbf{MEZIS e.V.} (seit 2007) & Pharma-Transparenz, leitlinienwatch.de & Kein Regress-Fokus \\
+\textbf{KBV} & Bundestags-Petition 158622, politische Lobby & Keine Einzeldaten, keine Plattform \\
+\textbf{KV RLP} & Regress-Ranking (Top-10 Kassen) & Nur eine KV-Region, nur Kassen-Rankings \\
+\textbf{KV-interne Statistiken} & Aggregierte Prüfzahlen & Nicht öffentlich, nicht arzt-gesteuert \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Was gebraucht wird, um die Datenlücken zu schließen}
+
+\begin{itemize}[nosep]
+  \item \textbf{Anonyme, arzt-gesteuerte Meldeplattform} mit verifizierten Daten
+  \item \textbf{Bundesweite Abdeckung} (nicht nur eine KV-Region)
+  \item \textbf{Granulare Auswertungen} nach: KV-Bezirk, Fachgruppe, Wirkstoffgruppe, Kasse, Jahr
+  \item \textbf{Öffentliches Dashboard} mit aggregierten Trends
+  \item \textbf{Policy Briefs} auf Basis der gesammelten Daten
+\end{itemize}
+
+\subsection{Internationale Einordnung}
+
+Es gibt weltweit keine vergleichbare Plattform:
+\begin{itemize}[nosep]
+  \item \textbf{USA:} Open Payments (CMS) — Pharma-Zahlungen, nicht Regresse
+  \item \textbf{UK:} NHS Overprescribing Review — staatlich, nicht partizipativ
+  \item \textbf{Schweiz:} physicianprofiling.ch — Methodenkritik, keine Meldeplattform
+\end{itemize}
+
+\textbf{→ First-Mover-Vorteil international.}
+
+
+\section{Rechtliche Bewertung}
+
+\subsection{Gesamtbewertung}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Rechtsgebiet} & \textbf{Risiko} & \textbf{Bewertung} \\
+\midrule
+DSGVO (bei Anonymisierung) & \textbf{Gering} & Anonyme Daten fallen nicht unter DSGVO (ErwGr. 26) \\
+Re-Identifizierung & \textbf{Mittel} & Hauptrisiko — beherrschbar durch k-Anonymität (k$\ge$5) \\
+Schweigepflicht § 203 StGB & \textbf{Gering} & Regressdaten = wirtschaftliche Daten des Arztes, keine Patientendaten \\
+Berufsrecht Ärztekammer & \textbf{Gering} & Keine Norm verbietet Mitteilung eigener wirtschaftlicher Daten \\
+UWG / Wettbewerbsrecht & \textbf{Sehr gering} & Gemeinnütziger Verein = kein geschäftliches Handeln \\
+Kartellrecht / Boykott & \textbf{Sehr gering} & Transparenz $\neq$ Boykottaufruf (BVerfG Lüth-Urteil 1958) \\
+Haftung für falsche Daten & \textbf{Mittel} & Beherrschbar: Disclaimer + Notice-and-Takedown \\
+DDG/DSA Haftungsprivileg & \textbf{Schutz vorhanden} & Art. 6 DSA bei Trennung Rohdaten vs. redaktionelle Auswertung \\
+Pressefreiheit Art. 5 GG & \textbf{Starker Schutz} & + Wissenschaftsfreiheit + Meinungsfreiheit \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Stärkstes Argument: KV RLP Präzedenzfall}
+
+Die KV Rheinland-Pfalz veröffentlicht seit 2025 ein öffentliches Regress-Ranking mit Kassen-Rankings nach § 106b/106d SGB V. Wenn eine Körperschaft des öffentlichen Rechts solche Daten publiziert, ist es einem gemeinnützigen Verein erst recht nicht verwehrt.
+
+\begin{itemize}[nosep]
+  \item Quelle: https://www.kv-rlp.de/praxis/berufspolitik/regress-ranking
+\end{itemize}
+
+\subsection{Rechtliche Pflichten des Betreibers}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Pflicht} & \textbf{Grundlage} & \textbf{Status} \\
+\midrule
+Impressum & § 5 DDG & Pflicht \\
+Datenschutzerklärung & Art. 13/14 DSGVO & Pflicht \\
+Verarbeitungsverzeichnis & Art. 30 DSGVO & Pflicht \\
+DSFA (Datenschutz-Folgenabschätzung) & Art. 35 DSGVO & Dringend empfohlen \\
+Datenschutzbeauftragter & Art. 37 DSGVO / § 38 BDSG & Freiwillig empfohlen \\
+Notice-and-Takedown-Verfahren & Art. 6 DSA & Pflicht \\
+TOM (technisch-organisatorische Maßnahmen) & Art. 32 DSGVO & Pflicht \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{DSGVO-Matrix: Rechtsgrundlagen explizit}
+
+Die folgende Matrix dokumentiert die DSGVO-Rechtsgrundlagen für jede Verarbeitungsstufe des Portals. Sie ist für externe Prüfer (Datenschutzbeauftragte, Fördermittelgeber) eine vorbereitende Selbstauskunft.
+
+{\small
+\begin{tabularx}{\textwidth}{X X X X}
+\toprule
+\textbf{Verarbeitung} & \textbf{Datenkategorie} & \textbf{Rechtsgrundlage} & \textbf{Status} \\
+\midrule
+EFN-Verifizierung & Personenbezogen (Arzt) & Art. 6 Abs. 1 lit.\,b DSGVO (Vertrag mit Nutzer) + Einwilligung (lit.\,a) & Pflicht \\
+Speicherung gehashter EFN & Pseudonymisiert & Art. 6 Abs. 1 lit.\,f DSGVO (berechtigtes Interesse: Doppelregistrierungsschutz) & Zulässig \\
+Anonyme Meldedaten & \textbf{Nicht personenbezogen} (ErwGr.\,26) & DSGVO nicht anwendbar nach Erwägungsgrund 26 & Außerhalb DSGVO \\
+Aggregierte Auswertung (k$\geq$5) & Anonymisiert & Art. 89 DSGVO (Forschungs- und Statistikprivileg) als Zusatzlegitimation & Zulässig \\
+Veröffentlichung Dashboard & Aggregierte Statistik & Art. 5 GG (Pressefreiheit) + Art. 89 DSGVO + KV RLP-Präzedenz & Zulässig \\
+Server-Logs (max. 7 Tage) & IP-Adressen (kurz) & Art. 6 Abs. 1 lit.\,f DSGVO (IT-Sicherheit) & Zulässig \\
+\bottomrule
+\end{tabularx}
+}
+
+\textbf{Wichtige Abgrenzung Art. 9 DSGVO (besondere Kategorien):} Die anonymisierten Meldedaten enthalten \textbf{keine Gesundheitsdaten} im Sinne des Art. 9 Abs. 1 DSGVO. Sie sind wirtschaftliche Daten des Arztes (Regressforderung, Wirkstoffgruppe ATC-Level 2, KV-Bezirk), nicht klinische Daten eines Patienten. Damit greift das verschärfte Verarbeitungsregime des Art. 9 nicht. Die ATC-Level-2-Aggregation (Wirkstoffgruppe statt Einzelpräparat) verhindert zusätzlich Ableitungen über konkrete Patientensituationen.
+
+\textbf{Forschungsprivileg Art. 89 DSGVO:} Da das Portal explizit der Versorgungsforschung und der Erkenntnisgewinnung über regulatorisch induzierte Unterversorgung dient, greift ergänzend das Forschungsprivileg. Dieses erlaubt eine erweiterte Verarbeitung mit klaren Schutzmaßnahmen (Pseudonymisierung, k-Anonymität, Verarbeitungsverzeichnis).
+
+\subsection{Vorsorge: Rechtsanwaltliche Prüfung}
+
+Vor Go-Live sollte eine einmalige Prüfung durch einen Fachanwalt für Medienrecht + Datenschutzrecht erfolgen. Geschätzte Kosten: 500–1.500 \,EUR. Die obige DSGVO-Matrix dient als Vorabklärung — sie ersetzt nicht die anwaltliche Prüfung, beschleunigt sie aber erheblich.
+
+
+\section{Technisches Konzept}
+
+\subsection{Architekturprinzip: Wahlkabine}
+
+Das System trennt strikt zwischen \textbf{Identitätsverifizierung} und \textbf{Meldungsdaten}:
+
+\begin{center}
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners, thick, text width=6cm, align=left, inner sep=10pt},
+    verifbox/.style={box, draw=umbruch-teal},
+    meldebox/.style={box, draw=umbruch-red},
+    dashbox/.style={box, draw=umbruch-dark, text width=13cm, align=center},
+    arrow/.style={->, thick},
+    cross/.style={path picture={ 
+      \draw[thick, red] (path picture bounding box.south west) -- (path picture bounding box.north east);
+      \draw[thick, red] (path picture bounding box.south east) -- (path picture bounding box.north west);
+    }}
+]
+
+% Nodes
+\node[verifbox] (verif) {
+    \textbf{Verifizierungs-DB}\\[1ex]
+    \small
+    $\bullet$ EFN (gehasht)\\
+    $\bullet$ Verifiziert $\boxtimes$\\
+    $\bullet$ Token-Seed
+};
+
+\node[meldebox, right=2cm of verif] (melde) {
+    \textbf{Meldungs-DB}\\[1ex]
+    \small
+    $\bullet$ KV-Bezirk \& Fachgruppe\\
+    $\bullet$ Wirkstoffgruppe\\
+    $\bullet$ Regresshöhe\\
+    $\bullet$ Antragstellende Kasse\\
+    $\bullet$ Ergebnis / Quartal
+};
+
+\node[dashbox, below=1.5cm of $(verif)!0.5!(melde)$] (dash) {
+    \textbf{Öffentliches Dashboard}\\[1ex]
+    \small Aggregierte, anonymisierte Auswertungen (nur wenn $k \ge 5$)
+};
+
+% Edges
+\draw[thick, dash pattern=on 5pt off 5pt] (verif) -- node[cross, minimum size=8mm, fill=white, label={[red,font=\small]below:KEIN LINK}] {} (melde);
+\draw[arrow] (melde) |- (dash);
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{Prinzip:} Vom anonymen Meldungs-Token kann nicht auf die EFN zurückgeschlossen werden (kryptographische Einweg-Ableitung). Die Verifizierungsdatenbank weiß nicht, welche Meldungen ein Arzt gemacht hat. Die Meldungsdatenbank weiß nicht, welcher Arzt gemeldet hat.
+
+\subsection{Tech-Stack (MVP)}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Komponente} & \textbf{Technologie} & \textbf{Begründung} \\
+\midrule
+Frontend & Astro + Svelte (bereits im .UMBRUCH Website-Projekt) & Schnell, leicht, SSG+SSR \\
+Backend/API & Node.js oder Python (FastAPI) & Einfach, bewährt \\
+Datenbank & SQLite (MVP) → PostgreSQL (Skalierung) & Minimal, portabel \\
+Hosting & Eigener Server (Deutscher Serverstandort, DSGVO-konform) & Volle Kontrolle, DSGVO-konform \\
+Kryptographie & bcrypt/argon2 für EFN-Hashes, CSPRNG für Tokens & Standard, bewährt \\
+Dashboard & Chart.js oder D3.js & Interaktiv, Open Source \\
+Formulare & Strukturiert (Dropdowns), kein Freitext & Gegen Fakes, leicht auswertbar \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Datenfluss}
+
+\begin{center}
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners, thick, text width=4cm, align=center, inner sep=4pt, font=\small},
+    arrow/.style={->, thick, draw=umbruch-dark}
+]
+\node[font=\bfseries, text=umbruch-dark] (arzt) at (0,0) {Arzt};
+\node[font=\bfseries, text=umbruch-dark] (plat) at (5,0) {Plattform};
+\node[font=\bfseries, text=umbruch-dark] (oeff) at (10,0) {Öffentlichkeit};
+
+\draw[thick, dotted, gray] (arzt) -- (0,-9);
+\draw[thick, dotted, gray] (plat) -- (5,-9);
+\draw[thick, dotted, gray] (oeff) -- (10,-9);
+
+\draw[arrow] (0,-1) -- node[above, font=\footnotesize] {1. Registrierung} (5,-1);
+\node[box, draw=umbruch-teal] at (5,-2) {2. Verifizierung\\(Abgleich + Postcode)};
+\draw[arrow] (5,-3) -- node[above, font=\footnotesize] {3. Token erhalten} (0,-3);
+\draw[arrow] (0,-4) -- node[above, font=\footnotesize] {4. Meldung (Token+Daten)} (5,-4);
+\node[box, draw=umbruch-red] at (5,-5.5) {5. Plausibilitätsprüfung\\[1ex]6. Speicherung (anonym)};
+\draw[arrow] (5,-7) -- node[above, font=\footnotesize] {7. Aggregation ($k \ge 5$)} (10,-7);
+\node[box, draw=umbruch-dark] at (10,-8.5) {8. Dashboard +\\Policy Brief};
+
+\end{tikzpicture}
+\end{center}
+
+
+\section{Datenarchitektur und Anonymisierung}
+
+\subsection{Meldungsfelder (strukturiert, Dropdowns)}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X X}
+\toprule
+\textbf{Feld} & \textbf{Typ} & \textbf{Optionen} & \textbf{Pflicht} \\
+\midrule
+KV-Bezirk & Dropdown & 17 KV-Bezirke & Ja \\
+Fachgruppe & Dropdown & ~20 Gruppen (aggregiert) & Ja \\
+Wirkstoffgruppe & Dropdown & ~30 Gruppen (ATC-Level 2) & Ja \\
+Antragstellende Kasse & Dropdown & Top-20 Kassen + "Sonstige" & Ja \\
+Art des Verfahrens & Dropdown & Einzelfallprüfung / Auffälligkeitsprüfung / Richtgrößenprüfung & Ja \\
+Ergebnis & Dropdown & Regress / Beratung / Freispruch / laufend & Ja \\
+Regresshöhe & Bereichs-Dropdown & <500€ / 500-2.000€ / 2.000-5.000€ / 5.000-20.000€ / >20.000€ & Bei Regress \\
+Zeitraum & Dropdown & Quartal + Jahr & Ja \\
+Wurde Praxisbesonderheit anerkannt? & Ja/Nein/k.A. &  & Optional \\
+Freitext-Kommentar & Textarea (max. 500 Zeichen) &  & Optional \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\textbf{Kein Freitext für identifizierende Felder.} Alles strukturiert = schwerer zu fälschen, leichter auszuwerten.
+
+\subsection{Anonymisierungsregeln}
+
+{\small
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+\textbf{Regel} & \textbf{Umsetzung} \\
+\midrule
+\textbf{k-Anonymität (k $\ge$ 5)} & Jede veröffentlichte Zelle muss $\ge$ 5 Meldungen enthalten \\
+\textbf{Aggregierungsebene} & KV-Bezirk (nicht Landkreis), Fachgruppe (nicht Spezialisierung) \\
+\textbf{Wirkstoffgruppe} & ATC-Level 2 (z.B. ``A10BJ --- GLP-1-Rezeptoragonisten''), nicht Einzelpräparat \\
+\textbf{Regresshöhe} & Bereiche, nicht exakte Beträge \\
+\textbf{Suppression} & Zellen mit < 5 Meldungen werden als "k.A." angezeigt \\
+\textbf{Freitext-Review} & Kommentare werden vor Veröffentlichung manuell geprüft \\
+\textbf{Re-Identifizierungs-Test} & Vor jeder neuen Auswertung: Kann diese Kombination eine Person identifizieren? \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Datenaufbewahrung}
+
+\begin{itemize}[nosep]
+  \item Meldungsdaten: Unbegrenzt (anonymisiert)
+  \item Verifizierungsdaten (gehashte EFN): Solange Account aktiv
+  \item Server-Logs: Max. 7 Tage, keine IP-Adressen in Meldungslogs
+  \item Backups: Verschlüsselt, nur Meldungsdatenbank (nicht Verifizierungsdatenbank)
+\end{itemize}
+
+
+\section{Identitätsverifizierung}
+
+\subsection{Anforderung: Nur Ärzte, aber anonym}
+
+Das zentrale Problem: Sicherstellen, dass nur approbierte Ärzte melden, ohne ihre Identität mit den Meldungen zu verknüpfen.
+
+\subsection{Empfohlenes Verfahren (Phasenmodell)}
+
+
+1. Arzt gibt seine \textbf{Einheitliche Fortbildungsnummer (EFN)} ein
+2. System prüft: Ist diese EFN einem realen Arzt zugeordnet? (Abgleich gegen öffentliches Verzeichnis der Landesärztekammern)
+3. \textbf{Aktivierungscode wird per Post} an die im Arztregister hinterlegte Praxisadresse geschickt
+4. Arzt gibt Code online ein → Account verifiziert
+5. System generiert einen \textbf{anonymen Session-Token} (kryptographisch, kein Rückschluss auf EFN möglich)
+6. EFN wird als Einweg-Hash gespeichert (verhindert Doppelregistrierung, aber keine Identifikation)
+
+\textbf{Vorteile:}
+\begin{itemize}[nosep]
+  \item Praxisadressen sind öffentlich (KV-Arztsuche) → schwer zu fälschen
+  \item Kein sensibles Dokument hochzuladen (keine Approbationsurkunde)
+  \item Postweg = physische Verifikation
+  \item EFN ist bundesweit eindeutig
+\end{itemize}
+
+\textbf{Kosten:} Porto (~1 \,EUR/Arzt) + Druckkosten → vernachlässigbar
+
+
+\begin{itemize}[nosep]
+  \item Integration des \textbf{elektronischen Heilberufsausweises (eHBA)}
+  \item Seit 01/2021 Pflicht für alle Vertragsärzte
+  \item Höchste Verifikationsstufe
+  \item Technisch aufwändiger (Chipkarten-Lesegerät, Middleware)
+\end{itemize}
+
+
+\begin{itemize}[nosep]
+  \item Viele Ärzte haben Fax, aber kein Chipkartenlesegerät
+  \item Fax an Praxis-Faxnummer mit Aktivierungscode
+  \item Praxis-Faxnummern sind öffentlich
+\end{itemize}
+
+\subsection{Methodisches Prinzip: Statistische Robustheit vor absoluter Verifikation}
+
+Das Portal kann nicht und muss nicht verhindern, dass jede einzelne Meldung individuell verifizierbar ist. Es muss verhindern, dass das aggregierte Bild durch koordinierte Manipulation oder Einzelfälschungen verzerrt wird. Das ist ein wichtiger methodischer Unterschied:
+
+\begin{itemize}[nosep]
+  \item \textbf{Was nicht das Ziel ist:} Jede Meldung beweisen, jede Fälschung ausschließen, jeden Einzelfall validieren.
+  \item \textbf{Was das Ziel ist:} Statistische Aussagen, deren Gültigkeit von der Verteilung der Meldungen abhängt, nicht von der Korrektheit jeder einzelnen.
+\end{itemize}
+
+Die Anti-Fake-Strategie zielt deshalb primär auf \textbf{statistische Ausreißererkennung}, \textbf{Volumenbegrenzung pro Meldender:m} (Rate-Limiting) und \textbf{Plausibilitätsprüfung} (Regresshöhen-Bereiche). Eine einzelne falsche Meldung verzerrt das Bild kaum, wenn das Portal hinreichend viele Meldungen aggregiert. Eine koordinierte Manipulation wäre statistisch detektierbar.
+
+Dieses Prinzip schützt vor dem klassischen Vorwurf ``Einzelfälle könnten erfunden sein''. Die Antwort lautet: Ja, einzelne Meldungen können falsch sein. Aber das aggregierte Bild ist gegen einzelne Falschmeldungen robust, weil es nicht auf jeder einzelnen Meldung beruht, sondern auf der Verteilung vieler Meldungen.
+
+\subsection{Anti-Fake-Maßnahmen}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Maßnahme} & \textbf{Gegen was} & \textbf{Aufwand} \\
+\midrule
+EFN + Postverifikation & Nicht-Ärzte & Hoch (physisch) \\
+Rate-Limiting (1 Meldung/Quartal) & Massenfakes & Gering \\
+Plausibilitätsprüfung (Regresshöhe) & Unrealistische Werte & Gering \\
+Strukturierte Eingabe (Dropdowns) & Willkürliche Freitext-Fakes & Gering \\
+Captcha + Honeypot & Bots & Gering \\
+Statistische Ausreißererkennung & Koordinierte Manipulationen & Mittel \\
+Doppelregistrierungssperre (EFN-Hash) & Mehrfachaccounts & Gering \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Was NICHT funktioniert}
+
+{\small
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+\textbf{Methode} & \textbf{Warum nicht} \\
+\midrule
+Nur E-Mail-Verifizierung & Wegwerf-Mails, keine Identitätsprüfung \\
+Wissensfragen (``EBM-Code für...'') & Googelbar \\
+Selbstauskunft (``Ich bin Arzt'') & Wertlos \\
+Approbationsurkunde hochladen & Fälschbar, DSGVO-problematisch \\
+Social-Media-Verifizierung & Nicht alle Ärzte haben Profile \\
+\bottomrule
+\end{tabularx}
+}
+
+
+
+\section{MVP-Definition}
+
+\subsection{Scope MVP (v0.1)}
+
+\textbf{In Scope:}
+\begin{itemize}[nosep]
+  \item [{[x]}] Registrierung mit EFN + Postverifikation
+  \item [{[x]}] Anonyme Meldung (strukturierte Felder, Dropdowns)
+  \item [{[x]}] Einfaches öffentliches Dashboard (Balkendiagramme nach KV-Bezirk, Fachgruppe, Kasse)
+  \item [{[x]}] k-Anonymitätsprüfung vor Veröffentlichung
+  \item [{[x]}] Impressum, Datenschutzerklärung, Disclaimer
+  \item [{[x]}] Notice-and-Takedown-Verfahren
+  \item [{[x]}] Responsives Design (Desktop + Mobile)
+\end{itemize}
+
+\textbf{Nicht in Scope (v0.1):}
+\begin{itemize}[nosep]
+  \item [{[ ]}] eHBA-Integration
+  \item [{[ ]}] Zeitreihenanalysen
+  \item [{[ ]}] API für Drittanbieter
+  \item [{[ ]}] Mehrsprachigkeit (EN)
+  \item [{[ ]}] Podcast/Video-Content
+  \item [{[ ]}] Policy Briefs (ab v0.2)
+\end{itemize}
+
+\subsection{Erfolgskennzahlen MVP}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{KPI} & \textbf{Zielwert (6 Monate)} & \textbf{Messung} \\
+\midrule
+Verifizierte Ärzte & $\ge$ 50 & Registrierungsdatenbank \\
+Meldungen & $\ge$ 100 & Meldungsdatenbank \\
+Dashboard-Aufrufe & $\ge$ 1.000 & Analytics (datenschutzkonform) \\
+Medienberichterstattung & $\ge$ 1 Artikel & Presseclipping \\
+Kooperationsanfragen & $\ge$ 1 & Posteingang \\
+\bottomrule
+\end{tabularx}
+}
+
+
+
+\section{Governance und Betrieb}
+
+\subsection{Anforderungen an die Trägerorganisation}
+
+Eine geeignete Trägerschaft erfüllt idealerweise folgende Voraussetzungen:
+
+\begin{itemize}[nosep]
+  \item Anerkannte Gemeinnützigkeit nach \S\,52 AO, vorzugsweise mit Satzungszwecken in den Bereichen:
+  \begin{itemize}[nosep]
+    \item Förderung der Volksbildung (\S\,52 Abs.\,2 Nr.\,7 AO)
+    \item Förderung des demokratischen Staatswesens (\S\,52 Abs.\,2 Nr.\,24 AO)
+    \item Wissenschaft und Forschung (\S\,52 Abs.\,2 Nr.\,1 AO)
+  \end{itemize}
+  \item Erfahrung mit datenschutzsensiblen Plattformen (DSGVO-Compliance, DSFA)
+  \item Zugang zur Ärzteschaft oder Bereitschaft, Kooperationen mit Fachgesellschaften und Berufsverbänden aufzubauen
+  \item Unabhängigkeit von Krankenkassen-Verbänden und Pharmaindustrie
+\end{itemize}
+
+In Frage kommen Vereine, gemeinnützige Stiftungen, Civic-Tech-Initiativen oder ärztliche Berufsverbände mit erweiterter Satzung.
+
+\subsection{Rollen-Struktur}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Rolle} & \textbf{Verantwortung} & \textbf{Besetzung} \\
+\midrule
+Vorstand / Projektleitung & Strategie, Finanzen, Kooperationen & Trägerorganisation \\
+Technik & Entwicklung, Hosting, Sicherheit & Trägerorganisation + Open-Source-Community \\
+Datenschutz & DSFA, Anonymisierung, Compliance & Externer Datenschutzbeauftragter \\
+Redaktion & Policy Briefs, Dashboard-Texte & Vorstand + Beirat \\
+Beirat (ab Phase 2) & Fachliche Beratung, Legitimation & 3--5 Ärzte / Gesundheitspolitiker \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Redaktionsrichtlinien}
+
+\begin{itemize}[nosep]
+  \item \textbf{Nur aggregierte Daten} werden veröffentlicht (nie Einzelmeldungen)
+  \item \textbf{k-Anonymität} wird bei jeder Auswertung geprüft
+  \item \textbf{Keine namentliche Nennung} einzelner Ärzte (auch nicht indirekt)
+  \item \textbf{Krankenkassen werden genannt} (sind öffentliche Körperschaften, KV RLP macht es vor)
+  \item \textbf{Disclaimer} auf jeder Seite: "Nicht verifizierte Eigenmeldungen. Keine Gewähr für Richtigkeit."
+  \item \textbf{Stellungnahme-Recht:} Krankenkassen können zu den Daten Stellung nehmen
+\end{itemize}
+
+
+\section{Finanzierung}
+
+\subsection{Kosten MVP}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Position} & \textbf{Einmalig} & \textbf{Laufend (monatlich)} \\
+\midrule
+Domain (regress-transparenz.de o.ä.) & 12 EUR & 1 EUR \\
+Hosting (ellmos-services, bereits vorhanden) & 0 EUR & 0 EUR (anteilig) \\
+Postversand Verifizierung (100 Ärzte) & 100 EUR & — \\
+Fachanwalt Datenschutz/Medienrecht (einmalig) & 500–1.500 EUR & — \\
+Freiwilliger DSB (einmalig Erstberatung) & 200–500 EUR & — \\
+Design / Logo & 0–300 EUR & — \\
+Entwicklung (Eigenleistung) & 0 EUR & — \\
+\textbf{Gesamt MVP} & \textbf{812–2.412 EUR} & \textbf{~1 EUR} \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Finanzierungsquellen}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Quelle} & \textbf{Potenzial} & \textbf{Timeline} \\
+\midrule
+\textbf{Eigenmittel (Bootstrap)} & 800–2.500 EUR & Sofort \\
+\textbf{Spenden (betterplace.org)} & 500–5.000 EUR/Jahr & Ab Gemeinnützigkeit \\
+\textbf{Schöpflin Stiftung (Lörrach!)} & 10.000–100.000 EUR & 3–9 Monate \\
+\textbf{Steady / Substack} & 2.000–6.000 EUR/Jahr & Ab Content \\
+\textbf{EU CERV-Programm} & 50.000–500.000 EUR & 12–24 Monate \\
+\textbf{Beratungsaufträge} (KVen, Fachgesellschaften) & 5.000–30.000 EUR & Ab Datenbasis \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Langfristige Nachhaltigkeit}
+
+Das Portal wird mit wachsender Datenbasis wertvoller:
+\begin{itemize}[nosep]
+  \item \textbf{Policy Briefs} auf Basis der Daten → Auftragsforschung für KVen, DDG, KBV
+  \item \textbf{Jahresberichte} → Medienberichterstattung → Spendenakquise
+  \item \textbf{Kooperationen} mit Therapiefreiheit e.V., MEZIS → gemeinsame Fördermittelanträge
+\end{itemize}
+
+
+\section{Zeitplan}
+
+\subsection{Phase 1: Grundlagen (Monat 1–2)}
+
+\begin{itemize}[nosep]
+  \item [{[ ]}] e.V. gründen (falls noch nicht geschehen)
+  \item [{[ ]}] Gemeinnützigkeit beantragen
+  \item [{[ ]}] Domain registrieren
+  \item [{[ ]}] Fachanwalt konsultieren (Datenschutz + Medienrecht)
+  \item [{[ ]}] DSFA erstellen
+  \item [{[ ]}] Technisches Grundgerüst aufsetzen (Astro + Backend)
+\end{itemize}
+
+\subsection{Phase 2: MVP-Entwicklung (Monat 3–4)}
+
+\begin{itemize}[nosep]
+  \item [{[ ]}] Registrierungssystem (EFN + Postverifikation)
+  \item [{[ ]}] Meldungsformular (strukturiert)
+  \item [{[ ]}] Anonymisierungs-Pipeline
+  \item [{[ ]}] Dashboard (Basisversion)
+  \item [{[ ]}] Datenschutzerklärung, Impressum, Disclaimer
+  \item [{[ ]}] Notice-and-Takedown-Verfahren
+\end{itemize}
+
+\subsection{Phase 3: Soft Launch (Monat 5–6)}
+
+\begin{itemize}[nosep]
+  \item [{[ ]}] Einladung von 20–50 Ärzten (persönliches Netzwerk + Therapiefreiheit e.V.)
+  \item [{[ ]}] Feedback einholen und iterieren
+  \item [{[ ]}] Erste Daten im Dashboard
+  \item [{[ ]}] Pressemitteilung vorbereiten
+\end{itemize}
+
+\subsection{Phase 4: Öffentlicher Launch (Monat 7–8)}
+
+\begin{itemize}[nosep]
+  \item [{[ ]}] Öffentliche Ankündigung
+  \item [{[ ]}] LinkedIn + Fachmedien (Deutsches Ärzteblatt, Ärzte Zeitung)
+  \item [{[ ]}] Erster Policy Brief (wenn Datenbasis ausreicht)
+  \item [{[ ]}] Kooperationsanfragen an Therapiefreiheit e.V., MEZIS, KBV
+\end{itemize}
+
+\subsection{Phase 5: Skalierung (ab Monat 9)}
+
+\begin{itemize}[nosep]
+  \item [{[ ]}] eHBA-Integration prüfen
+  \item [{[ ]}] Fördermittelanträge (Schöpflin, CERV)
+  \item [{[ ]}] Beirat aufbauen
+  \item [{[ ]}] Internationale Version (re:shape, EN)
+\end{itemize}
+
+
+\section{Risiken und Gegenmaßnahmen}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X X}
+\toprule
+\textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Gegenmaßnahme} \\
+\midrule
+Zu wenige Meldungen & Mittel & Dashboard leer, keine Relevanz & Persönliche Ansprache über Fachgesellschaften, Therapiefreiheit e.V. \\
+Fake-Meldungen & Gering & Datenqualität sinkt & Postverifikation + Rate-Limiting + Plausibilitätsprüfung \\
+Abmahnung durch Krankenkasse & Gering & Kosten, Aufwand & Fachanwalt vorab, Notice-and-Takedown, Art. 5 GG \\
+Re-Identifizierung eines Arztes & Gering & Datenschutzverstoß & k-Anonymität (k$\ge$5), Aggregierung, DSFA \\
+Negative Medienberichterstattung & Sehr gering & Reputationsschaden & Transparente Kommunikation, Disclaimer \\
+Technischer Ausfall / Hack & Gering & Datenverlust & Backups, keine sensiblen Daten in Meldungs-DB \\
+Keine Gemeinnützigkeit erhalten & Gering & Keine Spendenquittungen & Satzung vorab vom Finanzamt prüfen lassen \\
+\bottomrule
+\end{tabularx}
+}
+
+
+
+\section{Kooperationspartner}
+
+\subsection{Priorität 1 (sofort ansprechen)}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Partner} & \textbf{Warum} & \textbf{Kontakt} \\
+\midrule
+\textbf{Therapiefreiheit e.V.} & Größtes Netzwerk, Zugang zu regressierten Ärzten & therapiefreiheit.org \\
+\textbf{KV Rheinland-Pfalz} & Betreiben bereits Regress-Ranking, Vorbild & kv-rlp.de \\
+\textbf{DDG (Deutsche Diabetes Gesellschaft)} & GLP-1-Regress ist deren Kernthema & ddg.info \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Priorität 2 (ab Phase 4)}
+
+{\small
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+\textbf{Partner} & \textbf{Warum} \\
+\midrule
+\textbf{MEZIS e.V.} & Transparenz-Expertise, leitlinienwatch.de \\
+\textbf{KBV} & Bundestags-Petition, politischer Hebel \\
+\textbf{Virchowbund} & Ärzte-Verband, Reichweite \\
+\textbf{UPD (Unabhängige Patientenberatung)} & Patientenperspektive \\
+\textbf{FragDenStaat / OKF} & Transparenz-Expertise, technisch \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\subsection{Priorität 3 (ab Phase 5)}
+
+{\small
+\begin{tabularx}{\textwidth}{X X}
+\toprule
+\textbf{Partner} & \textbf{Warum} \\
+\midrule
+\textbf{Schöpflin Stiftung (Lörrach)} & Regional, transformationsorientiert \\
+\textbf{Robert Bosch Stiftung} & Gesellschaftliche Transformation \\
+\textbf{EU CERV-Programm} & Fördermittel für Demokratie/Transparenz \\
+\textbf{Wissenschaftliche Institute} (IGES, RWI) & Auswertung, Publikationen \\
+\bottomrule
+\end{tabularx}
+}
+
+
+
+\section{Quellen und Rechtsgrundlagen}
+
+\subsection*{Formales Literaturverzeichnis}
+
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{PP-003_references}
+
+\subsection{Gesetze und Verordnungen}
+
+\begin{itemize}[nosep]
+  \item §§ 106, 106b SGB V — Wirtschaftlichkeitsprüfung
+  \item § 52 AO — Gemeinnützige Zwecke
+  \item Art. 5 GG — Meinungs-, Presse-, Wissenschaftsfreiheit
+  \item DSGVO, insbesondere Erwägungsgrund 26 (Anonymisierung)
+  \item § 203 StGB — Ärztliche Schweigepflicht
+  \item DDG (Digitale-Dienste-Gesetz) / DSA Art. 6 — Haftungsprivileg
+  \item HinSchG — Hinweisgeberschutzgesetz (nicht direkt anwendbar, aber legitimierend)
+\end{itemize}
+
+\subsection{BSG-Rechtsprechung}
+
+\begin{itemize}[nosep]
+  \item BSG 27.08.2025, B 6 KA 9/24 R — Formalregress 491.000\,EUR (Stempel statt Unterschrift)
+  \item BSG 05.06.2024, B 6 KA 5/23 R — Differenzkostenregelung
+  \item BSG 05.06.2024, B 6 KA 10/23 R — Differenzkostenregelung
+  \item BGH-Urteile zu Bewertungsportalen (kununu, Jameda)
+  \item BVerfG Lüth-Urteil 1958 — Meinungsfreiheit bei wirtschaftlichem Nachteil
+\end{itemize}
+
+\subsection{Institutionelle Quellen}
+
+\begin{itemize}[nosep]
+  \item KV RLP: Regress-Ranking — https://www.kv-rlp.de/praxis/berufspolitik/regress-ranking
+  \item KV BW: Regressgefahr — https://www.kvbawue.de/praxis/verordnungen/arzneimittel/regressgefahr
+  \item KBV: Bundestags-Petition 158622
+  \item DDG/BVND: Statement Tirzepatid-Verordnung 03/2024
+  \item G-BA: Nutzenbewertung Tirzepatid 02.05.2024
+\end{itemize}
+
+\subsection{Studien und Analysen}
+
+\begin{itemize}[nosep]
+  \item Virchowbund: ``Regress — selten bedrohlich, aber lästig''
+  \item Ärzte Zeitung: ``Regressangst der Ärzte schadet Patienten''
+  \item Deutsches Ärzteblatt: ``Große regionale Unterschiede bei Wirtschaftlichkeitsprüfungen'' (Pipeline-Daten KV Hessen, KV Thüringen, KV Nordrhein)
+  \item Deutsches Ärzteblatt: ``Regressrisiko bei vertraulichen Erstattungsbeträgen bleibt unbekannt''
+  \item KBV-Berufsmonitoring Medizinstudierende (KBV/Universität Trier 2018, dritte Erhebungswelle, ca. 13.900 Befragte): 46,7\,\% nennen Regressangst als Niederlassungshindernis
+  \item MB-Monitor 2024 (Marburger Bund, n=9.649): 3\,h Bürokratie pro Tag bei Klinikärzten
+  \item KBV Bürokratieindex: 7,4\,h/Woche bei Niedergelassenen
+  \item Statistisches Bundesamt: 4,33\,Mrd.\,EUR/Jahr Bürokratiekosten ambulant
+  \item Goetz et al. 2024 (BMC Primary Care): Defensivmedizin bei deutschen Hausärzten
+  \item Moosazadeh et al. 2023 (Int J Qual Health Care): Meta-Analyse Defensivmedizin (75,8\,\% Prävalenz)
+  \item Stiftung Datenschutz: Praxisleitfaden Anonymisierung
+\end{itemize}
+
+
+\section{Anhang: Namensvorschläge}
+
+{\small
+\begin{tabularx}{\textwidth}{X X X}
+\toprule
+\textbf{Name} & \textbf{Domain} & \textbf{Bewertung} \\
+\midrule
+\textbf{Regress-Transparenz} & regress-transparenz.de & Klar, beschreibend \\
+\textbf{RegressWatch} & regresswatch.de & Modern, analog zu leitlinienwatch.de \\
+\textbf{Prüfkompass} & pruefkompass.de & Neutral, weniger konfrontativ \\
+\textbf{VerordnungsMonitor} & verordnungsmonitor.de & Breiter angelegt \\
+\bottomrule
+\end{tabularx}
+}
+
+
+\textbf{Empfehlung:} ``RegressWatch'' --- kurz, einprägsam, Parallele zu leitlinienwatch.de (MEZIS), signalisiert unabhängige Beobachtung.
+
+
+\emph{Dieses Konzeptpapier wurde mit KI-Unterstützung (Claude, Anthropic) erstellt. v1.0 vom 30.03.2026, v2.0 vom 08.04.2026 mit erweiterten Recherchen zu Pipeline-Dropout, Systemwiderspruch der Prüfverfahren, Bürokratiekosten und Formfehler-Rechtsprechung. v2.1 vom 08.04.2026 mit Verweis auf das Begleitpaper ST-001 und ergänzenden Befunden zu Niskanen-Bürokratie-Selbsterhaltung und verfassungsrechtlichen Angriffsvektoren. v2.2 vom 08.04.2026 nach Copilot-Review: Klarstellung ``pro-Governance, nicht anti-Regress'', explizite DSGVO-Matrix, schärfere Anti-Fake-Methodik (statistische Robustheit). Es stellt keine Rechtsberatung dar.}
+
+\vspace{0.5em}
+
+\emph{Verwandte Dokumente:}
+\begin{itemize}[nosep]
+  \item \textbf{ST-001 — Systemtheoretische Aufarbeitung der Regressangst} (Begleitstudie, v0.9, 66 Seiten): historische Container-Genealogie, rechtsdogmatische Drei-Code-Kollision (\S\,12 SGB\,V), Spieltheorie, Modellarzt-Hochrechnung (0,9--1,7\,Mrd.\,EUR/Jahr Folgekosten), Niskanen-Bestätigung der Prüfungseinrichtungen, verfassungsrechtliche Doppelbeschwerde-Strategie, normativer Schadensbegriff (BSG B\,6\,KA\,5/09\,R), Lesart~C (System als Formfehler-Optimierer), Prüfkatalog-Asymmetrie, Gegenpositions-Abschnitt (5 stärkste Einwände), Anhang~C (9 IFG-Anfragen als offene Forschungsfragen).
+  \item \textbf{Open-Source-Verordnungstool} (Software-Projekt, in Konzeption): Companion-Tool zur Regress-Prävention im Moment der Verordnung. Browser-basierter MVP, Förderprofil Prototype Fund. Empfohlene Trägerkonstellation: gemeinnützige Trägerorganisation plus medizinischer Review-Partner (z.\,B. Therapiefreiheit e.V.).
+\end{itemize}
+
+\vspace{1cm}
+\begin{center}
+Dieses Konzept steht unter CC BY 4.0. Wir suchen Umsetzungspartner.\\[1em]
+Kontakt: hallo@um-bruch.org \\
+Web: um-bruch.org
+\end{center}
+
+\newpage
+\section*{Änderungshistorie}
+\addcontentsline{toc}{section}{Änderungshistorie}
+
+{\small\sloppy
+\begin{itemize}[leftmargin=3em, itemsep=0.5em]
+  \item \textbf{v2.8} (April 2026) --- CORE4-Integration: ST-001-Referenz auf v0.12 (85~Seiten). V2-Datenabschnitt korrigiert (``Daten existieren, aber nicht integriert publiziert''; BMG 47.000, SpiFa Bayern 13.332). Definitionsdivergenz (Drei-Schichten, Faktor 500$\times$) bei Ribbat-Diskrepanz. V2a/V2b-Verteilung als originärer PP-003-Beitrag benannt. Doppelfunktion (${\sim}$35\,\% Evidenzsteuerung) referenziert.
+
+  \item \textbf{v2.7} (April 2026) --- ST-001-Referenz auf v0.11 (76~Seiten) aktualisiert. Ribbat V1/V2-Caveat an allen Nennungen ergänzt. KNV-Einordnung: PP-003 = Rang~7 von 14 Maßnahmen, ``Plan~B der Plan~A erzwingen soll''. Goodhart's/Campbell's Law beim Zertifikatsfehler. Governance-Pharmakovigilanz als ST-001-Begriff verankert. Fehlversorgung bidirektional explizit benannt. KBV-Berufsmonitoring: Quellenverzeichnis auf 46,7\,\%/13.900 (2018) korrigiert.
+
+  \item \textbf{v2.6} (April 2026) --- ST-001-Referenz auf v0.9 (66~Seiten) aktualisiert.
+
+  \item \textbf{v2.5} (April 2026) --- \textbf{Großer Strukturumbau nach LG-Review (35+ Kommentare):} Abschnitt~3 komplett umgebaut: V1/V2 sauber eingeführt mit Vergleichstabelle (3.1), Systemwiderspruch vor die Zahlen gezogen (3.2), Zahlen V1/V2-attributiert (3.3), Ribbat 72\,\%-Befund integriert (``Angst ist berechtigt''), ``Was wir nicht wissen''-Abschnitt neu (3.4), ``Drei Scanner, keine Qualitätsprüfung'' statt ``fehlende Gegenrichtung'', Abstract und Executive Summary komplett neu, Formfehler-Regress präzisiert (normativer Schadensbegriff), vertraulicher Erstattungsbetrag: Dilemma-Formulierung. 29~Seiten.
+
+  \item \textbf{v2.4} (April 2026) --- An ST-001 v0.8 angeglichen: Lesart~C (Formfehler-Optimierer) in Lesarten-Abschnitt integriert; Prüfkatalog-Asymmetrie als Argument; ST-001-Referenz aktualisiert (63~Seiten, neue Inhalte).
+
+  \item \textbf{v2.3} (April 2026) --- Option~B (KV-Beratung nach \S\,75 SGB\,V) und Option~C (KK-Stell\-ungnahme, BSG B\,6\,KA\,27/12\,R) als eigener Abschnitt eingearbeitet; Präzisierung: Option~C schützt nur gegen KK als Antragstellerin im Einzelfallverfahren, nicht gegen Prüfungs\-stellen-Auffälligkeitsprüfung; IFG-Strate\-giebezüge; Quer\-verweise auf ST-001 v0.6.
+
+  \item \textbf{v2.2} (März/April 2026) --- Copilot-Review~2 eingearbeitet: Anti-Fake-Schärfung, DSGVO-Matrix, Verweis auf Begleit\-studie ST-001. 25~Seiten.
+
+  \item \textbf{v2.1} (März 2026) --- Krypto\-graphisches Konzept ausgebaut (EFN-Verifizierung, $k$-Anonymität $k\geq5$, Wahlkabinen-Prinzip); Träger-Suche als Konzeptangebot formuliert (Um:bruch ist Denkfabrik, nicht Umsetzer).
+
+  \item \textbf{v2.0} (März 2026) --- Vollständige Neufassung als Positionspapier; drei minimal-invasive Reformhebel (\S\,106b Abs.\,2\,S.\,4, Publikations\-pflicht \S\,106c, Sichtbar\-machung \S\,48 BMV-Ä); MVP-Kalkulation 800--2.500\,EUR.
+
+  \item \textbf{v1.0} (März 2026) --- Erstes Konzeptdokument: Portal-Architektur, Anonymisierungs\-konzept, Datenschutz-Grundgerüst.
+\end{itemize}
+}
+
+\newpage
+\section*{KI-Transparenzhinweis}
+
+\noindent Dieses Dokument wurde unter extensivem Einsatz von KI-Sprachmodellen (u.\,a. Anthropic Claude, Microsoft Copilot, Google Gemini) erarbeitet. Der Einsatz war notwendig, um diese Analyse mit begrenzten Ressourcen zu ermöglichen. Es wurden mehrere Kontroll- und Reviewzyklen durchgeführt~--- sowohl KI-gestützt als auch durch menschliche Redaktion.
+
+\medskip\noindent KI-Sprachmodelle neigen zu Halluzinationen und können sachliche Fehler produzieren. Trotz sorgfältiger Prüfung sind Fehler nicht ausgeschlossen. Wir korrigieren dokumentierte Fehler gerne und veröffentlichen verbesserte Versionen.
+
+\medskip\noindent Dieses Dokument stellt keine Rechtsberatung dar.
+
+\medskip\noindent Hinweise auf Fehler bitte an: \href{mailto:hallo@um-bruch.org}{hallo@um-bruch.org}
+
+\end{document}

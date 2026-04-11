@@ -1,0 +1,27 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Internal planning (not for publication)
+Plan.txt
+_archive/
+*_submission/
+*BRIEFING*
+CORE_REVIEW_BEFUNDE.md
