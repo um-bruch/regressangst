@@ -162,10 +162,10 @@ Jede Session beginnt mit dem Laden von:
 
 ### 5c. Kontakte nachfassen
 - [ ] MEZIS: Ab 13.04. (Urlaubsende) — mit aktualisierten Dokumenten
-- [ ] Virchowbund: Ab 24.04. (Hoffmann zurück) — mit CORE4-Befund (Definitionsdivergenz)
-- [ ] Therapiefreiheit e.V.: Kontaktformular (LG)
-- [ ] Praxis-Direktkontakt: Konzept umsetzen
-- [ ] Bounce info@lfph.io: Aus Kontaktdatenbank entfernen
+- [ ] Virchowbund: Ab 24.04. — mit CORE4-Befund (Definitionsdivergenz)
+- [ ] Therapiefreiheit e.V.: Kontaktformular
+- [ ] Weiterer Direktkontakt: Konzept umsetzen
+- [ ] Bounced-Kontakte bereinigen
 
 ### 5d. Verteiler-Update-Mail (nach Phase 1-4)
 - [ ] Wesentliche Neuerungen + Versionsupdate an bisherige E-Mail-Kontakte
