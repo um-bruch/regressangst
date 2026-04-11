@@ -233,7 +233,7 @@ Die Steuerung KI-gestützter Forschung erfolgt durch Prompts. Deren systematisch
 | Proaktiv:Reaktiv | 1,74:1 | Menschliche Führung |
 | Produktivste Typen | SP (2,9×) + KO (2,7×) | 33,9% der Prompts → ~95% der Kernerkenntnisse |
 
-**Methodische Implikation:** Die Prompt-Taxonomie ermöglicht retrospektive Analyse der Mensch-KI-Forschungsdynamik. Ein Post-Session-Script (`recherche/prompt-archaeologie/prompt_analyzer.py`) automatisiert die 5-Stufen-Pipeline für Research-Sessions.
+**Methodische Implikation:** Die Prompt-Taxonomie ermöglicht retrospektive Analyse der Mensch-KI-Forschungsdynamik. Ein Post-Session-Script automatisiert die 5-Stufen-Pipeline für Research-Sessions (Tool: `.AI/.LAB/prompt-listener/prompt_analyzer.py`, nutzt llmauto für Klassifikation). Die Methode selbst wird erforscht unter `.TOPICS/.RESEARCH/.PRIO-1/prompt-archeology/`.
 
 Vollständige Dokumentation: `recherche/prompt-archaeologie/`
 

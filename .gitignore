@@ -33,3 +33,7 @@ textgrundlagen/
 recherche/CORE3.md
 recherche/CORE4.md
 recherche/SOURCE_Schutzinstrumente.txt
+
+# Tool liegt in .AI/.LAB/prompt-listener/, nicht im Repo
+recherche/prompt-archaeologie/prompt_analyzer.py
+recherche/prompt-archaeologie/auto-test/
