@@ -127,6 +127,26 @@
 
 ---
 
+## 5. Meta-Agenten-Prompts (Analyse der Analyse, Session 11.04.2026 spät / 12.04.2026)
+
+Diese Prompts wurden an Agenten gesendet, die das Forschungsprojekt selbst analysierten — nicht den Gegenstand, sondern den Prozess.
+
+| # | Agent-Name | Prompt (Kurzform) | Zweck | Ergebnis |
+|---|-----------|-------------------|-------|----------|
+| M01 | core4-reviewer | "Prüfe ST-001 v0.12 auf CORE4-Konformität. 6 Punkte 'Was wegfällt' korrekt abgeschwächt? Widersprüche?" | Qualitätssicherung | 2K, 2M, 3L Befunde → Abstract umgeschrieben |
+| M02 | kohaerenz-reviewer | "Prüfe 5 neue Abschnitte auf interne Konsistenz: Zahlen, Additionen, Bayern-Daten" | Zahlenvalidierung | Namenskollision "Schicht" entdeckt → Ebene/Schicht getrennt |
+| M03 | latex-reviewer | "Prüfe \label/\ref, Tabellen-Syntax, Einwand-Nummerierung, Encoding" | Technische Integrität | 43 Encoding-Stellen identifiziert → Encoding-Fix |
+| M04 | textgrundlagen-reviewer | "Prüfe 3 Textgrundlagen auf CORE4: Drei-Schichten, Doppelfunktion, Bayern, V1-Fairness, §§" | Cross-Dokument-Konsistenz | 3× Doppelfunktion fehlt, 3× Bayern fehlt → alle korrigiert |
+| M05 | bib-extractor | "Durchsuche ST-001 nach allen zitierbaren Quellen: Autor-Jahr, BSG, Gesetze, Institutionell" | Quellenextraktion | 73 Quellen → 50 BibTeX-Einträge |
+| M06 | privacy-checker | "Scanne Repo auf E-Mails, Telefon, Adressen, Credentials, Patientendaten" | Datenschutz-Audit | 0 kritisch, 2 Namen sanitisiert |
+| M07 | prompt-archaeologist | "Finde alle Prompts der letzten 7 Tage: JSONL-Logs, Session-Berichte, Methodik-Protokoll" | Prompt-Dokumentation | 127 Human + 81 LLM = 208 Prompts |
+| M08 | methodik-reviewer | "Bewerte alle Methoden: etabliert/adaptiert/neu/kritisch" | Methodische Reflexion | 23 Methoden, 6 kritisch, Verdikt: Major Revision |
+| M09 | prompt-classifier | "Klassifiziere alle 208 Prompts nach Typ/Thema/Zweck/Absicht/Methode/Folge/Ergebnis" | Prompt-Taxonomie | Stufe 2-4 der Pipeline, statistische Kennzahlen |
+
+**Beobachtung:** Die Meta-Agenten (M01-M09) sind selbst Teil des epistemischen Zirkels, den M08 (Methodik-Reviewer) als kritisch identifiziert hat. Claude analysiert Claude. Die einzige Brechung: LG entscheidet, welche Befunde umgesetzt werden und welche nicht.
+
+---
+
 ## Anmerkungen
 
 - **61 Agent-Prompts** dokumentiert (A01-A61), davon 15 allein für das CORE4-Multi-Agenten-Experiment
