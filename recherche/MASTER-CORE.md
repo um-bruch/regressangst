@@ -223,6 +223,27 @@ Die „unter 1 %"-Zahl dominiert die öffentliche Diskussion, weil sowohl KBV al
 
 ---
 
+## 10. Schutzinstrumente: Korrekte Rechtslage (§ 29 BMV-Ä)
+
+### Kritische Unterscheidung: Genehmigung ≠ Stellungnahme
+
+§ 29 Abs. 1 S. 2 BMV-Ä verbietet die **Genehmigung** von Arzneimittelverordnungen durch die Krankenkasse. BSG B 6 KA 27/12 R (20.03.2013) stellt klar: **Stellungnahmen** sind davon nicht betroffen (Rn. 19: „Zusagen oder Erklärungen [...] nicht von vornherein ausgeschlossen").
+
+### Vier Schutzwege und ihre Anwendbarkeit
+
+| Weg | Wer → Wen | Funktioniert bei |
+|-----|-----------|-----------------|
+| 1. KV-Beratung (Arzt → KV) | Immer ✓ | Allen Verordnungsfragen |
+| 2. KK-Stellungnahme (Arzt → Kasse, BSG 27/12 R) | ✓ bei unklarer Verordnungsfähigkeit | Off-Label, neue Wirkstoffe, GLP-1/Mounjaro. Inhaltsleer bei Standardmedikamenten |
+| 3. Patient-Eigenantrag (Patient → Kasse, § 13 Abs. 3a) | Eingeschränkt ⚠ | Genehmigungspflichtig (Cannabis, Reha). Bei Standard: Kasse verweist auf § 29 |
+| 4. Gesetzl. Vorabgenehmigung (Arzt → Kasse) | Nur Ausnahmen ✓ | Cannabis (§ 31 Abs. 6), Häusliche Krankenpflege, Reha |
+
+**Häufigster Praxisfall:** „Verordnungsfähig, aber Wirtschaftlichkeit unklar" (GLP-1/Mounjaro: vertraulicher Erstattungsbetrag, Arzt kennt Preis nicht). Hier ist Kombination Weg 1 + 2 am wirksamsten.
+
+**Häufigster Fehler (korrigiert 11.04.2026):** § 29 blockiert die KK-Anfrage (Weg 2) bei Standardmedikamenten → FALSCH. § 29 blockiert die formelle Genehmigung. Die BSG-konforme Stellungnahme ist davon nicht betroffen. § 29 trifft primär den Patienten-Antrag (Weg 3).
+
+---
+
 ## Anhang: Referenzpunkte-Index (CORE 1–7 + CORE3 + CORE4)
 
 Die folgenden Referenzpunkte sind die kanonische Wahrheit des Projekts:
