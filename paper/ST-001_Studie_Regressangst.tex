@@ -2488,14 +2488,53 @@ Vollständige Dokumentation: 14 RECHERCHE-Dateien in den Arbeitsmaterialien und 
 
   \item \textbf{Korrekturrate stieg von 2,8\,\% (Tag~1) auf 15,8\,\% (Tag~5).} Der Mensch wurde im Verlauf kritischer, nicht zahmer. Die produktivsten Korrekturen (H104, H108, H111) lösten die CORE3- und CORE4-Paradigmenwechsel aus.
 
-  \item \textbf{33,9\,\% der Prompts erzeugten ${\sim}$95\,\% der Kernerkenntnisse.} Startprompts (Hebelfaktor 2,9$\times$) und Korrekturen (2,7$\times$) waren die produktivsten Prompt-Typen. Bestätigungen und Nachfragen trugen kaum zu originären Befunden bei.
+  \item \textbf{33,9\,\% der Prompts erzeugten ${\sim}$95\,\% der Kernerkenntnisse.} Startprompts (Hebelfaktor 2,9$\times$) und Korrekturen (2,7$\times$) waren die produktivsten Prompt-Typen. Vertiefende Nachfragen (Typ~NT) und Bestätigungen (Typ~BE) waren für den Arbeitsfluss nötig, erzeugten aber keine originären Befunde. \textit{Wichtige Unterscheidung:} Die 6~Wendepunkte waren Startprompts (SP), nicht Nachfragen (NT) --- der Unterschied liegt im \textit{Öffnen} einer neuen Richtung vs. dem \textit{Vertiefen} einer bestehenden.
 
   \item \textbf{Proaktiv:Reaktiv = 1,74:1.} Der Mensch agierte 1,7$\times$ so oft proaktiv (neue Fragen, neue Richtungen) wie reaktiv (Bestätigung, Korrektur). Die Forschung war klar menschlich geführt, nicht KI-getrieben.
 
   \item \textbf{KI-Autonomie-Gradient:} Die KI war bei strukturierten Aufgaben zuverlässig (Tabellen, Recherche, Dokumentation). Bei synthetischen, interpretierenden Aufgaben (Bedeutung der 99,7\,\%, Definitonsartefakt, Bilanzbewertung) lag sie ohne menschliche Korrektur falsch oder unvollständig. Konservative Schätzung: Ohne menschliche Korrekturen wären mindestens 3 der 5 zentralen CORE-Referenzpunkte nicht in ihrer jetzigen Form entstanden.
 \end{enumerate}
 
-\noindent\textbf{Methodische Implikation:} Diese Analyse legt nahe, dass KI-gestützte Forschung nicht als ``KI forscht, Mensch prüft'' zu verstehen ist, sondern als ``Mensch fragt, KI sucht, Mensch korrigiert und synthetisiert''. Die entscheidende Wertschöpfung liegt in den Fragen und Korrekturen --- nicht in den Antworten. Die vollständige Prompt-Dokumentation (208 Prompts, 5 Aggregationsstufen) ist in den Arbeitsmaterialien verfügbar.
+\noindent\textbf{Die 6 Wendepunkt-Fragen im Wortlaut:}
+
+{\small
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{\#} & \textbf{Wörter} & \textbf{Frage (Wortlaut) $\to$ Ergebnis} \\
+\midrule
+H19 & 12 & ``Warum gibt es überhaupt zwei Prüfverfahren --- widerspricht sich das nicht?'' $\to$ V1/V2-Systemwiderspruch erkannt \\
+\addlinespace
+H33 & 11 & ``Stell dir vor du bist ein BVerfG-Anwalt --- wo würdest du ansetzen?'' $\to$ 5 verfassungsrechtliche Angriffsvektoren \\
+\addlinespace
+H53 & 14 & ``Das System prüft doch gar nicht das was es zu prüfen vorgibt?'' $\to$ Doppelter Zertifikatsfehler (CORE~4) \\
+\addlinespace
+H101 & 9 & ``Ich dachte das Richtgrößenverfahren wurde abgeschafft?'' $\to$ V1-Schutzstufenmodell + V2a/V2b (CORE3) \\
+\addlinespace
+H112 & 7 & ``Die ein Prozent sind auch zufällig oder?'' $\to$ Definitionsdivergenz, Faktor 500$\times$ (CORE4, Originalbeitrag~1) \\
+\addlinespace
+H120 & 10 & ``Meine Hypothese ist dass wir es falsch eingeschätzt haben'' $\to$ Doppelfunktion: 35\,\% Evidenzsteuerung (CORE4, Originalbeitrag~2) \\
+\bottomrule
+\end{tabularx}
+}
+
+\medskip
+\noindent\textbf{Einschränkungen der Prompt-Analyse:}
+
+\begin{itemize}[nosep]
+  \item \textbf{Dunkelziffer Copilot/Gemini:} Die 127 Human-Prompts erfassen nur Eingaben an Claude. Der menschliche Forscher (LG) hat zusätzlich Prompts an Copilot (GPT-4o) und Gemini (Deep Research) gesendet, deren Wortlaut nicht systematisch dokumentiert ist. Die \textit{Ergebnisse} dieser Prompts wurden als Copy-Paste an Claude weitergeleitet (11 Copilot-Inputs, 9 Gemini-Outputs nachweisbar), aber die \textit{steuernden Eingaben} des Menschen an diese Modelle sind eine echte Dokumentationslücke. Die tatsächliche Prompt-Zahl liegt geschätzt 30--50\,\% höher.
+  \item \textbf{Experimentelle Prompt-Formen:} Im Verlauf wurden innovative Ansätze entwickelt, die über klassische Recherche-Prompts hinausgehen: \textit{Naive-Suche-Test} (verblindeter Agent simuliert Journalisten --- geht er denselben Irrweg?), \textit{Reihenfolge-Bias-Kontrolle} (zwei Agenten bewerten in umgekehrter Reihenfolge), \textit{Prior-Art-Check} (systematische Suche nach eigener These), \textit{Alternative-Hypothese-Test} (aktives Testen der Gegenthese H2). Diese Methoden sind nicht Standard und verdienen eigenständige methodische Dokumentation.
+\end{itemize}
+
+\noindent\textbf{Methodische Selbstkritik --- invertierter Forschungsprozess:}
+
+Der wissenschaftliche Formalismus sieht vor: theoretischer Hintergrund $\to$ Datenlage $\to$ Lücken $\to$ Fragestellung $\to$ Methode $\to$ Analyse. Diese Studie hat den Prozess teilweise invertiert: Die Analyse begann, bevor die Verfahrensstrukturen (V1/V2, §\S\,106/106b) vollständig verstanden waren. Der Forscher (LG) konnte zu Beginn nicht zwischen V1 und V2 unterscheiden --- er brauchte die Fehler zum Lernen. Die CORE3-Entdeckung (V1-Schutzstufenmodell, V2a/V2b) und die CORE4-Entdeckung (Definitionsdivergenz) entstanden \textit{während} der Analyse, nicht davor.
+
+Das ist einerseits eine Stärke (explorative Entdeckung unter Unsicherheit), andererseits eine Schwäche: Eine systematischere Lektüre der Gesetzestexte und des Verfahrensrechts \textit{vor} Beginn der Analyse hätte den Umweg über fehlerhafte Annahmen (``V1 ist unfair'', ``keine V2-Daten'', ``unter 1\,\% ist Täuschung'') möglicherweise verkürzt. Die 5~dokumentierten Hypothesenrevisionen (Anhang~B) sind zugleich Beleg für intellektuelle Redlichkeit und für einen methodisch imperfekten Ausgangspunkt.
+
+\textbf{Fazit:} ``Mensch fragt, KI sucht, Mensch korrigiert und synthetisiert'' beschreibt die Dynamik. Die entscheidende Wertschöpfung liegt in den Fragen und Korrekturen --- nicht in den Antworten. Der wissenschaftliche Formalismus (erst lesen, dann fragen) bleibt wichtig und sollte in künftiger KI-gestützter Forschung bewusster eingehalten werden.
+
+\smallskip
+\noindent Die vollständige Prompt-Dokumentation (208+ Prompts, 5 Aggregationsstufen, statistische Auswertung) ist in den Arbeitsmaterialien verfügbar.
 
 \newpage
 \section*{Anhang C: Offene Forschungsfragen und eingereichte IFG-Anfragen}
