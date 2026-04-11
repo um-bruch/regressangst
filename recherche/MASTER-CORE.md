@@ -208,6 +208,35 @@ Die „unter 1 %"-Zahl dominiert die öffentliche Diskussion, weil sowohl KBV al
 - **Ausgeschlossen:** Nicht-verifizierbare Blogs, unattribuierte Statistiken, Gemini-Outputs ohne Claude-Double-Check
 - **Vollständige Dokumentation:** 40 Einzelanalysen in `recherche/einzelanalysen/`, Walk of Analysis (14 Phasen) in `recherche/WALK_OF_ANALYSIS_EXTENDED.md`, Methodik-Protokoll in `recherche/METHODIK_RECHERCHE_PROTOKOLL.md`
 
+### Prompt-Archäologie: 5-Stufen-Taxonomie (methodischer Eigenbeitrag)
+
+Die Steuerung KI-gestützter Forschung erfolgt durch Prompts. Deren systematische Dokumentation und Analyse ist selbst ein methodischer Beitrag. Im Projekt wurde eine 5-Stufen-Pipeline entwickelt:
+
+| Stufe | Datei | Inhalt |
+|-------|-------|--------|
+| 0 | `prompts-human.md` + `prompts-llm.md` | Rohdaten: 127 Human + 81 LLM-Prompts (Wortlaut) |
+| 1 | (gefiltert in Stufe 0) | Nur projektrelevante Prompts |
+| 2 | `categorized-prompt-protocol.md` | Klassifikation nach Thema/Typ/Zweck/Absicht/Methode/Folge/Ergebnis |
+| 3 | `aggregated-prompt-protocol.md` | Verdichtung pro Analyseeinheit (24 Einheiten) |
+| 4 | `statistical-prompt-aggregation.md` | Quantitative Kennzahlen |
+
+**Prompt-Typen:** Startprompt (SP) / Nachfrage-Thema (NT) / Nachfrage-Methode (NM) / Nachfrage-Steuerung (NS) / Korrektur (KO) / Bestätigung (BE) / Richtungsänderung (RA) / Meta-Prompt (MP)
+
+**Zentrale statistische Befunde:**
+
+| Kennzahl | Wert | Bedeutung |
+|----------|------|-----------|
+| Alle 6 Wendepunkte | Menschliche Startprompts | KI löste keinen Durchbruch selbst aus |
+| Wendepunkt-Prompts | Median 10,5 Wörter | Kürzeste Fragen = wichtigste Ergebnisse |
+| B:K-Verhältnis | 1,25:1 | Kaum Zustimmungs-Bias |
+| Korrekturrate | 2,8% → 15,8% (Tag 1→5) | Mensch wird kritischer, nicht zahmer |
+| Proaktiv:Reaktiv | 1,74:1 | Menschliche Führung |
+| Produktivste Typen | SP (2,9×) + KO (2,7×) | 33,9% der Prompts → ~95% der Kernerkenntnisse |
+
+**Methodische Implikation:** Die Prompt-Taxonomie ermöglicht retrospektive Analyse der Mensch-KI-Forschungsdynamik. Ein Post-Session-Script (`recherche/prompt-archaeologie/prompt_analyzer.py`) automatisiert die 5-Stufen-Pipeline für Research-Sessions.
+
+Vollständige Dokumentation: `recherche/prompt-archaeologie/`
+
 ---
 
 ## 9. Kassenspezifisches Prüfverhalten (KV-RLP-Ranking)
