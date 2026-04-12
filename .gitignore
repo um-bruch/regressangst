@@ -37,3 +37,6 @@ recherche/SOURCE_Schutzinstrumente.txt
 # Tool liegt in .AI/.LAB/prompt-listener/, nicht im Repo
 recherche/prompt-archaeologie/prompt_analyzer.py
 recherche/prompt-archaeologie/auto-test/
+
+# Redacted context: nur PDFs, nicht die .tex-Quellen
+recherche/RESEARCH_CONTEXT_*.tex
