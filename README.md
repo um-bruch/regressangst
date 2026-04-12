@@ -129,3 +129,19 @@ Um:bruch — Denkfabrik für gesellschaftlichen Wandel
 ---
 
 *KI-Transparenzhinweis: Dieses Projekt wurde unter extensivem Einsatz von KI-Sprachmodellen erarbeitet (Anthropic Claude, Microsoft Copilot, Google Gemini). Mehrere Kontroll- und Reviewzyklen wurden durchgeführt. KI-Modelle neigen zu Halluzinationen; Fehler sind trotz Prüfung nicht ausgeschlossen. Wir korrigieren dokumentierte Fehler und veröffentlichen verbesserte Versionen.*
+
+> **Kein Ersatz für therapeutische oder medizinische Einschätzung.** Diagnose, Behandlung und therapeutische Entscheidungen bleiben qualifizierten Fachpersonen vorbehalten. Dieses Projekt ist reine Dokumentation / Forschung / Softwareentwurf.
+>
+> **Not a substitute for therapeutic or medical assessment.** Diagnosis, treatment and therapeutic decisions remain reserved for qualified professionals. This project is pure documentation / research / software design.
+
+
+---
+
+## Haftung / Liability
+
+Dieses Projekt ist eine **unentgeltliche Open-Source-Schenkung** im Sinne der §§ 516 ff. BGB. Die Haftung des Urhebers ist gemäß **§ 521 BGB** auf **Vorsatz und grobe Fahrlässigkeit** beschränkt. Ergänzend gelten die Haftungsausschlüsse aus GPL-3.0 / MIT / Apache-2.0 §§ 15–16 (je nach gewählter Lizenz).
+
+Nutzung auf eigenes Risiko. Keine Wartungszusage, keine Verfügbarkeitsgarantie, keine Gewähr für Fehlerfreiheit oder Eignung für einen bestimmten Zweck.
+
+This project is an unpaid open-source donation. Liability is limited to intent and gross negligence (§ 521 German Civil Code). Use at your own risk. No warranty, no maintenance guarantee, no fitness-for-purpose assumed.
+
