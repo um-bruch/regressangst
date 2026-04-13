@@ -2,7 +2,7 @@
 
 > **Um:bruch — Denkfabrik für gesellschaftlichen Wandel**
 >
-> **Status: Working Paper (vorläufig)** — v0.12, April 2026 | CC BY 4.0
+> **Status: Working Paper / multiperspektivische Bestandsaufnahme mit Pilot-Charakter** — v0.15, April 2026 | CC BY 4.0
 >
 > Dieses Projekt ist ein laufendes Forschungsvorhaben. Die Befunde basieren auf öffentlich zugänglichen Quellen und KI-gestützter Analyse, nicht auf eigener Primärerhebung. Alle Ergebnisse sind vorläufig und werden laufend aktualisiert. Eine Einreichung bei einem Peer-Review-Journal ist noch nicht erfolgt. Wir veröffentlichen als Working Paper, um Transparenz über den Forschungsprozess herzustellen und Feedback zu ermöglichen.
 
@@ -43,9 +43,10 @@ Diese Befunde basieren auf der Analyse öffentlich zugänglicher Daten und Liter
 
 | Dokument | Version | Seiten | Beschreibung |
 |----------|---------|--------|--------------|
-| **ST-001** | v0.12 | 87 | Hauptstudie mit 7 Teilen + Gegenposition (6 Einwände) + 3 Anhängen |
-| **ST-001 ES** | v1.0 | 13 | Executive Summary mit 17 Befunden und KNV-Tabelle |
-| **PP-003** | v2.8 | 32 | Konzeptpapier: Regress-Transparenzportal (Lösungsvorschlag) |
+| **ST-001** | v0.15 | 99 | Hauptstudie mit 7 Teilen + Gegenposition (6 Einwände) + Schlusskapitel + 3 Anhängen. 18-fache Review-Chain (P0+P1) umgesetzt. |
+| **ST-001 ES (DE)** | v1.2 | 15 | Executive Summary mit Genre-Klärung, 60–65 % V2-Einschränkung, KNV-Tabelle (15 Maßnahmen inkl. Versorgungsprüfung) |
+| **ST-001 ES (EN)** | v1.2 | 15 | English executive summary (translator: Gemini, editor-reviewed) |
+| **PP-003** | v3.0 | 34 | Konzeptpapier: Regress-Transparenzportal (Lösungsvorschlag), Fünf-Scanner-Architektur |
 
 ### Struktur der Hauptstudie (ST-001)
 
@@ -114,7 +115,7 @@ pdflatex ST-001_Studie_Regressangst.tex
 
 ## Zitiervorschlag
 
-> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.12. https://github.com/research-line/regressangst
+> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.15. https://github.com/research-line/regressangst
 
 ## Lizenz
 
