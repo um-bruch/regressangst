@@ -1,6 +1,7 @@
 \documentclass{umbruch-position}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{needspace}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
 \usepackage[most]{tcolorbox}
@@ -11,7 +12,7 @@
 \untertitel{Eine multiperspektivische Bestandsaufnahme der deutschen\\Wirtschaftlichkeitsprüfung -- Begleitstudie zu PP-003}
 \author{Um:bruch -- Denkfabrik für gesellschaftlichen Wandel}
 \date{April 2026}
-\versionsnummer{0.15 (Arbeitsversion, P0+P1 umgesetzt)}
+\versionsnummer{0.22 (Arbeitsversion, +PDF-Kommentare Runde 6)}
 
 \zusammenfassung{%
 Diese Studie nimmt das deutsche Wirtschaftlichkeitspr\"ufsystem nach \S\S\,106\,ff. SGB\,V multiperspektivisch in den Blick: historisch (Container-Genealogie seit 1989), rechtsdogmatisch (Selbstverst\"andnis der Pr\"ufverfahren, Zertifikatsfehler), verhaltens\"okonomisch (Ribbat 2023, Goetz 2024), gesundheits\"okonomisch (Folgekostenrechnung) und international vergleichend. \textbf{Zentrale Befunde:} \textit{(1)~Drei Zertifikatsfehler} (als analytische Konstruktion verstanden, nicht als Tatsachenbehauptung \"uber Systemversagen: eine Diskrepanz zwischen dem, was das System zu messen vorgibt bzw.\ was \"offentlich kommuniziert wird, und dem, was es faktisch als Messinhalt und Messrichtung erfasst) --- die Auff\"alligkeitspr\"ufung (V1) misst Kostenabweichungen (enth\"alt aber ein dreistufiges Schutzstufenmodell, das die Endquote von ca.~0,097\,\% erzeugt); die Einzelfallpr\"ufung misst bei V2b\,(i)~reinen Formfehlern medizinisch irrelevant, bei V2b\,(ii)~inhaltlicher Unzul\"assigkeit codierte G-BA-Evidenz (schw\"acherer Zertifikatsfehler, aber punitiv kommuniziert); V2a (Unwirtschaftlichkeit) l\"asst medizinische Verteidigung und Kostendifferenzmethode zu. Der \textit{\"ubergeordnete Zertifikatsfehler} betrifft nicht den Messinhalt, sondern die Messrichtung: Das Gesamtsystem pr\"uft ausschlie\ss{}lich ``zu viel verordnet'', nie ``zu wenig versorgt'' --- der Versorgungsauftrag des \S\,70 SGB\,V hat kein eigenes Messinstrument. \textit{(2)~Schaden-Verschiebung zum Patienten:} Die Richtungs-Asymmetrie verlagert den Schaden vom Arzt (Regressrisiko bei Handeln) zum Patienten (Unterversorgung bei \"arztlicher Zur\"uckhaltung). \"Uberversorgung als Ausweichreaktion belastet Patientinnen und Patienten zudem doppelt: medizinisch (iatrogene Risiken, Overdiagnosis) und finanziell/zeitlich (Zuzahlungen, Fahrtwege, Arbeits- und Urlaubszeit, Begleitpersonen) --- entlang der SVR-Trias Unter-/\"Uber-/Fehlversorgung (SVR 2000/2001, \S\,135a SGB\,V). \textit{(3)~Definitionsdivergenz der Regressquote:} Die \"offentlich kommunizierte ``unter 1\,\%''-Quote misst rechtskr\"aftig durchgesetzte V1+V2-Regresse; das tats\"achliche V2-Verfahrensvolumen liegt um einen Faktor ${\sim}500$ h\"oher (47.000 Verfahren/Jahr bundesweit). Die von \"Arzten berichtete 72\,\%-Erfahrungsrate (Ribbat 2023) ist damit rechnerisch plausibel. Die Studie ist die wissenschaftliche Begleituntersuchung zum Konzeptpapier \textit{PP-003 -- Regress-Transparenzportal}.
@@ -416,38 +417,40 @@ Beide Prüfverfahren lassen sich als Eskalationstreppe lesen. Die zitierte \text
 
 \smallskip\noindent \textbf{Struktureller Unterschied:} Verfahren~1 ist \textit{probabilistisch}~--- viele Ärzte erreichen frühe Stufen, sehr wenige gelangen bis Schritt~n (das Schutzstufenmodell filtert). Verfahren~2 ist bei \textbf{V2b (Unzul\"assigkeit, insb.\ Formfehler)} nahezu \textit{deterministisch}~--- wer Schritt~0 erreicht, durchl\"auft die Pipeline fast vollst\"andig, weil keine Schutzstufe den Durchlauf unterbricht. Bei \textbf{V2a (Unwirtschaftlichkeit bei leitlinienkonformer Verordnung)} bestehen dagegen reale Verteidigungsm\"oglichkeiten (medizinische Begr\"undung, Kostendifferenzmethode \S\,106b Abs.\,2a SGB\,V) --- hier ist das Verfahren ebenfalls probabilistisch, wenn auch ohne Beratungsschutz. \textbf{Betroffenheit beginnt bei Schritt~1, nicht erst beim Geldfluss.}
 
+\needspace{12\baselineskip}
 \medskip
 \noindent\textbf{Verfahren 1: Auffälligkeitsprüfung} (\S\,106 SGB\,V)
 \hfill{\small$\uparrow$ Eskalation}
 
+\nopagebreak
 {\footnotesize
-\begin{tabularx}{\textwidth}{p{3.5cm} p{1.9cm} p{2.3cm} p{0.6cm} p{2.1cm} p{2.1cm}}
+\begin{tabularx}{\textwidth}{p{3.5cm} p{2.4cm} p{2.3cm} p{0.6cm} p{1.7cm} p{1.9cm}}
 \toprule
-\textbf{Schritt / Methode} & \textbf{Umgangs-sprache} & \textbf{Verfahrens-Begriff} & \textbf{Reg.} & \textbf{P\,ges.} & \textbf{P\,$|$\,S0} \\
+\textbf{Schritt / Methode} & \textbf{Sprachform} & \textbf{Verfahrens-Begriff} & \textbf{Reg.} & \textbf{P\,ges.} & \textbf{P\,$|$\,S0} \\
 \midrule
-\multicolumn{6}{@{}p{\linewidth}@{}}{\itshape\bfseries --- Zyklus 2 (Schritte 5--9): nur bei erneuter Auff\"alligkeit \textup{\emph{nach}} Ablauf der 2-Jahres-Karenz (\S\,106b Abs.\,2 S.\,3 SGB\,V);\newline 5 Jahre Unauff\"alligkeit = Reset auf Zyklus 1 ---} \\
+\rowcolor{umbruch-red!8} Schritt 8: Regress rechts\-kräftig --- selten & ,,Der Regress ist durch`` & Regress rechts\-kräftig & 1 & k.D.* KV\,BaWü: 0,097\,\% (V1+V2) & \textbf{$\sim$0,3\,\%} KV\,Hessen: 3\,/\,916 \\
 \addlinespace
-Schritt 9: Regress rechts\-kräftig --- selten & ,,Der Regress ist durch`` & Regress rechts\-kräftig & 1 & k.D.* KV\,BaWü: 0,097\,\% (V1+V2) & \textbf{$\sim$0,3\,\%} KV\,Hessen: 3\,/\,916 \\
+\rowcolor{umbruch-red!8} Schritt 7: Klage --- Sozial\-gericht & ,,Ich gehe vor Gericht`` & Regress streitig & 1 & k.D. & k.D. \\
 \addlinespace
-Schritt 8: Klage --- Sozial\-gericht & ,,Ich gehe vor Gericht`` & Regress streitig & 1 & k.D. & k.D. \\
+\rowcolor{umbruch-red!8} Schritt 6: Widerspruchs\-entscheidung & ,,Entscheidung gefallen`` & Regress aufgehoben od.\,bestätigt & 1 & k.D. & k.D. \\
 \addlinespace
-Schritt 7: Widerspruchs\-entscheidung & ,,Entscheidung gefallen`` & Regress aufgehoben od.\,bestätigt & 1 & k.D. & k.D. \\
+\rowcolor{umbruch-red!8} Schritt 5: Widerspruch & ,,Ich wehre mich`` & Regress ange\-fochten & 1 & k.D. & k.D. \\
 \addlinespace
-Schritt 6: Widerspruch & ,,Ich wehre mich`` & Regress ange\-fochten & 1 & k.D. & k.D. \\
+\multicolumn{6}{@{}p{\linewidth}@{}}{\itshape\bfseries --- Folgeschritte 5--8 (\textcolor{umbruch-red}{$\blacksquare$} \emph{rot hinterlegt}) nur nach Pfad 4b --- nicht nach Pfad 4a ---} \\
 \addlinespace
-Schritt 5: Regress\-fest\-setzung (gedeckelt 25.000~EUR / 2~J.) --- Ausnahme\-fall & ,,Ich habe einen Regress`` & Regress fest\-gesetzt (n.\,rechts\-kr.) & 1 & $\sim$0,1\,\% & $\sim$0,3\,\% \\
+\rowcolor{umbruch-red!8} Schritt \textbf{4b}: Regress\-fest\-setzung (Zweitzyklus, gedeckelt 25.000~EUR / 2~J.) --- Ausnahme\-fall & ,,Ich habe einen Regress`` & Regress fest\-gesetzt (n.\,rechts\-kr.) & 1 & $\sim$0,1\,\% & $\sim$0,3\,\% \\
 \addlinespace
-\multicolumn{6}{@{}p{\linewidth}@{}}{\itshape\bfseries --- Ende Zyklus 1 (Schritte 0--4): bei Beratung endet der Fall rechtlich;\newline Regress im Erstzyklus ausgeschlossen (\S\,106b Abs.\,2 S.\,2 SGB\,V) ---} \\
+\rowcolor{umbruch-teal!10} Schritt \textbf{4a}: \textbf{Beratung \emph{statt} Regress} (Erstzyklus, bei Erstmaligkeit) --- Rechtsfolge, ersetzt den Regress (\S\,106b Abs.\,2 S.\,2 SGB\,V) & ,,Ich werde beraten`` & Regress im Erstzyklus ausge\-schlossen & 0 & k.D. & $<$\,1\,\% \\
 \addlinespace
-Schritt 4: Entscheidung --- \textbf{Zyklus\-abschluss (Endpunkt für $>$99\,\%)} & ,,Die Prüfung ist durch`` & Kein Regress (Regelfall) & 0 & k.D. & \textbf{hoch} ($>$99\,\%) \\
+\multicolumn{6}{@{}p{\linewidth}@{}}{\itshape\bfseries --- \textbf{Verzweigung in Schritt 3 (Bewertung)}: Verneinung $\to$ Verfahren endet ($>$99\,\%); Bejahung $\to$ Pfad \textbf{4a} (\textcolor{umbruch-teal}{$\blacksquare$} Erstzyklus) oder Pfad \textbf{4b} (\textcolor{umbruch-red}{$\blacksquare$} Zweitzyklus, nach 2-Jahres-Karenz; 5-Jahres-Reset auf Zyklus 1) ---} \\
 \addlinespace
-Schritt 3: \textbf{Beratung \emph{statt} Regress} --- \textbf{Rechtsfolge des Erstzyklus}, nicht Vorstufe & ,,Ich werde beraten`` & Regress im Erstzyklus ausge\-schlossen & 0 & k.D. & mittel \\
+\rowcolor{umbruch-teal!10} Schritt 3: \textbf{Bewertung} der Wirtschaftlichkeit (Verneinung = Endpunkt für $>$99\,\%; Bejahung = Übergang zu Pfad 4a/4b) & ,,Die Prüfung ist durch`` & Kein Regress (Regelfall, Verneinung) & 0 & k.D. & \textbf{hoch} ($>$99\,\% Verneinung) \\
 \addlinespace
-Schritt 2: Anhörung + Praxis\-besonder\-heiten & ,,Ich erkläre mich`` & Kein Regress & 0 & k.D. & $\sim$100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 2: Anhörung + Praxis\-besonder\-heiten --- Erklärungs\-versuch des Arztes (Filterstufe vor Bewertung) & ,,Ich erkläre mich`` & Verfahren läuft & 0 & k.D. & $\sim$100\,\% \\
 \addlinespace
-Schritt 1: Prüf\-verfahren ein\-geleitet --- Screening & ,,Die prüfen mich`` & Prüf\-verfahren (kein Verdacht) & 0 & $\sim$10--20\,\% [$^\dagger$] & $\sim$100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 1: Prüf\-verfahren ein\-geleitet --- Screening & ,,Die prüfen mich`` & Prüf\-verfahren (kein Verdacht) & 0 & $\sim$10--20\,\% [$^\dagger$] & $\sim$100\,\% \\
 \addlinespace
-Schritt 0: Trigger: Kosten-/Mengen\-abweichung erkannt & --- & Kein Verfahren & 0 & $\sim$10--20\,\% [$^\dagger$] & 100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 0: Trigger: Kosten-/Mengen\-abweichung erkannt & --- & Kein Verfahren & 0 & $\sim$10--20\,\% [$^\dagger$] & 100\,\% \\
 \bottomrule
 \end{tabularx}
 
@@ -464,46 +467,52 @@ k.D. = keine publizierten Daten verfügbar.
 }
 
 \smallskip
-\noindent\textit{\textbf{Kernaussage V1:} Die Pipeline ist \emph{zweizyklisch} angelegt. Im Erstzyklus filtert eine dreistufige Schutzkaskade --- (1)~Anhörung + Praxisbesonderheiten, (2)~\emph{Beratung statt Regress} als Rechtsfolge (\S\,106b Abs.\,2 S.\,2 SGB\,V), (3)~Karenzzeit und gedeckelter Folgeregress. Fast niemand kommt am Ende an: Die rechtskräftige Endquote von ca.~0,097\,\% (KV BaWü, V1+V2 zusammen) ist das \emph{Ergebnis} dieser Filterkaskade, nicht ihr Ausgangspunkt. Ein Regress kann erst in Zyklus~2 --- nach erneuter Auffälligkeit nach Ablauf der 2-Jahres-Karenz --- festgesetzt werden und ist dort auf 25.000~EUR gedeckelt; 5~Jahre Unauffälligkeit setzen auf Zyklus~1 zurück.}
+\noindent\textit{\textbf{Kernaussage V1:} Die Pipeline verzweigt nach Schritt~3 in zwei alternative Endpfade: Pfad~\textbf{4a} (Erstzyklus, Beratung statt Regress, $<$\,1\,\%) und Pfad~\textbf{4b} (Zweitzyklus, Regressfestsetzung, gedeckelt 25.000~EUR, $\sim$\,0,3\,\%). Pfad 4b setzt voraus, dass nach 2-Jahres-Karenz eine erneute Auffälligkeit eintritt; 5~Jahre Unauffälligkeit setzen auf Pfad 4a zurück. Schritte 5--8 (Widerspruch/Klage/Rechtskraft) sind nur nach 4b relevant. Die rechtskräftige Endquote von ca.~0,097\,\% (KV BaWü, V1+V2 zusammen) ist das \emph{Ergebnis} dieser dreistufigen Filterkaskade (Anhörung+Praxisbesonderheiten in Schritt~2, Beratung als Substitut in 4a, Deckelung in 4b), nicht ihr Ausgangspunkt.}
 
+\smallskip
+\noindent\textbf{Präzisierung der Reihenfolge (Schritt 2 → 3 → 4a/4b).} Die Schritte sind \emph{sequenziell zu lesen, mit Verzweigung in Schritt 3}: Wer in Schritt~2 (Anhörung + Praxisbesonderheiten) eine Abweichung erfolgreich erklärt, deren Bewertung in Schritt~3 zur Verneinung der Wirtschaftlichkeitsverletzung führt, scheidet aus dem Verfahren aus --- weder Beratung (Pfad~4a) noch Regressfestsetzung (Pfad~4b) kommt für ihn in Betracht. Die Beratung tritt nur dann ein, wenn die Prüfungsstelle in Schritt~3 zu der Erkenntnis gelangt: ``Es liegt eine Unwirtschaftlichkeit vor'', und die Auffälligkeit erstmalig im Prüfzyklus auftritt (Pfad~4a). Tritt sie wiederholt nach Karenz auf, geht es direkt zur Regressfestsetzung in Pfad~4b. Die Beratung ist damit das Erstmaligkeits-Privileg eines Arztes, dessen Wirtschaftlichkeitsverletzung bejaht wurde, der aber zum ersten Mal in einem Prüfzyklus auffällig geworden ist (BSG 22.10.2014, B 6 KA 3/14 R --- Grundsatzentscheidung ``Beratung vor Regress'' zur Vorgängernorm \S\,106 Abs.\,5e SGB\,V; BSG 11.12.2019, B 6 KA 23/18 R --- direkte Bestätigung zu \S\,106b Abs.\,2 SGB\,V: ``individuelle Beratung vor Regressfestsetzung gilt bei statistischen Erstauffälligkeiten, \emph{nicht} bei Einzelfallprüfungen''; GPE Baden-Württemberg, Verfahrensbeschreibung). Das ist dogmatisch wichtig, weil es die häufige Fehllesart entkräftet, die Beratung sei eine sanktionsfreie ``Vorstufe'' --- sie ist tatsächlich Regress-Substitut. Aggregierte Stufendurchlauf-Quoten (Anhörung $\to$ Bewertung-Verneinung $\to$ Bewertung-Bejahung $\to$ Beratung) werden von keiner KV publiziert (offener Recherchepunkt R1).
+
+\needspace{12\baselineskip}
 \medskip
 \noindent\textbf{Verfahren 2: Einzelfallprüfung} (\S\,106b Abs.\,1 SGB\,V)
 \hfill{\small$\uparrow$ Eskalation}
 
+\nopagebreak
 {\footnotesize
-\begin{tabularx}{\textwidth}{p{3.5cm} p{1.9cm} p{2.3cm} p{0.6cm} p{2.1cm} p{2.1cm}}
+\begin{tabularx}{\textwidth}{p{2.8cm} p{2.2cm} p{2.5cm} p{0.5cm} p{1.7cm} p{3.0cm}}
 \toprule
-\textbf{Schritt / Methode} & \textbf{Umgangs-sprache} & \textbf{Verfahrens-Begriff} & \textbf{Reg.} & \textbf{P\,ges.} & \textbf{P\,$|$\,S0} \\
+\textbf{Schritt / Methode} & \textbf{Sprachform} & \textbf{Verfahrens-Begriff} & \textbf{Reg.} & \textbf{P\,$|$\,S0} & \textbf{Dropout-Anmerkung} \\
 \midrule
-Schritt 9: Regress rechts\-kräftig --- häufiger als V1 & ,,Der Regress ist durch`` & Regress rechts\-kräftig & 1 & k.D. & k.D.\,$\ll$\,Schritt\,5 (70--80\,\% vergleichen vorher; R3) \\
+\rowcolor{umbruch-red!8} Schritt 9: Regress rechts\-kräftig & ,,Regress ist durch`` & Regress rechts\-kräftig & 1 & k.D., $\ll$ Schritt 5 & V2a$>$V2b vor Gericht (R2) \\
 \addlinespace
-Schritt 8: Klage --- Sozial\-gericht & ,,Ich gehe vor Gericht`` & Regress streitig & 1 & k.D. & k.D.; Minderheit \\
+\rowcolor{umbruch-red!8} Schritt 8: Klage --- Sozial\-gericht & ,,Ich gehe vor Gericht`` & Regress streitig & 1 & k.D., Minderheit & --- \\
 \addlinespace
-Schritt 7: Widerspruchs\-entscheidung & ,,Entscheidung gefallen`` & Regress aufgehoben od.\,bestätigt & 1 & k.D. & k.D.; V2a$>$V2b (R2) \\
+\rowcolor{umbruch-red!8} Schritt 7: Wider\-spruchs\-ent\-scheidung & ,,Entscheidung gefallen`` & Regress aufgehoben oder bestätigt & 1 & k.D. & --- \\
 \addlinespace
-Schritt 6: Widerspruch & ,,Ich wehre mich`` & Regress ange\-fochten & 1 & k.D. & k.D.; $<$Schritt\,5 (Vergleichs-Ausstieg) \\
+\rowcolor{umbruch-red!8} Schritt 6: Widerspruch & ,,Ich wehre mich`` & Regress ange\-fochten & 1 & k.D. & 70--80\,\% Vergleichs-Ausstieg vor diesem Schritt (R3) \\
 \addlinespace
-Schritt 5: Regress\-fest\-setzung --- Regelfall (V2b) / abh\"angig von Verteidigung (V2a) & ,,Ich habe einen Regress`` & Regress fest\-gesetzt (n.\,rechts\-kr.) & 1 & k.D. & $\sim$100\,\%\,(V2b) /\\niedriger\,(V2a) \\
+\rowcolor{umbruch-red!8} Schritt 5: Regress\-fest\-setzung & ,,Ich habe einen Regress`` & Regress fest\-gesetzt (n.\,rechts\-kr.) & 1 & $\sim$95\,\% [$^{*}$] & --- \\
 \addlinespace
-Schritt 4: Bewertung --- Verdacht bestätigt/verneint & ,,Die entscheiden`` & Regress möglich\,/\,entfällt & 0/1 & k.D. & $\sim$100\,\% (Durch\-lauf); Ausgang abh. V2a/V2b \\
+\multicolumn{6}{p{\textwidth}}{\itshape --- Hier wäre systematisch die ``Beratung statt Regress'' anzusiedeln (analog Pfad 4a in V1) --- gesetzlich ausgeschlossen (\S\,106b Abs.\,2 S.\,3 Hs.\,2 SGB\,V) ---} \\
 \addlinespace
-Schritt 3: Formale\,/\,doku\-mentarische Prüfung & ,,Die prüfen meine Unterlagen`` & Regress\-verfahren aktiv & 0 & k.D. & $\sim$100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 4: Bewertung --- Verdacht bestätigt/verneint & ,,Die entscheiden`` & Regress möglich\,/\,entfällt & 0/1 & $\sim$100\,\% & --- \\
 \addlinespace
-\multicolumn{6}{l}{\textit{--- Beratung vor Regress: gesetzlich nicht vorgesehen (\S\,106b Abs.\,2 S.\,4) --- Schutzstufe fehlt ---}} \\
+\rowcolor{umbruch-teal!10} Schritt 3: Formale Prüfung & ,,Die prüfen meine Unterlagen`` & Regress\-verfahren aktiv & 0 & $\sim$100\,\% & --- \\
 \addlinespace
-Schritt 2: Unterlagen\-anforderung --- Recht\-fertigungs\-phase & ,,Ich muss mich recht\-fertigen`` & Regress\-verfahren aktiv & 0 & k.D. & $\sim$100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 2: Unter\-lagen\-anforderung & ,,Ich muss mich rechtfertigen`` & Regress\-verfahren aktiv & 0 & $\sim$100\,\% & --- \\
 \addlinespace
-Schritt 1: Prüf\-verfahren ein\-geleitet --- Verdachts\-verfahren & ,,Die prüfen mich gezielt`` & Regress\-verfahren ein\-geleitet & 0 & k.D. [$^{\ddagger}$] & $\sim$100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 1: Prüf\-verfahren eingeleitet & ,,Die prüfen mich gezielt`` & Regress\-verfahren eingeleitet & 0 & $\sim$100\,\% & [$^{\ddagger}$] \\
 \addlinespace
-Schritt 0: Trigger: Konkreter Kassen\-antrag --- sub\-stantiierter Verdacht & --- & Kein Verfahren & 0 & k.D. [$^{\ddagger}$] & 100\,\% \\
+\rowcolor{umbruch-teal!10} Schritt 0: Konkreter Kassen\-antrag (Trigger) & --- & Kein Verfahren & 0 & 100\,\% (Def.) & [$^{\ddagger}$] \\
 \bottomrule
 \end{tabularx}
 
 \smallskip
-\noindent[$^{\ddagger}$] KV\,Nordrhein: gesch\"atzt ca.\,20.000 Einzelfallpr\"ufungs-Antr\"age\,/\,Jahr bei ca.\,13.500 Praxen (konservative Bandbreite: 15.000--25.000; Quelle: interne KV-Berichte 2016--2018, zitiert in der Berichter\-stattung zur GKV-VSG-Umsetzung; \textbf{extern nicht verifizierbar}, keine ver\"offentlichte Jahresstatistik der KV~Nordrhein; Verfahrens\-abschluss\-quoten nicht publiziert. Die Gr\"o\ss{}enordnung bleibt Gegenstand der IFG-Anfrage an die KV~Nordrhein (Anhang~C) und des offenen Recherchepunkts R3).\\
+\noindent[$^{*}$] KV~Nordrhein gegenüber dem Deutschen Ärzteblatt: ca.\,95\,\% der Einzelfallprüfungen führen zu einem Regress (Vergleich rechnet rechentechnisch als Regress; daher ST-001-Schätzung 70--80\,\% Vergleich konsistent im 95\,\%-Korridor).\\
+{[$^{\ddagger}$] KV\,Nordrhein: gesch\"atzt ca.\,20.000 Einzelfallpr\"ufungs-Antr\"age\,/\,Jahr bei ca.\,13.500 Praxen (konservative Bandbreite: 15.000--25.000; Quelle: interne KV-Berichte 2016--2018, zitiert in der Berichter\-stattung zur GKV-VSG-Umsetzung; \textbf{extern nicht verifizierbar}, keine ver\"offentlichte Jahresstatistik der KV~Nordrhein; Verfahrens\-abschluss\-quoten nicht publiziert. Die Gr\"o\ss{}enordnung bleibt Gegenstand der IFG-Anfrage an die KV~Nordrhein (Anhang~C) und des offenen Recherchepunkts R3).}\\
 Reg. = Regress objektiv eingetreten (0\,=\,nein; 0/1\,=\,verfahrensabhängig; 1\,=\,ja).\\
-P\,ges. = alle Vertragsärzte als Bezugsgröße. \quad
-P\,$|$\,S0 = bedingte Wahrscheinlichkeit gegeben Schritt~0. \quad
+P\,$|$\,S0 = bedingte Wahrscheinlichkeit, dass ein V2-Antrag (Schritt~0) diese Stufe erreicht. \quad
+\textbf{Dropout-Anmerkung} = qualitative Hinweise auf Verfahrensaussstiege (Vergleich, V2a/V2b-Differenz). Quantitative Werte sind k.D. (R2--R4). \quad
 k.D. = keine publizierten Daten.
 }
 
@@ -519,7 +528,7 @@ Diese Studie arbeitet, wo nötig, mit Schätzungen und hypothesengeleiteter Argu
 \begin{itemize}[nosep, leftmargin=2em]
   \item \textbf{R1 --- V1-Dropout-Quoten je Schutzstufe:} Wie viele statistisch auffällige Ärzte fallen in Stufe~1 (Anhörung/Praxisbesonderheiten), Stufe~2 (Beratung) bzw. Stufe~3 (gedeckelter Folgeregress) aus dem Verfahren? Nur die Endquote (0,097\,\%) ist bekannt.
   \item \textbf{R2 --- V2-Widerspruchs-Erfolgsquote:} Wie oft gewinnen Ärzte im Beschwerdeausschuss bzw. vor dem Sozialgericht? Unterschied V2a vs. V2b?
-  \item \textbf{R3 --- V2-Vergleichsquoten rechtskräftig vs. faktisch:} Der in dieser Studie verwendete Wert ``70--80\,\% vergleichen vor Rechtskraft'' beruht auf Praxisberichten, nicht auf publizierten Statistiken.
+  \item \textbf{R3 --- V2-Vergleichsquoten rechtskräftig vs. faktisch:} Der in dieser Studie verwendete Wert ``70--80\,\% vergleichen vor Rechtskraft'' beruht auf Praxisberichten, nicht auf publizierten Statistiken. \emph{Teilweise belastbare Annäherung gefunden:} KV~Nordrhein gibt gegenüber dem \emph{Deutschen Ärzteblatt} an, dass ``ca. 95\,\% der Einzelfallprüfungen zu einem Regress führen'' (publizierter Aggregat-Wert für V2-Anträge der KV Nordrhein 2017--2019; Vergleich zählt rechentechnisch als Regress, sodass ST-001-Schätzung 70--80\,\% Vergleich konsistent in den 95\,\%-Korridor passt). Die exakte Vergleichsquote (Regress-mit-Vergleich vs. Regress-rechtskräftig) bleibt nicht publiziert.
   \item \textbf{R4 --- Quantitative Aufteilung V2a/V2b:} Anteil, durchschnittliche Regresssumme und Widerspruchs-Erfolgsquote je Untertyp.
 \end{itemize}
 }}
@@ -609,23 +618,23 @@ Beide Prüfverfahren produzieren Ergebnisse, die \textbf{überwiegend nicht mess
 \textit{Begriffserklärung ``Zertifikat'':} In der folgenden Tabelle bezeichnet \textbf{Zertifikat} eine belastbare, inhaltliche Aussage über die medizinische Angemessenheit einer Versorgungsleistung im Sinne des \S\,12 Abs.\,1 SGB\,V. Ein Zertifikat liegt nur vor, wenn das Prüfergebnis tatsächlich misst, ob die Versorgung ``ausreichend, zweckmäßig und wirtschaftlich'' war --- nicht lediglich, ob eine formale oder statistische Auffälligkeit vorliegt.
 
 {\small
-\begin{tabularx}{\textwidth}{p{3cm} X X}
+\begin{tabularx}{\textwidth}{p{4cm} X X}
 \toprule
 \textbf{Instanz} & \textbf{Selbstanspruch} & \textbf{Tatsächlich gemessen\,/\,Zertifikat?} \\
 \midrule
-Auffälligkeitsprüfung (\S\,106 SGB\,V) & Wirtschaftliche Versorgung (Screening) & Kosten-/Mengenabweichung vom Fachgruppen\-durch\-schnitt $\to$ statistisch-ökonomisches Abweichungssignal \textbf{(kein medizin. Zertifikat)} \\
+Auffälligkeits\-prüfung (\S\,106 SGB\,V) & Wirtschaftliche Versorgung (Screening) & Kosten-/Mengenabweichung vom Fachgruppen\-durch\-schnitt $\to$ statistisch-ökonomisches Abweichungssignal \textbf{(kein medizin. Zertifikat)} \\
 \addlinespace
-Einzelfallprüfung & Medizinische Unwirt\-schaft\-lich\-keit im Einzelfall & Formale\,/\,doku\-mentarische Angreifbarkeit $\to$ formales Sanktionsresultat \textbf{(kein medizin. Zertifikat)} \\
+Einzelfall\-prüfung & Medizinische Unwirt\-schaft\-lich\-keit im Einzelfall & Formale\,/\,doku\-mentarische Angreifbarkeit $\to$ formales Sanktionsresultat \textbf{(kein medizin. Zertifikat)} \\
 \addlinespace
-Praxisbesonderheiten & Korrektur legitimer Abweichung & Verfahrensabhängige Anerkennung; anmeldepflichtig, regional intransparent $\to$ Validität exogen (kein Zertifikat) \\
+Praxis\-besonderheiten & Korrektur legitimer Abweichung & Verfahrensabhängige Anerkennung; anmeldepflichtig, regional intransparent $\to$ Validität exogen (kein Zertifikat) \\
 \addlinespace
 Ärztliche Dokumentation & Medizinische Begründung & Selbstbeschreibung unter systemischem Druck $\to$ Dokumentation \textbf{(kein Zertifikat)} \\
 \addlinespace
-Medizinischer Dienst (MD) & Leistungs-\,/\,Abrechnungsprüfung & Regel- und zweckgebundene Anspruchsbewertung \textbf{(kein Qualitätszertifikat)} \\
+Medizinischer Dienst (MD) & Leistungs-\,/\,Abrechnungs\-prüfung & Regel- und zweckgebundene Anspruchsbewertung \textbf{(kein Qualitätszertifikat)} \\
 \addlinespace
-Amtsärztliche Gutachten & Status-\,/\,Verwaltungsfragen & Zustandsbewertung (Dienstfähigkeit etc.) \textbf{(kein Versorgungszertifikat)} \\
+Amtsärztliche Gutachten & Status-\,/\,Verwaltungs\-fragen & Zustandsbewertung (Dienstfähigkeit etc.) \textbf{(kein Versorgungs\-zertifikat)} \\
 \addlinespace
-Forschung\,/\,Register\,/\,QS (IQTIG etc.) & Qualitätsverbesserung & Aggregierte Qualitätssignale; nicht individualisierbar, nicht sanktionslogisch \textbf{(kein Zertifikat)} \\
+Forschung\,/\,Register\,/\,QS (IQTIG etc.) & Qualitäts\-verbesserung & Aggregierte Qualitätssignale; nicht individualisierbar, nicht sanktionslogisch \textbf{(kein Zertifikat)} \\
 \addlinespace
 Schlichtungsstellen (Ärztekammern) & Behandlungsstandard & Patientenbezogene medizinische Angemessenheit $\to$ \textbf{medizinisches Zertifikat} (selten, ex post, systemisch entkoppelt) \\
 \addlinespace
@@ -889,7 +898,7 @@ Das Einzelfallprüfverfahren misst nicht medizinische Fehler, sondern formale An
 Diese Richtungs-Asymmetrie ist in ihrer Tragweite gr\"o\ss{}er als V1 und V2 zusammen: Denn w\"ahrend die ersten beiden Zertifikatsfehler \emph{falsche Sanktionen} produzieren k\"onnen (Formfehler-Regress bei medizinisch korrekter Verordnung), produziert der Richtungsfehler \emph{systematische Unterversorgung} ohne institutionalisierten Korrekturmechanismus.
 
 \medskip
-\noindent\textbf{Pr\"azisierung: Was genau dem Versorgungsauftrag des \S\,70 SGB\,V fehlt.} Es w\"are zu schlicht, zu sagen, es g\"abe ``kein Messinstrument'' f\"ur \S\,70. Aggregierte Messungen existieren durchaus: die Bedarfsplanung der KVen (r\"aumliche Erreichbarkeit), der Zi-Versorgungsatlas \cite{zi_versorgungsatlas} (regionale Versorgungs\-indikatoren), ACSC-Hospitalisierungen (Ambulatory Care Sensitive Conditions; Sundmacher et al.\ 2015, \cite{glaeske_pfaff_lehrbuch}), die Qualit\"atssicherung nach \S\,135a/\S\,136 SGB\,V. Die Pr\"azisierung lautet daher: Dem Versorgungsauftrag des \S\,70 fehlt \textbf{kein Mess-, sondern ein Sanktions- bzw. Korrekturinstrument auf Praxisebene}, das die Asymmetrie zur Wirtschaftlichkeitspr\"ufung aufheben w\"urde. Aggregate werden gemessen, aber nicht mit operativen Korrekturschritten gegen den Einzel\-leistungs\-erbringer verbunden. Der MD pr\"uft Abrechnungs-, nicht Therapieangemessenheit; der G-BA arbeitet mit aggregierten Indikatoren ohne ambulante Einzelfall-Anbindung; Arzthaftung setzt erst bei manifestem Schaden ein. Ergebnis: Ein Arzt, der aus Angst weniger tut, wird nie gepr\"uft. Ein Arzt, der leitliniengerecht behandelt, riskiert Regress. \textbf{Das System belohnt Unterlassung und bestraft Handeln} --- und das ist kein Messfehler innerhalb eines Verfahrens, sondern die grunds\"atzliche Richtungswahl des Gesamtsystems (vgl. Abschnitt~\ref{subsec:versorgungspruefung}: Vorschlag einer Versorgungspr\"ufung als symmetrisches Korrekturinstrument).
+\noindent\textbf{Pr\"azisierung: Was genau dem Versorgungsauftrag des \S\,70 SGB\,V fehlt.} Es w\"are zu schlicht, zu sagen, es g\"abe ``kein Messinstrument'' f\"ur \S\,70. Aggregierte Messungen existieren durchaus: die Bedarfsplanung der KVen (r\"aumliche Erreichbarkeit), der Zi-Versorgungsatlas \cite{zi_versorgungsatlas} (regionale Versorgungs\-indikatoren), ACSC-Hospitalisierungen (Ambulatory Care Sensitive Conditions; Sundmacher et al.\ 2015, \cite{glaeske_pfaff_lehrbuch}), die Qualit\"atssicherung nach \S\,135a/\S\,136 SGB\,V. Die Pr\"azisierung lautet daher: Dem Versorgungsauftrag des \S\,70 fehlt \textbf{kein Mess-, sondern ein Sanktions- bzw. Korrekturinstrument auf Praxisebene}, das die Asymmetrie zur Wirtschaftlichkeitspr\"ufung aufheben w\"urde. Aggregate werden gemessen, aber nicht mit operativen Korrekturschritten gegen den Einzel\-leistungs\-erbringer verbunden. Der MD pr\"uft Abrechnungs-, nicht Therapieangemessenheit; der G-BA arbeitet mit aggregierten Indikatoren ohne ambulante Einzelfall-Anbindung; Arzthaftung setzt erst bei manifestem Schaden ein. Ergebnis: Ein Arzt, der aus Angst weniger tut, wird nie gepr\"uft. Ein Arzt, der leitliniengerecht behandelt, riskiert Regress. \textbf{Das System belohnt Unterlassung und bestraft Handeln} --- und das ist kein Messfehler innerhalb eines Verfahrens, sondern die grunds\"atzliche Richtungswahl des Gesamtsystems (vgl. Abschnitt~\ref{subsec:versorgungspruefung}: Vorschlag einer Versorgungspr\"ufung als symmetrisches Korrekturinstrument; sowie Abschn.~\ref{subsubsec:asymmetrie-gegengratifikation} f\"ur die Diskussion eines positiven R\"uckkopplungssignals nach Vorbild des britischen QOF --- ``nachweislich gute Medizin h\"ohere Verg\"utung'' --- als institutionelles Gegengewicht zur einseitig negativen Sanktionsstruktur).
 
 \medskip
 \noindent\textit{Kanonischer Befund:}
@@ -1490,6 +1499,25 @@ Null-Signal (neutral) & Keine Prüfung = kein Feedback & Keine Prüfung = kein F
 }
 
 \noindent Ein Regelkreis, der nur Minus-Signale sendet, erzeugt systemtheoretisch vorhersagbar ein Über\-vorsichtiges Gleich\-gewicht: Das System bestraft Abweichung, belohnt aber Konformität nicht. Der Arzt erhält nie die Rückmeldung ``Ihre Verordnungspraxis ist medizinisch angemessen'' --- er erfährt nur ``Sie wurden nicht bestraft''. Die Abwesenheit von Bestrafung ist kein positives Signal. Sie ist ein Null-Signal, das der Arzt nicht von Glück unterscheiden kann.
+
+\subsubsection{Asymmetrische Sanktionsstruktur ohne Gegengratifikation}
+\label{subsubsec:asymmetrie-gegengratifikation}
+
+Die bisherige Analyse fokussiert auf einen Sanktionskanal --- den wirtschaftsbezogenen Regress der Krankenkassen. Dieser Fokus greift zu kurz. Der niedergelassene Arzt steht strukturell unter einem \textbf{bidirektionalen Sanktionsdruck}, dem auf der positiven Seite \textit{kein} institutionelles Äquivalent gegenübersteht. Diese Konfiguration ist der eigentliche Kern der institutionellen Schieflage.
+
+\textbf{Sanktionskanal A --- wirtschaftliche Übernutzung (Kassenrichtung).} Wird eine Verordnung als unwirtschaftlich eingestuft, droht Regress (\S\,106, \S\,106b SGB\,V), bei Formfehlern Einzelfallregress (\S\,48 BMV-\"A), in schweren Fällen Disziplinarverfahren durch die KV (\S\,81 Abs.\,5 SGB\,V), bei wiederholten Verstößen Zulassungsentzug (\S\,95 Abs.\,6 SGB\,V). Diese Sanktionen greifen, wenn der Arzt \emph{zu viel, zu teuer oder außerhalb der Indikation} verordnet.
+
+\textbf{Sanktionskanal B --- medizinische Unterversorgung (Patientenrichtung).} Unterlässt der Arzt eine medizinisch indizierte Leistung oder verzögert sie, greifen zivilrechtliche Ansprüche aus dem Behandlungsvertrag (\S\S\,630a ff., 280 Abs.\,1, 823 BGB), gegebenenfalls strafrechtliche Haftung (\S\S\,223, 229 StGB), Verfahren vor den Gutachterkommissionen und Schlichtungsstellen der Ärztekammern sowie berufsrechtliche Maßnahmen bis hin zum Approbationsentzug (\S\,5 BÄO). Bundesweit bearbeiten die Gutachterkommissionen und Schlichtungsstellen jährlich rund 12.000 Arzthaftungsverfahren, mit einer Bestätigungsquote kausaler Behandlungsfehler von etwa 24--25\,\% \cite{schlichtung2023}. Parallel begutachtet der Medizinische Dienst jährlich rund 14.000 Fälle \cite{mdbund2023}. Diese Sanktionen greifen, wenn der Arzt \emph{zu wenig, zu spät oder zu zurückhaltend} verordnet.
+
+Der Arzt steht damit zwischen zwei rechtlich bewehrten Fehlerkonten: Das eine führt die Kasse, das andere der Patient. Beide Konten kennen nur Minus\-buchungen. Es gibt kein institutionelles Konto, auf dem leitliniengerechte, maßvolle, evidenzbasierte Versorgung \textit{positiv} gutgeschrieben würde.
+
+\textbf{Die fehlende Gegengratifikation.} Das deutsche Vertragsarztsystem kennt keinen formalisierten Belohnungsmechanismus für evidenzbasiertes Verordnungsverhalten. Es existiert keine öffentliche Anerkennung, keine Prämie, kein Unauffälligkeitszertifikat, keine formale Bestätigung für langjährig regelkonformes Verhalten. Auch fachliche Empfehlungsinitiativen wie die DGIM-Kampagne ``Klug entscheiden'' \cite{dgim_klug_entscheiden} oder die DEGAM-S2e-Leitlinie zu Überversorgung \cite{degam_s2e_ueberversorgung} liefern ausschließlich normative Empfehlungen --- ohne institutionelle Rückkopplung an Honorar, Prüfstatus oder öffentliche Anerkennung. Das gilt analog für die internationale \emph{Choosing-Wisely}-Initiative und vergleichbare Low-Value-Care-Programme: Systematische Reviews zeigen, dass Dissemination und Empfehlungen allein --- ohne strukturelle Verankerung in Vergütung, Audit oder Workflow --- Versorgungsverhalten nicht messbar verändern \cite{cliff2021cw,colla2017cw}.
+
+Der internationale Vergleich illustriert den Kontrast mit einem positiven Rückkopplungssystem. Der britische \emph{Quality and Outcomes Framework} (QOF), seit 2004 im NHS etabliert, honoriert leitliniengerechte Versorgung mit rund 25\,\% des Praxishonorars \cite{doran2006qof,forbes2017qof}. Systematische Reviews belegen moderate Verbesserungen in Diabetes- und SMI-Care, dokumentieren aber auch \emph{unintended consequences} (Gaming, Exklusionen, Fokusverengung) \cite{roland2009p4p,vanherck2010p4p}. Die methodische Debatte --- unter anderem formalisiert im McGuire-Pauly-Modell der Multi-Payer-Agentur \cite{mcguirepauly1991} --- ist in dieser Studie nicht zu entscheiden. Entscheidend ist die \emph{strukturelle} Differenz: Ein positives Rückkopplungssignal existiert, es wird evaluiert, es wird diskutiert. Das deutsche System kennt diese Diskussion auf operativer Ebene nicht, weil der Mechanismus gar nicht existiert.
+
+\textbf{Konsequenz für das Anreizfeld.} Die Kombination aus bidirektionalem Sanktionsdruck und einseitig negativer Rückkopplung erzeugt eine Anreizstruktur, in der der Arzt rational zwei Ziele simultan verfolgt: (1) Minimierung der Regressexposition, (2) Minimierung der Haftungsexposition. Beide Ziele lassen sich nur über Risikoreduktion erreichen --- entweder durch Überweisung, Vermeidung oder übervorsichtige Dokumentation. Der \emph{dritte} rationale Modus --- maximale medizinische Qualität als eigenständiges Ziel --- bleibt ökonomisch unbelohnt. Zu den Besten zu gehören bringt dem Arzt im deutschen System keinen institutionellen Gewinn, der über die Abwesenheit von Sanktion hinausginge. Der rationale Arzt minimiert Exposition; er maximiert nicht Qualität.
+
+Das erklärt, warum die in Teil III dokumentierten Verhaltensanpassungen (Quartalsende-Verschiebung, Überweisung statt Behandlung, Verordnungsverzicht) in einem anreiztheoretisch konsistenten Bild stehen: Sie sind nicht Ausdruck mangelnder Professionalität, sondern die erwartbare Antwort auf ein Anreizfeld, das Fehler teuer, Exzellenz aber unbelohnt lässt. Der Lösungsraum in Teil VII greift diesen Befund auf (Rang\,4 des KNV-Katalogs: positive Rückkopplung als struktureller Hebel).
 
 \subsection{Der Modellarzt}
 
@@ -2383,44 +2411,47 @@ Die Pharmakovigilanz überwacht systematisch die Nebenwirkungen von Arzneimittel
 Die folgende Tabelle bewertet alle in dieser Studie entwickelten Lösungsvorschläge nach Aufwand, politischer Realisierbarkeit, erwartetem Nutzen und resultierendem Kosten-Nutzen-Verhältnis (KNV). Die Einschätzungen stützen sich auf die in den vorhergehenden Abschnitten dargestellten Begründungen.
 
 {\small
-\begin{longtable}{p{0.3cm} p{4.5cm} p{1.2cm} p{1.4cm} p{1.5cm} p{1.2cm} p{1.2cm}}
+\begin{longtable}{p{0.3cm} p{4.2cm} p{1.0cm} p{1.2cm} p{1.3cm} p{1.0cm} p{1.0cm} p{1.5cm}}
 \toprule
-\textbf{\#} & \textbf{Maßnahme} & \textbf{Aufw.} & \textbf{Realis.} & \textbf{Nutzen} & \textbf{KNV} & \textbf{Zeit} \\
+\textbf{\#} & \textbf{Maßnahme} & \textbf{Aufw.} & \textbf{Realis.} & \textbf{Nutzen} & \textbf{KNV} & \textbf{Zeit} & \textbf{Zivil\-gesell\-schaft} \\
 \midrule
-1 & Halbsatz-Streich \S\,106b Abs.\,2 S.\,4 (Beratungsschutz für V2) & gering & hoch & hoch & \textbf{A+} & kurz \\
+1 & Halbsatz-Streich \S\,106b Abs.\,2 S.\,4 (Beratungsschutz für V2) & gering & hoch & hoch & \textbf{A+} & kurz & indirekt \\
 \addlinespace
-2 & Sichtbarmachung \S\,48 BMV-Ä im SGB\,V & gering & hoch & mittel & \textbf{A} & kurz \\
+2 & Sichtbarmachung \S\,48 BMV-Ä im SGB\,V & gering & hoch & mittel & \textbf{A} & kurz & indirekt \\
 \addlinespace
-3 & Bundeseinheitliche Bagatellgrenze & gering & hoch & mittel & \textbf{A} & kurz \\
+3 & Bundeseinheitliche Bagatellgrenze & gering & hoch & mittel & \textbf{A} & kurz & indirekt \\
 \addlinespace
-4 & Positive Rückkopplung (Unauffälligkeits-Zertifikat) & gering & hoch & mittel & \textbf{A} & kurz \\
+4 & Positive Rückkopplung (Unauffälligkeits-Zertifikat) & gering & hoch & mittel & \textbf{A} & kurz & indirekt \\
 \addlinespace
-5 & Unabhängige Effizienzprüfung des Prüfsystems & gering & hoch & hoch & \textbf{A} & mittel \\
+5 & Unabhängige Effizienzprüfung des Prüfsystems & gering & hoch & hoch & \textbf{A} & mittel & indirekt \\
 \addlinespace
-6 & Publikationspflicht der Prüfungsstellen (Hebel~2) & gering & mittel & transform. & \textbf{A$-$} & kurz \\
+6 & Publikationspflicht der Prüfungsstellen (Hebel~2) & gering & mittel & transform. & \textbf{A$-$} & kurz & indirekt \\
 \addlinespace
-7 & \textbf{PP-003: Regress-Transparenzportal} & mittel & mittel & hoch & \textbf{B+} & mittel \\
+7 & \textbf{PP-003: Regress-Transparenz\-portal} & mittel & mittel & hoch & \textbf{B+} & mittel & \textbf{direkt} \\
 \addlinespace
-8 & Öffnung der operativen Prüfkataloge & mittel & mittel & hoch & B+ & mittel \\
+8 & Öffnung der operativen Prüfkataloge & mittel & mittel & hoch & B+ & mittel & indirekt \\
 \addlinespace
-9 & Kostenfolgen-Pflichtabschätzung bei Anträgen & mittel & mittel & mittel & B & mittel \\
+9 & Kostenfolgen-Pflichtabschätzung bei Anträgen & mittel & mittel & mittel & B & mittel & indirekt \\
 \addlinespace
-10 & Maximale Gesamtverfahrensdauer & mittel & mittel & mittel & B & mittel \\
+10 & Maximale Gesamtverfahrensdauer & mittel & mittel & mittel & B & mittel & indirekt \\
 \addlinespace
-11 & Open-Source-Verordnungstool & mittel & mittel & mittel & B & mittel \\
+11 & \textbf{Open-Source-Verordnungs\-tool} (vgl. VerordnungsAmpel) & mittel & mittel & mittel & B & mittel & \textbf{direkt} \\
 \addlinespace
-12 & Sanktionsfolge für unbegründete Kassenanträge & mittel & niedrig & hoch & B & lang \\
+12 & Sanktionsfolge für unbegründete Kassenanträge & mittel & niedrig & hoch & B & lang & indirekt \\
 \addlinespace
-13 & IFG-Anfragen an Prüfungsstellen & gering & niedrig & gering--mittel & C & kurz \\
+13 & \textbf{IFG-Anfragen an Prüfungsstellen} & gering & niedrig & gering--mittel & C & kurz & \textbf{direkt} \\
 \addlinespace
-14 & Governance-Pharmakovigilanz & hoch & niedrig & transform. & B$-$ & lang \\
+14 & Governance-Pharmakovigilanz & hoch & niedrig & transform. & B$-$ & lang & indirekt \\
 \addlinespace
-15 & \textbf{Versorgungsprüfung (\S\S\,70, 135a SGB\,V)} & hoch & mittel & transform. & \textbf{B} & lang \\
+15 & \textbf{Versorgungsprüfung (\S\S\,70, 135a SGB\,V)} & hoch & mittel & transform. & \textbf{B} & lang & indirekt \\
 \bottomrule
 \end{longtable}
 }
 
-\noindent\textit{Aufw. = legislativer, technischer, finanzieller Aufwand. Realis. = politische Machbarkeit. KNV = Kosten-Nutzen-Verhältnis (A+ bis C). Zeit: kurz $<$1\,J., mittel 1--3\,J., lang $>$3\,J.}
+\noindent\textit{Aufw. = legislativer, technischer, finanzieller Aufwand. Realis. = politische Machbarkeit. KNV = Kosten-Nutzen-Verhältnis (A+ bis C). Zeit: kurz $<$1\,J., mittel 1--3\,J., lang $>$3\,J. \textbf{Zivilgesellschaft:} \emph{direkt} = von zivilgesellschaftlichen Akteuren ohne gesetzgeberische Beteiligung umsetzbar; \emph{indirekt} = nur über Information, PR, Lobby an Gesetzgeber/Selbstverwaltung adressierbar.}
+
+\medskip
+\noindent\textbf{Drei direkt zivilgesellschaftlich adressierbare Maßnahmen.} Von den 15 Maßnahmen sind nur drei \textit{ohne} parlamentarische, exekutive oder selbstverwaltungsrechtliche Beteiligung umsetzbar: \textbf{Rang~7} (PP-003 Transparenzportal --- empirische Datenerhebung durch eine gemeinnützige Trägerorganisation), \textbf{Rang~11} (Open-Source-Verordnungstool --- vgl. die bestehende Software VerordnungsAmpel, GitHub research-line/verordnungsampel) und \textbf{Rang~13} (IFG-Anfragen an Prüfungsstellen --- niedrigschwellige Bürgerrechtsnutzung). Die übrigen zwölf Maßnahmen (Ränge 1--6, 8--10, 12, 14--15) erfordern legislative oder selbstverwaltungsinterne Akteursentscheidungen --- die Zivilgesellschaft kann sie nur mittelbar über Öffentlichkeitsarbeit, Lobby und Information beeinflussen. \textbf{Diese Konvergenz ist nicht zufällig:} Ein Forschungsbericht, ein Konzeptpapier und eine Software-Veröffentlichung sind genau die drei Hebel, die Um:bruch in dieser Publikation tatsächlich auf den Weg bringt --- die anderen zwölf Maßnahmen sind Forderungen an andere Akteure.
 
 \medskip
 \noindent\textbf{Einordnung PP-003:} Das Regress-Transparenzportal positioniert sich im oberen Mittelfeld (Rang~7). Es ist --- wie diese Studie betont --- \textit{notwendig, aber nicht hinreichend}. Seine strategische Funktion ist die eines zivilgesellschaftlichen Druckaufbaus: Wird die Publikationspflicht (Rang~6) politisch realisiert, wird das Portal teilweise überflüssig --- was ausdrücklich das gewünschte Ergebnis wäre. PP-003 ist der Plan~B, der Plan~A erzwingen soll.
@@ -2839,6 +2870,20 @@ A11 & KBV & Anwendung \S\,48 BMV-Ä (``Sonstiger Schaden'') in den letzten fünf
 
 {\small\sloppy
 \begin{itemize}[leftmargin=3em, itemsep=0.5em]
+  \item \textbf{v0.22} (April 2026, 2026-04-14) --- \textbf{PDF-Kommentare Runde 6 (Pfad-Färbung + V2-Designprobleme).} (1)~Verzweigungs-Header in V1 \emph{direkt nach} Schritt~3 platziert (vorher zwischen Schritt 4a und 5). (2)~\textbf{Pfad-Färbung} eingeführt: \texttt{colortbl} geladen; Schritte 0--3 + Pfad 4a in Teal-Hintergrund (\textcolor{umbruch-teal}{$\blacksquare$}), Pfad 4b und Folgeschritte 5--8 in Rot-Hintergrund (\textcolor{umbruch-red}{$\blacksquare$}); Verzweigungs-Header benennt die Pfad-Farben explizit. Auch V2-Tabelle entsprechend gefärbt: Schritte 0--4 in Teal (Verfahrenslauf bis Bewertung), 5--9 in Rot (Sanktionsphase). (3)~V2-Spaltenbreiten neu balanciert (Ich-wehre-mich- und Regress-Aufgehoben-Designprobleme): Schritt 3.3$\to$2.8, Sprachform 1.9$\to$2.2, Verfahrens-Begriff 3.0$\to$2.5, Dropout 2.3$\to$3.0; lange Begriffe (``Widerspruchsentscheidung'', ``Unterlagenanforderung'') mit Trennstrichen versehen. (4)~Methoden-Antwort an LG zur Pipeline-Darstellung in Begleitchat protokolliert: CONSORT-Stil-Flussdiagramm + Sankey für künftige Visualisierung (TODO).
+
+  \item \textbf{v0.21} (April 2026, 2026-04-14) --- \textbf{PDF-Kommentare Runde 5 (V1-Pipeline 4a/4b, V2-Spaltenbreiten).} (1)~V1-Pipeline restrukturiert nach Lukas-Vorschlag: Schritt~5 (Regressfestsetzung, Zweitzyklus) wird zu \textbf{Pfad~4b}, Schritt~4 (Beratung, Erstzyklus) wird zu \textbf{Pfad~4a}; Folgeschritte 6--9 (Widerspruch/Klage/Rechtskraft) werden zu Schritten 5--8 und greifen nur nach Pfad 4b. Verzweigungslogik in Schritt~3 (Bewertung) jetzt explizit als Tabellen-Multicolumn-Header dargestellt; Kernaussage und Präzisierungs-Box entsprechend angepasst. (2)~V2-Tabellen-Spaltenbreiten neu balanciert: ``Verfahrens-Begriff'' 2.5 $\to$ 3.0\,cm (lange Bezeichnungen wie ``Regress aufgehoben od.\,bestätigt'' brauchen Platz), ``Schritt'' 3.5 $\to$ 3.3, ``Sprachform'' 2.4 $\to$ 1.9, ``Reg.'' 0.6 $\to$ 0.5, ``Dropout'' 1.8 $\to$ 2.3. (3)~LG-Wunsch in TODO erfasst: Baum-Diagramm der Pipelines für künftige Versionen.
+
+  \item \textbf{v0.20} (April 2026, 2026-04-14) --- \textbf{PDF-Kommentare Runde 4 (6 Annotationen, V2-Tabelle methodisch konsolidiert).} (1)~V1-Schritt~4 P\,$|$\,S0: ``klein'' $\to$ ``$<$\,1\,\%'' mit Erläuterung, dass die 0,3\,\% in Schritt~5 die Zyklus-2-Fälle sind. (2/6)~Tabellen-Header ``Umgangs-sprache'' $\to$ ``Sprachform'' (Designproblem behoben), Spaltenbreiten in V1+V2 angepasst. (3)~Seitenumbruch zwischen Verfahren-Überschrift und Tabelle: \texttt{needspace}-Paket geladen, beide Pipelines mit \texttt{\textbackslash needspace\{12\textbackslash baselineskip\}} geschützt. (4)~V2-Tabelle methodisch konsolidiert (Lukas-Korrektur): P\,$|$\,S5-Doppelbasis verworfen, durchgängig P\,$|$\,S0; Schritt~5 mit KV-Nordrhein-Datenpunkt $\sim$95\,\%; eigene neue Spalte ``Dropout-Anmerkung'' für Vergleichsausstieg + V2a/V2b-Hinweise (statt Re-Basierung in derselben Spalte). (5)~V2-Spalte ``P\,ges.'' entfernt (war durchgängig k.D., sinnlos). Bezugswechsel-Multicolumn-Zeile entfernt (jetzt obsolet, da konsistente Basis).
+
+  \item \textbf{v0.19} (April 2026, 2026-04-14) --- \textbf{PDF-Kommentare Runde 3 (V2-Tabelle Bezugsbasis).} V2-Pipeline-Tabelle methodisch konsistent gemacht: Bis Schritt~5 ist P\,$|$\,S0 die Bezugsbasis (alle V2-Anträge); ab Schritt~6 wechselt die Basis zu P\,$|$\,S5 (Regressbescheid-Population). Schritt~5 erhält den belastbaren KV-Nordrhein-Datenpunkt $\sim$95\,\% (Vergleich rechnet als Regress); V2a/V2b-Differenzierung wandert systematisch in die Schritte 6+ (wo sie auf der neuen Basis sauber zuordenbar ist), nicht mehr in Schritt~5 (wo sie eine implizite Re-Basierung bedeutete). Header-Spalte und Legenden um P\,$|$\,S5 erweitert.
+
+  \item \textbf{v0.18} (April 2026, 2026-04-14) --- \textbf{PDF-Kommentare Runde 2 (4 Annotationen).} (1)~Schlagworte-Spacing in Klasse reduziert (Zusammenfassung+Schlagworte sollen auf S.1 passen). (2)~V1-Pipeline restrukturiert: Schritt~3 ist jetzt \emph{Bewertung der Wirtschaftlichkeit} (Verneinung = Endpunkt für $>$99\,\%; Bejahung = Übergang zu Schritt~4); Schritt~4 ist die \emph{Beratung statt Regress} bei Erstmaligkeit (Minderheit der bejahten Fälle). Klarstellung: Mehrheit scheidet bereits in Schritt~2/3 aus, Beratung ist ein Erstmaligkeits-Privileg für die <1\%, deren Wirtschaftlichkeitsverletzung bejaht wurde. (3)~V2-Tabelle: ``Beratung statt Regress''-Lückenzeile mit korrektem Multicolumn-Wrap (lief vorher über den Rand).
+
+  \item \textbf{v0.17} (April 2026, 2026-04-14) --- \textbf{PDF-Kommentare-Bearbeitung (8 Annotationen).} (1)~V1-Pipeline-Erläuterung präzisiert: Beratung (Schritt~3) ist Regress-Substitut nach festgestellter Wirtschaftlichkeitsverletzung, nicht sanktionsfreie Vorstufe (Belege: BSG 22.10.2014 B 6 KA 3/14 R; BSG 11.12.2019 B 6 KA 23/18 R; GPE BaWü). (2)~V2-Pipeline: Position der gesetzlich ausgeschlossenen Beratung systematisch zwischen Schritt~4 (Bewertung) und Schritt~5 (Festsetzung) verortet (\S\,106b Abs.\,2 S.\,3 Hs.\,2 SGB\,V), nicht zwischen Schritt~2 und 3 wie zuvor. (3)~R3 erweitert um belastbaren Datenpunkt: KV Nordrhein/Dt.~Ärzteblatt: ``ca.~95\,\% der Einzelfallprüfungen führen zu Regress'' --- konsistent mit ST-001-Schätzung 70--80\,\% Vergleich. (4)~Zertifikate-Tabelle (Abschn.~2.7): Spaltenüberschreibung behoben (erste Spalte 3cm $\to$ 4cm + Trennstriche). (5)~KNV-Tabelle (Abschn.~7.X): neue Spalte ``Zivilgesellschaft'' (direkt/indirekt) + Erläuterungs-Absatz: drei direkt zivilgesellschaftlich adressierbare Maßnahmen (Rang~7 PP-003, Rang~11 Open-Source-Verordnungstool/VerordnungsAmpel, Rang~13 IFG-Anfragen). (6)~Vorwärtsverweis von ``Praxisebene''-Befund (Abschn.~2.8) auf Asymmetrie-Subsubsection (Belohnungssystem-Idee). Recherche-Bericht: \texttt{\_review\_chain\_2026-04-13/RECHERCHE\_BERATUNG\_R1R4\_2026-04-14.md}.
+
+  \item \textbf{v0.16} (April 2026, 2026-04-14) --- \textbf{Asymmetrie-Gegengratifikation + BibCheck-Korrektur.} \emph{BibCheck-Korrektur:} \texttt{colla2017cw} war Frankenstein-Eintrag (Titel von Rich-Editorial, DOI von Bitton et al., falsche Pages); ersetzt durch Colla et al. (2017) ``Interventions Aimed at Reducing Use of Low-Value Health Services'' Med Care Res Rev 74(5):507--550 (DOI 10.1177/1077558716656970), inhaltlich passend zur Aussage. \emph{Asymmetrie:} Neuer Unterabschnitt in Teil~III „Asymmetrische Sanktionsstruktur ohne Gegengratifikation" zwischen Regelkreisanalyse und Modellarzt: bidirektionaler Sanktionsdruck (Kasse über \S\S\,106, 106b SGB\,V + Patient über \S\S\,630a ff., 823 BGB, \S\S\,223, 229 StGB, Approbationsentzug \S\,5 B\"AO, rund 12.000 Schlichtungsverfahren/Jahr); fehlende institutionelle Gegengratifikation für evidenzbasierte Versorgung; internationaler Kontrast QOF/Choosing-Wisely; Konsequenz Exposition-Minimierung statt Qualitätsmaximierung; Verweis auf KNV-Rang\,4 (positive Rückkopplung). 8 neue Bib-Einträge: Schlichtungsstellen-Statistik 2023, MD-Bund 2023, Doran 2006 (NEJM), Forbes 2017 (BJGP), Roland/Campbell 2009 (Ann Fam Med), Van Herck 2010 (BMC HSR), McGuire/Pauly 1991 (JHE), Cliff 2021 (Milbank Q), Colla 2017 (JGIM). Alle per WebSearch verifiziert.
+
   \item \textbf{v0.15} (April 2026, 2026-04-14) --- \textbf{P1-Umsetzung Review-Chain (14 Punkte).} Median-Lognormal-Fußnote bei SpiFa 334~EUR; Bib-Lücken geschlossen (AVR 2024, KV Nordrhein Prüfvereinbarung 2024, KVB Bayern, Zi-Versorgungsatlas, BRH GKV 2025, KBV Bundesarztregister 2024, Kahneman/Tversky 1979); Versorgungsforschungs-Primärliteratur ergänzt (SVR 2000/2001 Band~III, Busse/Blümel Lancet 2017, Pfaff/Neugebauer/Glaeske/Schrappe 2017, DGIM ``Klug entscheiden'', DEGAM-S2e 053/045); Versorgungsprüfung als eigene \S\,7.X-Subsection mit Grenzen-Unterabschnitt (Kodier-Arbitrage, ACSC-Aggregat-Vorbehalte, Datenschutz-Doppelbind) und KNV-Zeile~15; Patientenlast-Originalität präzisiert (allgemeine vs. spezifische Dimension) in Abschnitt 2.7.3 und Glossar; Ribbat-Theorie-Mapping auf Spieltheorie+Lipsky reduziert, Foucault/Herd als Marginalien, Falsifikationsbedingungen pro Theorie; Devil's-Advocate-Wirksamkeit (60--65\,\%-Einschränkung in V2-Kernaussage + Vorwärtsverweis Einwand~4 + Einwand~5 in Hauptthese); 5-Jahres-Reset-Fundstelle präzisiert (Rahmenvorgaben \S\,6 statt \S\,106b Abs.\,2 S.\,3), Anhörungsgrundlage \S\,24 SGB\,X ergänzt; normativer Schadensbegriff präzisiert (Schaden entsteht mit unzulässiger Verordnung, wird durch Bezahlung konkretisiert); Konfidenzintervalle für Ribbat-Kernzahlen (47\,/55\,/51\,/72\,/85\,\%); Bias-Diskussion (Non-Response/Response/Recall/Publikation); Niskanen sprachlich abgefedert (``aus Public-Choice-Perspektive''); \S\,70-Argumentation präzisiert (kein Sanktions-/Korrekturinstrument auf Praxisebene, nicht ``kein Messinstrument''); neues Schluss-Kapitel ``Was diese Studie zeigt --- und was nicht'' mit Bogenschluss drei Zertifikatsfehler, Belegt/Plausibel/Hypothese-Gliederung und Genre-Klärung (Working Paper / Bestandsaufnahme mit Pilot-Charakter).
 
   \item \textbf{v0.14} (April 2026, 2026-04-14) --- \textbf{P0-Umsetzung Review-Chain (10 Punkte).} Summierungsrechnungs-Label-Fix (totes \texttt{??} repariert); 60--99\,\%-Bandbreite konsistent (Poisson-$\lambda$ 0,30--1,48 korrigiert); \S\,135a SGB\,V als SVR-Trias-Verankerung; KV-Nordrhein 20.000-Zahl als ``extern nicht verifizierbar'' markiert (IFG-Anfrage anhängig); BSG 27.08.2025 (B\,6\,KA\,9/24\,R) mit 490.000~EUR global; Untergerichts-Urteile verifiziert (SG Mainz, LSG BW, SG Marburg); V.i.S.d.P. \S\,18 MStV; BibCheck mit 46 Einträgen (dimdi\_hta65-Halluzination korrigiert, 6 Warnungen eingearbeitet); Zertifikatsfehler-Framing als ``analytische Konstruktion''; Leseorientierungs-Box mit V1/V2/V2a/V2b-Legende. 95~Seiten.

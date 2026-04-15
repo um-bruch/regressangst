@@ -9,6 +9,8 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[ngerman]{babel}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
@@ -20,6 +22,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
 \RequirePackage{longtable}
+\RequirePackage{colortbl}
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 \RequirePackage{etoolbox}
@@ -159,9 +162,15 @@
     % Trennlinie
     \textcolor{umbruch-red}{\rule{0.6\textwidth}{1.5pt}}
 
+    % Schlagworte (zuerst, weil kurz und sonst auf eigene Seite rutschen würden)
+    \ifthenelse{\equal{\@schlagworte}{}}{}{%
+      \vspace{4mm}
+      {\footnotesize\color{umbruch-muted}\textbf{Schlagworte:} \@schlagworte}
+    }
+
     % Zusammenfassung
     \ifthenelse{\equal{\@zusammenfassung}{}}{}{%
-      \vspace{6mm}
+      \vspace{4mm}
       \begin{minipage}{0.85\textwidth}
         \small\color{umbruch-ink}
         \textbf{Zusammenfassung.}
@@ -169,14 +178,8 @@
       \end{minipage}
     }
 
-    % Schlagworte
-    \ifthenelse{\equal{\@schlagworte}{}}{}{%
-      \vspace{4mm}
-      {\footnotesize\color{umbruch-muted}\textbf{Schlagworte:} \@schlagworte}
-    }
-
   \end{center}
-  \vspace{8mm}
+  \vspace{4mm}
 }
 
 % ===== Custom Environments =====
