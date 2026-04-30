@@ -1,7 +1,7 @@
-# Regress-Melder — Versionierungsarchitektur
+# Regressangst — Versionierungsarchitektur
 
 > Single Source of Truth + abgeleitete Produkte mit Versionsbindung
-> Erstellt: 2026-04-10 | LG + CL
+> Erstellt: 2026-04-10 | Aktualisiert: 2026-04-30
 
 ---
 
@@ -38,12 +38,14 @@ ST-001 „Systemtheoretische Aufarbeitung der Regressangst" (Source of Truth)
 
 | Dokument | Aktuelle Version | Basiert auf ST-001 | Status |
 |---|---|---|---|
-| **ST-001** | **v0.12** (11.04.2026) | — (ist die Quelle) | Aktiv |
-| PP-003 | v2.8 | v0.12 | Aktuell (CORE4: Definitionsdivergenz, BMG 47.000, V2a/V2b als Portal-Beitrag) |
+| **ST-001** | **v0.22** (14.04.2026) | — (ist die Quelle) | Aktiv; PDF im Repo: 104 Seiten |
+| ST-001 Executive Summary (DE) | v1.3 | v0.22 | Aktuell; PDF im Repo: 16 Seiten |
+| ST-001 Executive Summary (EN) | v1.3 | v0.22 | Aktuell; PDF im Repo: 16 Seiten |
+| PP-003 | v3.1 | v0.22 | Aktuell; PDF im Repo: 40 Seiten |
 | PP-003K | v2.0 | v0.3 | Prüfung fällig |
-| Die Regress-Firewall | v0.2 | v0.11 | `infomaterial/Die_Regress_Firewall.tex/.pdf` + PPTX in `broschueren/` |
-| Der Architekturplan | v0.2 | v0.11 | `infomaterial/Der_Architekturplan_gegen_den_Regress.tex/.pdf` + PPTX in `broschueren/` |
-| Mein Arzt hat Angst | v0.2 | v0.11 | `infomaterial/Mein_Arzt_hat_Angst.tex/.pdf` + PPTX in `broschueren/` |
+| Die Regress-Firewall | PDF aktualisiert 2026-04-15 | v0.22 | Broschüre im Repo-PDF-Ordner |
+| Der Architekturplan | PDF aktualisiert 2026-04-15 | v0.22 | Broschüre im Repo-PDF-Ordner |
+| Mein Arzt hat Angst | PDF aktualisiert 2026-04-15 | v0.22 | Broschüre im Repo-PDF-Ordner |
 
 ---
 
@@ -86,4 +88,4 @@ ST-001 „Systemtheoretische Aufarbeitung der Regressangst" (Source of Truth)
 
 ---
 
-*Erstellt: 2026-04-10 | CL + LG*
+*Erstellt: 2026-04-10 | Aktualisiert: 2026-04-30*

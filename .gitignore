@@ -14,6 +14,48 @@
 Thumbs.db
 desktop.ini
 
+# Python / tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.claude/
+.vscode/
+
+# Internal coordination
+AUFGABEN.txt
+TEST.txt
+TESTS.txt
+TESTERGEBNISSE.txt
+BUGREPORT.md
+DIAGNOSE_REPORT.md
+
+# Build / release artifacts
+releases/
+dist/
+build/
+*.exe
+*.msi
+*.msix
+*.appx
+
+# Secrets / credentials
+.env
+.env.*
+credentials.json
+client_secret*.json
+token.json
+*.pem
+*.key
+*.pfx
+*.p12
+*.db
+*.sqlite
+*.sqlite3
+
 # Editor
 *.swp
 *.swo
@@ -22,9 +64,12 @@ desktop.ini
 # Internal planning (not for publication)
 Plan.txt
 _archive/
+_partners/
 *_submission/
 *BRIEFING*
+CORE.txt
 CORE_REVIEW_BEFUNDE.md
+removed_sections/
 
 # Pädagogisches Material (nicht Teil der wissenschaftlichen Arbeit)
 textgrundlagen/

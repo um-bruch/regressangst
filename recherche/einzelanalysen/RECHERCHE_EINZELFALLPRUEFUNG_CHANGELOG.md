@@ -551,7 +551,7 @@ Der bundesweite Rahmen:
 
 ## Offene Punkte / weitere Recherche nötig
 
-1. **Volltext BT-Drs. 12/3608 Seiten 81 und 100:** Der PDF-Download (8.4 MB) enthält die Begründungstexte — eine manuelle Auswertung durch Lukas wäre hilfreich, um den exakten Wortlaut der GSG-Begründung zur Einzelfallprüfung zu dokumentieren (liegt lokal als webfetch-Cache: `C:\Users\User\.claude\projects\C--Users-User-OneDrive--UMBRUCH\5584492c-8bbd-4962-85ed-ef0846e86041\tool-results\webfetch-1775624358663-q2xddv.pdf`)
+1. **Volltext BT-Drs. 12/3608 Seiten 81 und 100:** Der PDF-Download (8.4 MB) enthält die Begründungstexte — eine manuelle Auswertung der öffentlich bezogenen PDF wäre hilfreich, um den exakten Wortlaut der GSG-Begründung zur Einzelfallprüfung zu dokumentieren.
 2. **Exakter Wortlaut § 106 SGB V in der Fassung 1993** — muss aus historischer juris-/Beck-Online-Datenbank gezogen werden (kein offen zugänglicher Volltext der 1993er Fassung gefunden)
 3. **Protokolle Bundestags-Gesundheitsausschuss 12. WP 1992:** Sachverständigenanhörung zum GSG, Liste der geladenen Experten, insbesondere Aussagen zu § 106 — nicht öffentlich online verfügbar, erfordert Archiv-Zugriff (Bundestags-Archiv oder dipbt.bundestag.de für 12. WP)
 4. **Zeitgenössische Kommentare:** Jörg, Michael — "Das neue Kassenarztrecht: Teilnahme an der vertragsärztlichen Versorgung, Rechte und Pflichten des Vertragsarztes, Vergütung und Wirtschaftlichkeitsprüfung ... unter Berücksichtigung des Gesundheits-Strukturgesetzes 1993 und der Rechtsprechung des Bundessozialgerichts" (HEIDI UB Heidelberg) — wäre die zeitgenössische Primärkommentierung zur GSG-Reform

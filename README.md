@@ -1,8 +1,12 @@
 # Regressangst — Systemtheoretische Aufarbeitung der deutschen Wirtschaftlichkeitsprüfung
 
+<p align="center">
+  <img src="assets/regressangst_icon.png" alt="Regressangst" width="112">
+</p>
+
 > **Um:bruch — Denkfabrik für gesellschaftlichen Wandel**
 >
-> **Status: Working Paper / multiperspektivische Bestandsaufnahme mit Pilot-Charakter** — v0.15, April 2026 | CC BY 4.0
+> **Status: Working Paper / multiperspektivische Bestandsaufnahme mit Pilot-Charakter** — v0.22, April 2026 | CC BY 4.0
 >
 > Dieses Projekt ist ein laufendes Forschungsvorhaben. Die Befunde basieren auf öffentlich zugänglichen Quellen und KI-gestützter Analyse, nicht auf eigener Primärerhebung. Alle Ergebnisse sind vorläufig und werden laufend aktualisiert. Eine Einreichung bei einem Peer-Review-Journal ist noch nicht erfolgt. Wir veröffentlichen als Working Paper, um Transparenz über den Forschungsprozess herzustellen und Feedback zu ermöglichen.
 
@@ -43,10 +47,10 @@ Diese Befunde basieren auf der Analyse öffentlich zugänglicher Daten und Liter
 
 | Dokument | Version | Seiten | Beschreibung |
 |----------|---------|--------|--------------|
-| **ST-001** | v0.15 | 99 | Hauptstudie mit 7 Teilen + Gegenposition (6 Einwände) + Schlusskapitel + 3 Anhängen. 18-fache Review-Chain (P0+P1) umgesetzt. |
-| **ST-001 ES (DE)** | v1.2 | 15 | Executive Summary mit Genre-Klärung, 60–65 % V2-Einschränkung, KNV-Tabelle (15 Maßnahmen inkl. Versorgungsprüfung) |
-| **ST-001 ES (EN)** | v1.2 | 15 | English executive summary (translator: Gemini, editor-reviewed) |
-| **PP-003** | v3.0 | 34 | Konzeptpapier: Regress-Transparenzportal (Lösungsvorschlag), Fünf-Scanner-Architektur |
+| **ST-001** | v0.22 | 104 | Hauptstudie mit 7 Teilen + Gegenposition + Schlusskapitel + Anhängen. P0/P1/P2-Review und PDF-Kommentarrunden umgesetzt. |
+| **ST-001 ES (DE)** | v1.3 | 16 | Executive Summary mit Asymmetrie-Subsection, aktualisierter Regressquoten-Bandbreite und KNV-Tabelle (15 Maßnahmen inkl. Versorgungsprüfung) |
+| **ST-001 ES (EN)** | v1.3 | 16 | English executive summary synchronized with ST-001 v0.22 |
+| **PP-003** | v3.1 | 40 | Konzeptpapier: Regress-Transparenzportal mit Forderungskatalog, Trägerschaftsszenarien und aktualisierter Kostenkalkulation |
 
 ### Struktur der Hauptstudie (ST-001)
 
@@ -115,7 +119,7 @@ pdflatex ST-001_Studie_Regressangst.tex
 
 ## Zitiervorschlag
 
-> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.15. https://github.com/research-line/regressangst
+> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.22. https://github.com/research-line/regressangst
 
 ## Lizenz
 

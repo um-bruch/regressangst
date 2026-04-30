@@ -1,0 +1,2 @@
+# This repository has no Python runtime dependencies.
+# Publication work is document-first and mainly uses the local LaTeX toolchain.
