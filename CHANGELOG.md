@@ -9,10 +9,12 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 - GitHub-Standarddokumente für Community, Security und Contribution-Flow
 - Repo-Icon für wiedererkennbare Projektassets
 - Windows-Startdatei für den direkten Einstieg in Studie, Executive Summary oder README
+- Maschinenlesbarer `llms.txt`-Kontext für Crawler, LLMs und Repo-Disambiguation
 
 ### Changed / Geändert
 - `.gitignore` um interne Steuerungsdateien, Releases, Forschungs-Privatordner und Credential-Muster erweitert
 - README und Versionierung auf ST-001 v0.22, Executive Summary v1.3 und PP-003 v3.1 aktualisiert
+- README-Einstieg um Startpunkte, Suchkontext und aktuellen Canonical-Link `um-bruch/regressangst` ergänzt
 - Lokalen Webfetch-Cache-Pfad aus einer Recherchedatei entfernt
 
 ## [0.22] - 2026-04-15
