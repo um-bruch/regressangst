@@ -12,6 +12,23 @@
 
 ---
 
+## Startpunkte
+
+| Ziel | Einstieg |
+|------|----------|
+| Studie lesen | [`pdf/ST-001_Studie_Regressangst.pdf`](pdf/ST-001_Studie_Regressangst.pdf) |
+| Kurzfassung deutsch | [`pdf/ST-001_Executive_Summary.pdf`](pdf/ST-001_Executive_Summary.pdf) |
+| Executive Summary English | [`pdf/ST-001_Executive_Summary_EN.pdf`](pdf/ST-001_Executive_Summary_EN.pdf) |
+| Regress-Transparenzportal | [`pdf/PP-003_Regress_Transparenzportal.pdf`](pdf/PP-003_Regress_Transparenzportal.pdf) |
+| Quellen- und Recherchekern | [`recherche/MASTER-CORE.md`](recherche/MASTER-CORE.md) |
+| Versionsstand prüfen | [`meta/VERSIONIERUNG.md`](meta/VERSIONIERUNG.md) |
+
+**Canonical Repository:** <https://github.com/um-bruch/regressangst>
+
+**Öffentliche Projektseite:** <https://um-bruch.org/projekte/>
+
+Suchkontext: `Regressangst`, `Wirtschaftlichkeitsprüfung`, `ST-001`, `PP-003`, `Regress-Transparenzportal`, `ärztliche Regressangst`, `Um:bruch Regress-Melder`.
+
 ## Forschungsfrage
 
 Das deutsche Wirtschaftlichkeitsprüfsystem (§§ 106 ff. SGB V) erzeugt eine Regressangst unter Vertragsärzten, deren Folgekosten die durchgesetzten Regresse nach Modellrechnung um das 100- bis 1.000-fache übersteigen könnten.
@@ -119,7 +136,7 @@ pdflatex ST-001_Studie_Regressangst.tex
 
 ## Zitiervorschlag
 
-> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.22. https://github.com/research-line/regressangst
+> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.22. https://github.com/um-bruch/regressangst
 
 ## Lizenz
 
@@ -144,9 +161,9 @@ Um:bruch — Denkfabrik für gesellschaftlichen Wandel
 
 ## Haftung / Liability
 
-Dieses Projekt ist eine **unentgeltliche Open-Source-Schenkung** im Sinne der §§ 516 ff. BGB. Die Haftung des Urhebers ist gemäß **§ 521 BGB** auf **Vorsatz und grobe Fahrlässigkeit** beschränkt. Ergänzend gelten die Haftungsausschlüsse aus GPL-3.0 / MIT / Apache-2.0 §§ 15–16 (je nach gewählter Lizenz).
+Dieses Projekt ist eine **unentgeltlich veröffentlichte Forschungs- und Dokumentationssammlung** unter CC BY 4.0. Die Haftung des Urhebers ist gemäß **§ 521 BGB** auf **Vorsatz und grobe Fahrlässigkeit** beschränkt. Ergänzend gelten die Hinweise aus der CC-BY-4.0-Lizenz.
 
 Nutzung auf eigenes Risiko. Keine Wartungszusage, keine Verfügbarkeitsgarantie, keine Gewähr für Fehlerfreiheit oder Eignung für einen bestimmten Zweck.
 
-This project is an unpaid open-source donation. Liability is limited to intent and gross negligence (§ 521 German Civil Code). Use at your own risk. No warranty, no maintenance guarantee, no fitness-for-purpose assumed.
+This project is an unpaid research and documentation publication under CC BY 4.0. Liability is limited to intent and gross negligence (§ 521 German Civil Code). Use at your own risk. No warranty, no maintenance guarantee, no fitness-for-purpose assumed.
 

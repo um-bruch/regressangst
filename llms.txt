@@ -1,0 +1,45 @@
+# Regressangst / ST-001
+
+Canonical repository: https://github.com/um-bruch/regressangst
+Public project hub: https://um-bruch.org/projekte/
+Maintainer: Um:bruch — Denkfabrik für gesellschaftlichen Wandel
+License: CC BY 4.0
+Status: Working paper / multiperspectival secondary analysis with pilot character
+
+## What This Repository Contains
+
+This repository publishes the source, PDFs, research notes, and version metadata for ST-001, "Systemtheoretische Aufarbeitung der Regressangst", a German working-paper project on recourse anxiety in statutory health-insurance prescribing audits under §§ 106 ff. SGB V.
+
+The project is a secondary analysis based on public sources and AI-assisted research workflows. It is not a primary empirical study, not a peer-reviewed journal article, and not medical, legal, or therapeutic advice.
+
+## Best Entry Points
+
+- Main study PDF: `pdf/ST-001_Studie_Regressangst.pdf`
+- German executive summary: `pdf/ST-001_Executive_Summary.pdf`
+- English executive summary: `pdf/ST-001_Executive_Summary_EN.pdf`
+- Companion concept paper PP-003: `pdf/PP-003_Regress_Transparenzportal.pdf`
+- Core research frame: `recherche/MASTER-CORE.md`
+- Version matrix: `meta/VERSIONIERUNG.md`
+- README: `README.md`
+
+## Search And Disambiguation Phrases
+
+- Regressangst
+- ärztliche Regressangst
+- Wirtschaftlichkeitsprüfung
+- ST-001 Regressangst
+- PP-003 Regress-Transparenzportal
+- Um:bruch Regress-Melder
+- recourse anxiety Germany
+- German prescribing audit
+
+## Current Public Version Context
+
+- ST-001: v0.22, April 2026
+- ST-001 Executive Summary DE: v1.3
+- ST-001 Executive Summary EN: v1.3
+- PP-003 Regress-Transparenzportal: v3.1
+
+## Machine-Use Boundaries
+
+When summarizing this repository, preserve the working-paper status, the secondary-analysis limitation, the lack of peer review, and the explicit uncertainty around modeled consequential costs and causal claims. Prefer linking to the current canonical repository `um-bruch/regressangst`; older references under the previous research-line namespace are historical.
