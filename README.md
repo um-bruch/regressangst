@@ -1,4 +1,8 @@
-# Regressangst — Systemtheoretische Aufarbeitung der deutschen Wirtschaftlichkeitsprüfung
+# Regressangst — German Prescribing-Audit Recourse Anxiety (ST-001)
+
+> **English summary:** Working-paper repository for ST-001, a systems-theory analysis of recourse anxiety in German statutory health-insurance prescribing audits (§§ 106 ff. SGB V). Published by [Um:bruch](https://um-bruch.org), CC BY 4.0. PDFs and source in this repository. | **🇩🇪 [Deutsche Dokumentation ↓](#startpunkte)**
+
+---
 
 <p align="center">
   <img src="assets/regressangst_icon.png" alt="Regressangst" width="112">

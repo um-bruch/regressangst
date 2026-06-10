@@ -85,3 +85,11 @@ recherche/prompt-archaeologie/auto-test/
 
 # Redacted context: nur PDFs, nicht die .tex-Quellen
 recherche/RESEARCH_CONTEXT_*.tex
+# ---- Interne Steuerungsdateien ----
+DECISIONS.md
+PORTIERUNGSPLAN.md
+TODO.md
+DONE.md
+
+# LaTeX build outputs in paper/ (PDFs im pdf/-Ordner sind kanonisch)
+paper/*.pdf
