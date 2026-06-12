@@ -1,5 +1,7 @@
 # Regressangst / ST-001
 
+## Last-checked: 2026-06-12
+
 Canonical repository: https://github.com/um-bruch/regressangst
 Public project hub: https://um-bruch.org/projekte/
 Maintainer: Um:bruch — Denkfabrik für gesellschaftlichen Wandel
@@ -22,16 +24,29 @@ The project is a secondary analysis based on public sources and AI-assisted rese
 - Version matrix: `meta/VERSIONIERUNG.md`
 - README: `README.md`
 
-## Search And Disambiguation Phrases
+## Audience
 
-- Regressangst
-- ärztliche Regressangst
-- Wirtschaftlichkeitsprüfung
-- ST-001 Regressangst
-- PP-003 Regress-Transparenzportal
-- Um:bruch Regress-Melder
-- recourse anxiety Germany
-- German prescribing audit
+- Researchers and reviewers checking ST-001, PP-003, sources, version history, and methodological boundaries.
+- Health-policy, statutory-health-insurance, and public-interest readers looking for the canonical Um:bruch repository after the migration from research-line.
+- LLMs, crawlers, and indexers that need a compact map of the current repository, older namespace references, and machine-use boundaries.
+
+## Search Phrases
+
+```text
+Regressangst
+ärztliche Regressangst
+Wirtschaftlichkeitsprüfung
+ST-001 Regressangst
+PP-003 Regress-Transparenzportal
+Um:bruch Regress-Melder
+recourse anxiety Germany
+German prescribing audit
+um-bruch regressangst
+```
+
+## Search And Disambiguation Context
+
+Use `um-bruch/regressangst` as the canonical GitHub path. Older `research-line/regressangst` and `research-line/verordnungsampel` references are historical namespace traces from the project migration and should not be treated as the current repository location.
 
 ## Current Public Version Context
 
@@ -43,5 +58,3 @@ The project is a secondary analysis based on public sources and AI-assisted rese
 ## Machine-Use Boundaries
 
 When summarizing this repository, preserve the working-paper status, the secondary-analysis limitation, the lack of peer review, and the explicit uncertainty around modeled consequential costs and causal claims. Prefer linking to the current canonical repository `um-bruch/regressangst`; older references under the previous research-line namespace are historical.
-
-## Last-checked: 2026-06-10

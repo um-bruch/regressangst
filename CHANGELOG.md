@@ -16,6 +16,8 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 - README und Versionierung auf ST-001 v0.22, Executive Summary v1.3 und PP-003 v3.1 aktualisiert
 - README-Einstieg um Startpunkte, Suchkontext und aktuellen Canonical-Link `um-bruch/regressangst` ergänzt
 - Lokalen Webfetch-Cache-Pfad aus einer Recherchedatei entfernt
+- `llms.txt` auf den Standard mit `Last-checked`, Audience und fenced Search Phrases gebracht
+- Historische `research-line`-GitHub-Links in den LaTeX-Quellen auf die aktuellen `um-bruch`-Repos umgestellt
 
 ## [0.22] - 2026-04-15
 
