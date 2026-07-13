@@ -10,6 +10,7 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 - Repo-Icon für wiedererkennbare Projektassets
 - Windows-Startdatei für den direkten Einstieg in Studie, Executive Summary oder README
 - Maschinenlesbarer `llms.txt`-Kontext für Crawler, LLMs und Repo-Disambiguation
+- `THIRD_PARTY_LICENSES.txt` als direkte Inventur für das dependency-freie Working-Paper-Repository
 
 ### Changed / Geändert
 - `.gitignore` um interne Steuerungsdateien, Releases, Forschungs-Privatordner und Credential-Muster erweitert

@@ -146,6 +146,8 @@ pdflatex ST-001_Studie_Regressangst.tex
 
 CC BY 4.0 — [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
+Drittanbieter-Lizenzen: Dieses Repository bündelt keine externen Runtime-Abhängigkeiten; siehe [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt).
+
 ## Kontakt
 
 Um:bruch — Denkfabrik für gesellschaftlichen Wandel

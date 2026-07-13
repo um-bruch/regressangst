@@ -1,0 +1,39 @@
+Regressangst - Third-Party License Inventory
+============================================
+
+Checked: 2026-07-14
+Scope: Direct repository/runtime dependency inventory for this published
+working-paper repository. This is not a frozen transitive SBOM.
+
+Project License
+---------------
+
+Regressangst is published under Creative Commons Attribution 4.0 International
+(CC BY 4.0). See LICENSE and NOTICE.
+
+Bundled Third-Party Runtime Code
+--------------------------------
+
+No bundled third-party runtime code is required by this repository.
+
+Python Dependencies
+-------------------
+
+The repository declares no Python runtime dependencies. requirements.txt is
+intentionally limited to the note:
+
+  This repository has no Python runtime dependencies.
+
+Publication/Build Tooling
+-------------------------
+
+PDF publication work is document-first and uses the local LaTeX toolchain
+(for example MiKTeX or TeX Live) installed on the build machine. That toolchain
+is not bundled in this repository and is therefore outside this repository
+license inventory.
+
+Assets and Documents
+--------------------
+
+Repository text, LaTeX sources, PDFs, icons, and project assets are treated as
+project material under the project license unless a file states otherwise.
