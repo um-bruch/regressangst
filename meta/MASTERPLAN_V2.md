@@ -235,3 +235,44 @@ Jede Session beginnt mit dem Laden von:
 *Erstellt: 2026-04-11 | CL + LG*
 *Basiert auf: CORE3.md, CORE4.md (v3), METHODIK_RECHERCHE_PROTOKOLL.md*
 *Ersetzt: 12-Phasen-Masterplan (UEBERGABE_NAECHSTE_SESSION.md)*
+
+
+---
+
+## TASKPLAN-BÜNDEL — TASKWRITER (2026-07-22, Selektor Exit 0)
+
+Selector: mode=deep; root_id=.SOFTWARE; project_path=C:\Users\lukas\OneDrive\.TOPICS\.SOFTWARE\UMBRUCH\REL-PUB_Regressangst; task_ids leer; Leserechte/Anlage/Änderung erlaubt. Vorprüfung: kein Projekt-LOCK*.txt, kein TEST*.txt; Cloud-Sync-Prüfung hoch; Branch master entspricht origin/master. Vorbestehende Dirty-Dateien (.gitignore, START.bat, CONTRIBUTING-Mac Studio.md und sechs Assets) bleiben unverändert.
+
+### Aktueller Stand und Klassifikation
+
+Belegt: ST-001 v0.22, deutsche/englische Executive Summaries v1.3, PP-003 v3.1, drei Broschüren-PDFs, CC-BY-4.0-LICENSE/NOTICE, Security-/Community-Dokumente, Changelog, llms.txt und Third-Party-Lizenzinventur. CORE3/CORE4-Einarbeitung und mehrere Review-/PDF-Kommentarrunden sind in den Dokumenten als durchgeführt beschrieben. Das Repository bleibt ausdrücklich ein vorläufiges, nicht peer-reviewtes Working Paper und eine sekundäre, KI-gestützte Analyse.
+
+Gültig offen formalisiert: aktueller Status-/Release-Index, ST-001-Quellhygiene, Quellen-/BibTeX-/Evidenzregister, methodischer Review-/Reproduzierbarkeitsvertrag, Ableger-Synchronisation, Broschüren-/PP-003-Rebuild-Provenienz, IFG-Antwortregister, lokales Public-Release-/Zenodo-Gate, unabhängiges Review-Paket und autorisierter Prompt-/Session-Log-Pfad.
+
+Historisch oder nicht anwendbar: Die April-Checklisten im Masterplan bleiben als Historie, werden aber nicht blind als aktuelle Termine behandelt. Die im Plan genannte ST-001_Das_Angstsystem.tex-Datei, infomaterial-Textgrundlagen und broschueren-Struktur sind im aktuellen Baum nicht vorhanden; daraus wird keine Lösch-, Build- oder Upload-Arbeit erfunden. IFG-Anträge, Behörden-/Verbandskontakte, Website-/Blog-Deploy, NotebookLM, Zenodo, DOI, Mailverteiler und externe Reviews bleiben autorisierungs- und zustandsabhängige Blocker.
+
+### TASKPLAN-Aufgaben
+
+- #1185 / TW-RA-01 / high / special / local: aktuellen Publikations-, Versions- und Aufgabenstatus gegen den Baum abgleichen. Quellen: README, CHANGELOG, llms, MASTERPLAN, VERSIONIERUNG, Git-Status. DoD: Versionen/Artefakte/Links/Lizenzen und erledigte CORE4-/Review-Schritte belegt; fehlende, supersedierte und externe Punkte getrennt. Prüfweg: statischer Baum-/Link-/UTF-8-/NUL-Readback; keine Außenaktion.
+
+- #1186 / TW-RA-02 / high / large / local: ST-001-Quellhygiene für echte UTF-8-Umlaute, Referenzen, Nummerierung, Tabellenmetadaten und relative Grafikpfade schließen. Quellen: MASTERPLAN 1b, ST-001-Quelle, Klasse und Grafiken. DoD: wartbare Quelle, alte fehlende Datei dokumentiert, Changelog/Versionierung konsistent. Prüfweg: Diff-/Encoding-/Referenzscan und späterer LaTeX-/PDF-Readback; TASKWRITER baut nicht.
+
+- #1187 / TW-RA-03 / high / special / local: Quellen-, BibTeX- und Evidenz-Provenienzvertrag für ST-001/PP-003 erstellen. Quellen: MASTERPLAN 1c/6a, BibTeX-Dateien, MASTER-CORE, ST-001 und README. DoD: Claims, Zahlen, Rechtsnormen, IFG-Status und CORE-Referenzen mit Quelle/Stand/Lizenz/Evidenzstatus; Schätzungen bleiben als solche. Prüfweg: lokaler Register-/Link-/Hash-Readback, keine Websuche oder Kontaktaufnahme.
+
+- #1188 / TW-RA-04 / medium / large / local: methodischen Review- und Reproduzierbarkeitsvertrag ohne Peer-Review-Behauptung dokumentieren. Quellen: METHODIK_BEWERTUNG, WALK_OF_ANALYSIS, MASTER-CORE, README, llms. DoD: LLM-Brainstorming, menschliche Entscheidung, unabhängige Review, Konfliktauflösung, Negativbefunde und Limitationen getrennt. Prüfweg: Dokument-/Claim-/Encoding-Readback, keine externe Begutachtung.
+
+- #1189 / TW-RA-05 / high / large / local: ST-001 als Source of Truth mit Summaries, PP-003 und Versionsmatrix synchronisieren. Quellen: VERSIONIERUNG, ST-001, Summary-/PP-003-LaTeX, README. DoD: Definitionsdivergenz, V1/V2a/V2b, Bayern, Doppelfunktion, Grenzen und KNV in betroffenen Ablegern synchron oder bewusst nicht betroffen; PP-003K-Prüfstatus geklärt. Prüfweg: Source-/Derived-Diff und spätere PDF-Prüfung; kein Upload.
+
+- #1190 / TW-RA-06 / medium / large / local: autoritative Textgrundlagen und Rebuild-Vertrag für Broschüren/PP-003 klären. Quellen: MASTERPLAN Phase 3/4, VERSIONIERUNG, vorhandene PDFs/Paper/Konzeptpapier/README. DoD: Quelle/Basisversion/Ausgabe/Prüfmethode oder Missing-Source-Blocker je Material; NotebookLM/PPTX/Faktencheck getrennt. Prüfweg: Baum-/Hash-/PDF-Metadaten-/Lizenz-Readback; kein Build, Deploy oder NotebookLM-Auftrag.
+
+- #1191 / TW-RA-07 / medium / special / local: evidenzgebundenes IFG-Antwort- und Forschungsfragen-Register für ST-001 Anhang C führen. Quellen: MASTERPLAN 5a/5b, ST-001 Anhang C, README, Rechercheprotokoll, MASTER-CORE. DoD: je Anfrage eingereicht/bestätigt/beantwortet/verweigert/ausstehend/nicht belegt, mit Primärdokument, Datum, Hash und Claim-Einbau; nichts erfunden. Prüfweg: lokaler Register-/Claim-Readback, keine neue Anfrage oder Behördenkommunikation.
+
+- #1192 / TW-RA-08 / high / special / local: lokales Public-Release-/Zenodo-Readiness-Gate ohne Upload/DOI bauen. Quellen: MASTERPLAN, README, LICENSE, NOTICE, SECURITY, THIRD_PARTY_LICENSES, llms, CHANGELOG. DoD: Paket-, Lizenz-, Build-, PDF-, Status-, Limitation- und Checksummevidenz; Working-Paper-/Nicht-Peer-Review-/Nichtberatungsgrenzen sichtbar; Website, Blog, Zenodo, DOI, Mail und Deploy als externe Gates. Prüfweg: statischer Paket-/Lizenz-/Manifest-/Hash-Readback.
+
+- #1193 / TW-RA-09 / medium / special / local: unabhängiges Forschungsreview-Paket mit Prüffragen, Claim-Matrix, Konfliktregeln und Feedbackweg vorbereiten. Quellen: MASTERPLAN Reviews, METHODIK_BEWERTUNG, README, SECURITY, CONTRIBUTING. DoD: interne LLM-Review, menschliche Redaktion und externe unabhängige Begutachtung getrennt; keine Zustimmung/Peer-Review vorgetäuscht. Prüfweg: lokaler Paket-/Claim-/Link-Readback, keine Revieweransprache.
+
+- #1194 / TW-RA-10 / low / large / local: autorisierten Prompt-/Session-Log-Extraktionspfad für TODO #18 entscheiden und dokumentieren. Quellen: WALK_OF_ANALYSIS TODO #18, METHODIK_BEWERTUNG, MASTERPLAN, prompt-archäologie. DoD: Herkunft/Berechtigung/Redaktion/PII-/Secret-Schutz/Hash/Schema und Aufbewahrung; bei fehlenden freigegebenen JSONL-Logs bleibt der Blocker offen. Prüfweg: synthetisches Redaction-/Hash-Fixture; keine Sessiondatenübernahme oder Veröffentlichung.
+
+### TASKWRITER-Grenze
+
+Dieses Bündel formalisiert und synchronisiert ausschließlich Aufgaben. Es führt keine Aufgabe, keinen LaTeX-/PDF-/Build-/Review-/Web-/Zenodo-/DOI-/Upload-/Deploy-/Kontakt-/IFG-/E-Mail-/Commit-/Push-/Tag-/Release-Aktion und keine externe oder medizinische Prüfung aus. Vorbestehende Dirty-Dateien, Assets und historische Forschungsartefakte bleiben unangetastet.

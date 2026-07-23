@@ -27,6 +27,7 @@ venv/
 
 # Internal coordination
 AUFGABEN.txt
+LOCK*.txt
 TEST.txt
 TESTS.txt
 TESTERGEBNISSE.txt
