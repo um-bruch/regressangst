@@ -19,6 +19,14 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 - Lokalen Webfetch-Cache-Pfad aus einer Recherchedatei entfernt
 - `llms.txt` auf den Standard mit `Last-checked`, Audience und fenced Search Phrases gebracht
 - Historische `research-line`-GitHub-Links in den LaTeX-Quellen auf die aktuellen `um-bruch`-Repos umgestellt
+- `.gitignore` um `LOCK*.txt` ergänzt (systemweite LOCK-Konvention, verhindert versehentliches Commiten von Sperr-Dateien)
+- `meta/MASTERPLAN_V2.md` um ein TASKWRITER-Taskbündel (Stand 2026-07-22) für offene Register-, Quellen- und Release-Gate-Aufgaben ergänzt
+
+### Fixed / Behoben
+- Reines CRLF-Zeilenendenartefakt in `START.bat` zurückgesetzt (keine inhaltliche Änderung)
+
+### Removed / Entfernt
+- Degenerierte Dublette `CONTRIBUTING-Mac Studio.md` (Umlaute durch ae/oe/ue ersetzt, sonst identisch zu `CONTRIBUTING.md`) sowie sechs unbezogene App-Icon-Assets (`assets/android-icon-*.png`, `favicon.png`, `icon.png`, `splash-icon.png`) nach `_archive/` verschoben — nicht referenziert, gehören nicht zu diesem Repository
 
 ## [0.22] - 2026-04-15
 
