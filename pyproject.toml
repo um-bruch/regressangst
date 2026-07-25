@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regressangst"
+version = "0.22.0"
+description = "Working-paper repository for ST-001 on German prescribing-audit recourse anxiety and health-policy transparency"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC-BY-4.0" }
+keywords = ["health-policy", "prescribing-audit", "regressangst", "public-health", "sgb-v", "health-economics", "open-research"]
+authors = [
+    { name = "Um:bruch — Denkfabrik für gesellschaftlichen Wandel", email = "kontakt@um-bruch.org" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Creative Commons Attribution 4.0 International (CC-BY-4.0)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+[project.urls]
+Homepage = "https://um-bruch.org/projekte/"
+Repository = "https://github.com/um-bruch/regressangst"
+Documentation = "https://github.com/um-bruch/regressangst#readme"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = ["."]

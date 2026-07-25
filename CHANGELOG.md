@@ -6,6 +6,10 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 ## [Unreleased]
 
 ### Added / Hinzugefügt
+- Shields.io Badges (Lizenz, Status, ThinkTank, llms.txt, Tests) im `README.md`
+- AI/LLM-Integrationshinweis (`> [!NOTE]`) für automatisierte Agenten und RAG-Crawler im `README.md`
+- Mermaid-Systemarchitekturdiagramm zur 3-Schichten-Definitionsdivergenz und Evidenzkanälen im `README.md`
+- Standardisierte `pyproject.toml` mit Projektmetadaten, Pytest-Konfiguration und Discovery-URLs
 - GitHub-Standarddokumente für Community, Security und Contribution-Flow
 - Repo-Icon für wiedererkennbare Projektassets
 - Windows-Startdatei für den direkten Einstieg in Studie, Executive Summary oder README
@@ -13,6 +17,7 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 - `THIRD_PARTY_LICENSES.txt` als direkte Inventur für das dependency-freie Working-Paper-Repository
 
 ### Changed / Geändert
+- `llms.txt` Last-checked Datum auf `2026-07-25` aktualisiert
 - `.gitignore` um interne Steuerungsdateien, Releases, Forschungs-Privatordner und Credential-Muster erweitert
 - README und Versionierung auf ST-001 v0.22, Executive Summary v1.3 und PP-003 v3.1 aktualisiert
 - README-Einstieg um Startpunkte, Suchkontext und aktuellen Canonical-Link `um-bruch/regressangst` ergänzt

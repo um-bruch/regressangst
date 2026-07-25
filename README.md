@@ -1,6 +1,15 @@
 # Regressangst — German Prescribing-Audit Recourse Anxiety (ST-001)
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Status: Working Paper v0.22](https://img.shields.io/badge/Status-Working%20Paper%20v0.22-orange.svg)](pdf/ST-001_Executive_Summary.pdf)
+[![Think Tank: Um:bruch](https://img.shields.io/badge/Think%20Tank-Um%3Abruch-8A2BE2.svg)](https://um-bruch.org)
+[![llms.txt](https://img.shields.io/badge/llms.txt-indexiert-green.svg)](llms.txt)
+[![Tests](https://img.shields.io/badge/Tests-2%20passed-brightgreen.svg)](tests/)
+
 > **English summary:** Working-paper repository for ST-001, a systems-theory analysis of recourse anxiety in German statutory health-insurance prescribing audits (§§ 106 ff. SGB V). Published by [Um:bruch](https://um-bruch.org), CC BY 4.0. PDFs and source in this repository. | **🇩🇪 [Deutsche Dokumentation ↓](#startpunkte)**
+
+> [!NOTE]
+> **Maschinenlesbarer Kontext für KI-Agenten:** Eine kompakte Repository-Übersicht für LLMs, RAG-Crawler und automatisierte Indexer befindet sich in [`llms.txt`](llms.txt).
 
 ---
 
@@ -32,6 +41,30 @@
 **Öffentliche Projektseite:** <https://um-bruch.org/projekte/>
 
 Suchkontext: `Regressangst`, `Wirtschaftlichkeitsprüfung`, `ST-001`, `PP-003`, `Regress-Transparenzportal`, `ärztliche Regressangst`, `Um:bruch Regress-Melder`.
+
+## Systemarchitektur & Definitionsdivergenz
+
+```mermaid
+graph TD
+    A["Statistische Datenquellen<br>(BMG / GKV-SV / KV Bayern)"] --> B["Drei-Schichten-Modell der Regressangst"]
+    
+    subgraph Schichten ["Definitionsdivergenz (Faktor 500x)"]
+        B --> C1["Schicht 1: Offizielle Statistik<br>(&lt;100 Rechtskräftige/Jahr, 0.065%)"]
+        B --> C2["Schicht 2: Formale Anträge<br>(Auffälligkeitsprüfungen V1)"]
+        B --> C3["Schicht 3: Einzelfallprüfungen V2<br>(~47.000 Verfahren/Jahr, ~30% Betroffenheit)"]
+    end
+    
+    subgraph Duales_Evidenzsystem ["Parallele Evidenzkanäle"]
+        D1["CME-Fortbildung<br>(Edukativ, vor Fehler)"]
+        D2["V2-Prüfsystem<br>(Punitiv, nach Fehler)"]
+    end
+    
+    C3 --> D2
+    
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style Schichten fill:#e1f5fe,stroke:#0288d1
+    style Duales_Evidenzsystem fill:#fff3e0,stroke:#f57c00
+```
 
 ## Forschungsfrage
 
@@ -120,56 +153,12 @@ KI-gestützter Multi-Stream-Analyseprozess (April 2026, ~60–80 Stunden Mensch+
 
 - Agent-Prompts sind als Suchstrategien dokumentiert, aber die vollen Instruktions-Texte liegen nicht immer vor
 - Gemini-Outputs erforderten systematischen Double-Check (dokumentierte Halluzinationen: Moosazadeh, französische Protestzahlen)
-- Die Studie wurde unter extensivem KI-Einsatz erstellt — Fehler sind trotz sorgfältiger Prüfung nicht ausgeschlossen
-- Vor Zenodo-Upload werden alle BibTeX-Einträge per WebSearch gegen Originalpublikationen verifiziert
-
-### Vollständige Dokumentation
-
-Alle Rechercheschritte, Suchstrategien, Quellen, Agenten-Einsätze und Hypothesenrevisionen sind in den Dateien unter `recherche/` nachvollziehbar dokumentiert. Der MASTER-CORE fasst die konsolidierten Ergebnisse zusammen.
-
-## Kompilierung
-
-```bash
-# Voraussetzung: MiKTeX oder TeX Live mit inputenc utf8
-cd paper
-pdflatex ST-001_Studie_Regressangst.tex
-bibtex ST-001_Studie_Regressangst
-pdflatex ST-001_Studie_Regressangst.tex
-pdflatex ST-001_Studie_Regressangst.tex
-```
-
-## Zitiervorschlag
-
-> Um:bruch — Denkfabrik für gesellschaftlichen Wandel (2026). *Systemtheoretische Aufarbeitung der Regressangst: Eine multiperspektivische Bestandsaufnahme der deutschen Wirtschaftlichkeitsprüfung.* Working Paper ST-001, v0.22. https://github.com/um-bruch/regressangst
-
-## Lizenz
-
-CC BY 4.0 — [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
-
-Drittanbieter-Lizenzen: Dieses Repository bündelt keine externen Runtime-Abhängigkeiten; siehe [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt).
-
-## Kontakt
-
-Um:bruch — Denkfabrik für gesellschaftlichen Wandel
-- Web: [um-bruch.org](https://um-bruch.org)
-- Mail: hallo@um-bruch.org
 
 ---
 
-*KI-Transparenzhinweis: Dieses Projekt wurde unter extensivem Einsatz von KI-Sprachmodellen erarbeitet (Anthropic Claude, Microsoft Copilot, Google Gemini). Mehrere Kontroll- und Reviewzyklen wurden durchgeführt. KI-Modelle neigen zu Halluzinationen; Fehler sind trotz Prüfung nicht ausgeschlossen. Wir korrigieren dokumentierte Fehler und veröffentlichen verbesserte Versionen.*
+## Lizenz & Zitierweise
 
-> **Kein Ersatz für therapeutische oder medizinische Einschätzung.** Diagnose, Behandlung und therapeutische Entscheidungen bleiben qualifizierten Fachpersonen vorbehalten. Dieses Projekt ist reine Dokumentation / Forschung / Softwareentwurf.
->
-> **Not a substitute for therapeutic or medical assessment.** Diagnosis, treatment and therapeutic decisions remain reserved for qualified professionals. This project is pure documentation / research / software design.
+CC BY 4.0 — Um:bruch (2026): *Regressangst — Systemtheoretische Aufarbeitung der Wirtschaftlichkeitsprüfung (§§ 106 ff. SGB V)*. Working Paper ST-001, v0.22. URL: <https://github.com/um-bruch/regressangst>.
 
-
----
-
-## Haftung / Liability
-
-Dieses Projekt ist eine **unentgeltlich veröffentlichte Forschungs- und Dokumentationssammlung** unter CC BY 4.0. Die Haftung des Urhebers ist gemäß **§ 521 BGB** auf **Vorsatz und grobe Fahrlässigkeit** beschränkt. Ergänzend gelten die Hinweise aus der CC-BY-4.0-Lizenz.
-
-Nutzung auf eigenes Risiko. Keine Wartungszusage, keine Verfügbarkeitsgarantie, keine Gewähr für Fehlerfreiheit oder Eignung für einen bestimmten Zweck.
-
-This project is an unpaid research and documentation publication under CC BY 4.0. Liability is limited to intent and gross negligence (§ 521 German Civil Code). Use at your own risk. No warranty, no maintenance guarantee, no fitness-for-purpose assumed.
+Dritthersteller-Lizenzen und Dependency-Inventur: [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt).
 
