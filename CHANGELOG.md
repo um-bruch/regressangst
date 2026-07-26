@@ -17,6 +17,7 @@ Format basiert lose auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/)
 - `THIRD_PARTY_LICENSES.txt` als direkte Inventur für das dependency-freie Working-Paper-Repository
 
 ### Changed / Geändert
+- `llms.txt` Last-checked Datum auf `2026-07-26` und Verifikation der Pytest-Testsuite (2 passed) aktualisiert
 - `llms.txt` Last-checked Datum auf `2026-07-25` aktualisiert
 - `.gitignore` um interne Steuerungsdateien, Releases, Forschungs-Privatordner und Credential-Muster erweitert
 - README und Versionierung auf ST-001 v0.22, Executive Summary v1.3 und PP-003 v3.1 aktualisiert

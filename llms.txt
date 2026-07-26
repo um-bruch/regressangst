@@ -1,6 +1,6 @@
 # Regressangst / ST-001
 
-## Last-checked: 2026-07-25
+## Last-checked: 2026-07-26
 
 Canonical repository: https://github.com/um-bruch/regressangst
 Public project hub: https://um-bruch.org/projekte/
