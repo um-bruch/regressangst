@@ -4,6 +4,7 @@
 [![Status: Working Paper v0.22](https://img.shields.io/badge/Status-Working%20Paper%20v0.22-orange.svg)](pdf/ST-001_Executive_Summary.pdf)
 [![Think Tank: Um:bruch](https://img.shields.io/badge/Think%20Tank-Um%3Abruch-8A2BE2.svg)](https://um-bruch.org)
 [![llms.txt](https://img.shields.io/badge/llms.txt-indexiert-green.svg)](llms.txt)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](pyproject.toml)
 [![Tests](https://img.shields.io/badge/Tests-2%20passed-brightgreen.svg)](tests/)
 
 > **English summary:** Working-paper repository for ST-001, a systems-theory analysis of recourse anxiety in German statutory health-insurance prescribing audits (§§ 106 ff. SGB V). Published by [Um:bruch](https://um-bruch.org), CC BY 4.0. PDFs and source in this repository. | **🇩🇪 [Deutsche Dokumentation ↓](#startpunkte)**
