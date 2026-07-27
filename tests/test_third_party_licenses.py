@@ -26,3 +26,11 @@ def test_public_docs_reference_third_party_license_inventory():
 
     assert "THIRD_PARTY_LICENSES.txt" in readme
     assert "THIRD_PARTY_LICENSES.txt" in changelog
+
+
+def test_public_masterplan_uses_portable_project_path():
+    masterplan = (ROOT / "meta" / "MASTERPLAN_V2.md").read_text(encoding="utf-8")
+
+    assert "C:\\Users\\" not in masterplan
+    assert "/Users/" not in masterplan
+    assert "project_path=UMBRUCH/REL-PUB_Regressangst" in masterplan

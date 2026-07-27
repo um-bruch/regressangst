@@ -241,7 +241,7 @@ Jede Session beginnt mit dem Laden von:
 
 ## TASKPLAN-BÜNDEL — TASKWRITER (2026-07-22, Selektor Exit 0)
 
-Selector: mode=deep; root_id=.SOFTWARE; project_path=C:\Users\lukas\OneDrive\.TOPICS\.SOFTWARE\UMBRUCH\REL-PUB_Regressangst; task_ids leer; Leserechte/Anlage/Änderung erlaubt. Vorprüfung: kein Projekt-LOCK*.txt, kein TEST*.txt; Cloud-Sync-Prüfung hoch; Branch master entspricht origin/master. Vorbestehende Dirty-Dateien (.gitignore, START.bat, CONTRIBUTING-Mac Studio.md und sechs Assets) bleiben unverändert.
+Selector: mode=deep; root_id=.SOFTWARE; project_path=UMBRUCH/REL-PUB_Regressangst; task_ids leer; Leserechte/Anlage/Änderung erlaubt. Vorprüfung: kein Projekt-LOCK*.txt, kein TEST*.txt; Cloud-Sync-Prüfung hoch; Branch master entspricht origin/master. Vorbestehende Dirty-Dateien (.gitignore, START.bat, CONTRIBUTING-Mac Studio.md und sechs Assets) bleiben unverändert.
 
 ### Aktueller Stand und Klassifikation
 
